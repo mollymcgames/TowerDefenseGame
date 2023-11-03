@@ -7,9 +7,13 @@ public class TowerArcher : MonoBehaviour
 
     public GameObject arrowPrefab; //add the arrow prefab here
     public Transform firePoint; //an empty game object as the firepoint to assingn in the inspector
-    public float fireRate = 2.0f; //the rate of fire
+    [SerializeField]
+    private float fireRate = 2.0f; //the rate of fire
+    [SerializeField]
+    private float arrowSpeed = 5f; //the speed of the arrow
 
     private float timeUnitlFire; //Timer to keep track of when to fire
+    private GameObject currentArrow; //the current arrow that is fired
     // Start is called before the first frame update
     void Start()
     {
@@ -29,20 +33,40 @@ public class TowerArcher : MonoBehaviour
             FireArrow();
             timeUnitlFire = fireRate; 
         }
+
+        //If an arrow is present move it towards the enemy's positon 
+        if(currentArrow != null)
+        {
+            GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
+            if (enemy != null)
+            {
+                currentArrow.transform.position = Vector3.MoveTowards(currentArrow.transform.position, enemy.transform.position, arrowSpeed * Time.deltaTime);
+            }
+        }
         
     }
     private void FireArrow()
     {
-        //Instantiate an arrow prefab at the firepoint position and rotation
-        GameObject arrow = Instantiate(arrowPrefab, firePoint.position, firePoint.rotation);
-
-        //Get the arrow component
-        Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
-
-        //Set the initial velocity of the arrow in the -x direction but will need to change later
-        if (rb != null)
+        //Find the closest object with the tag "Enemy"
+        GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
+        if (enemy != null)
         {
-            rb.velocity = new Vector2(-5f, 0f); // Adjust the speed here
+            //Instantiate an arrow prefab at the firepoint position and rotation
+            GameObject arrow = Instantiate(arrowPrefab, firePoint.position, firePoint.rotation);
+
+            //calculate the direction towards the enemy
+            Vector3 direction = (enemy.transform.position - firePoint.position).normalized;
+
+            //Get the arrow component
+            Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
+
+            //Set the initial velocity of the arrow in the -x direction but will need to change later
+            if (rb != null)
+            {
+                // rb.velocity = new Vector2(-5f, 0f); // Adjust the speed here
+                rb.velocity = direction * arrowSpeed;
+                currentArrow = arrow; // Set the current arrow                
+            }
         }
     }
 }
