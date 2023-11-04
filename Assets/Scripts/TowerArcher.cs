@@ -8,46 +8,65 @@ public class TowerArcher : MonoBehaviour
     public Transform firePoint; // An empty game object as the fire point to assign in the inspector
     public Transform targetWaypoint; // The target waypoint the enemy moves towards
 
-    [SerializeField] private float fireRate = 0f; // The rate of fire
+    [SerializeField] private float fireRate = 1.0f; // The rate of fire
     [SerializeField] private float arrowSpeed = 5f; // The speed of the arrow
 
-    private float timeUnitlFire; // Timer to keep track of when to fire
-    private GameObject currentArrow; // The current arrow that is fired
-    private bool ShouldFire = true; // A flag to determine if the tower should fire
+    private float timeUntilFire; // Timer to keep track of when to fire
+    private List<GameObject> activeArrows = new List<GameObject>(); // List to hold active arrows
+    private bool shouldFire = true; // A flag to determine if the tower should fire
 
     // Start is called before the first frame update
     void Start()
     {
-        timeUnitlFire = 0f; // Set the timer to the fire rate
+        timeUntilFire = 0f; // Set the timer to the fire rate
     }
 
     // Update is called once per frame
     void Update()
     {
         // Countdown the timer until it's time to fire the next arrow
-        timeUnitlFire -= Time.deltaTime;
+        timeUntilFire -= Time.deltaTime;
 
         // If the timer reaches zero or below, fire an arrow and reset the timer
-        if (timeUnitlFire <= 0 && ShouldFire)
+        if (timeUntilFire <= 0 && shouldFire)
         {
             FireArrow();
-            timeUnitlFire = fireRate;
+            timeUntilFire = fireRate;
         }
 
+        //Create a seperate list to hold arrows that are no longer active
+        List<GameObject> inactiveArrows = new List<GameObject>();
+
         // If an arrow is present, move it towards the enemy's position
-        if (currentArrow != null)
+        foreach (GameObject arrow in activeArrows)
         {
-            GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
-            if (enemy != null && Vector3.Distance(enemy.transform.position, targetWaypoint.position) <= 0.5f)
+            if (arrow != null)
             {
-                // Stop firing or handle this condition as needed
-                ShouldFire = false;
-                Debug.Log("Enemy is very close to the waypoint. Stopping fire.");
+                GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
+                if (enemy != null && Vector3.Distance(enemy.transform.position, targetWaypoint.position) <= 0.5f)
+                {
+                    // Stop firing when the enemy reaches the waypoint
+                    shouldFire = false;
+                    inactiveArrows.Add(arrow);
+                    Destroy(arrow);
+                    Debug.Log("Enemy is very close to the waypoint. Stopping fire.");
+                }
+                else if (enemy != null && Vector3.Distance(arrow.transform.position, enemy.transform.position) <= 0.5f)
+                {
+                    // Handle the arrow hitting the enemy
+                    inactiveArrows.Add(arrow);
+                    Destroy(arrow);
+                }
+                else if (enemy != null && shouldFire)
+                {
+                    arrow.transform.position = Vector3.MoveTowards(arrow.transform.position, enemy.transform.position, arrowSpeed * Time.deltaTime);
+                }
             }
-            else if (enemy != null && ShouldFire)
-            {
-                currentArrow.transform.position = Vector3.MoveTowards(currentArrow.transform.position, enemy.transform.position, arrowSpeed * Time.deltaTime);
-            }
+        }
+        //remove the inactive arrows from the active arrows list
+        foreach (GameObject arrow in inactiveArrows)
+        {
+            activeArrows.Remove(arrow);
         }
     }
 
@@ -70,7 +89,7 @@ public class TowerArcher : MonoBehaviour
             if (rb != null)
             {
                 rb.velocity = direction * arrowSpeed;
-                currentArrow = arrow; // Set the current arrow
+                activeArrows.Add(arrow); // Add the arrow to the list of active arrows
             }
         }
     }
