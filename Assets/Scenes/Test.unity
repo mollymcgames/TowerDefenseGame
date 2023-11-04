@@ -813,7 +813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetWaypoint: {fileID: 497689699}
-  speed: 4
+  speed: 1
 --- !u!95 &962847912
 Animator:
   serializedVersion: 7
