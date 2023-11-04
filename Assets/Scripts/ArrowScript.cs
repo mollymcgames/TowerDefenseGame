@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class ArrowScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int damageAmount = 1; // The damage the arrow will do to the enemy
 
-    // Update is called once per frame
-    void Update()
+    public void DealDamage()
     {
-        
+        GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
+        if(enemy != null)
+        {
+            EnemyHealthManager enemyHealthManager = enemy.GetComponent<EnemyHealthManager>();
+            if(enemyHealthManager != null)
+            {
+                enemyHealthManager.TakeDamage(damageAmount); //Change the value if needed
+            }
+        }
     }
 }

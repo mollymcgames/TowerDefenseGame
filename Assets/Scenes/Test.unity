@@ -813,7 +813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetWaypoint: {fileID: 497689699}
-  speed: 1
+  speed: 4
 --- !u!95 &962847912
 Animator:
   serializedVersion: 7
@@ -952,7 +952,6 @@ MonoBehaviour:
   targetWaypoint: {fileID: 497689699}
   fireRate: 1
   arrowSpeed: 5
-  damageAmount: 1
 --- !u!1 &1043311799
 GameObject:
   m_ObjectHideFlags: 0
