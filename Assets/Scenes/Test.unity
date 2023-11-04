@@ -3550,7 +3550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 818338797150954617, guid: 35c7b707d35018d4e94da8c3173714e1, type: 3}
   firePoint: {fileID: 983292879}
-  fireRate: 2
+  fireRate: 12
   arrowSpeed: 5
 --- !u!1 &1043311799
 GameObject:

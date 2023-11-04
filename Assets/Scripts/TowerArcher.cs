@@ -17,7 +17,7 @@ public class TowerArcher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeUnitlFire = 0f; //set the timer to the fire rate //might need to be 0
+        timeUnitlFire = 12f; //set the timer to the fire rate //might need to be 0
         
     }
 
