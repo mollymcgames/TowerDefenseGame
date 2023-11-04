@@ -652,6 +652,7 @@ GameObject:
   - component: {fileID: 962847909}
   - component: {fileID: 962847912}
   - component: {fileID: 962847911}
+  - component: {fileID: 962847913}
   m_Layer: 0
   m_Name: ZombieMan
   m_TagString: Enemy
@@ -812,7 +813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetWaypoint: {fileID: 497689699}
-  speed: 4
+  speed: 1
 --- !u!95 &962847912
 Animator:
   serializedVersion: 7
@@ -835,6 +836,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &962847913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962847906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3296c26948005b24f9c3dd96b0b009ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  currentHealth: 10
 --- !u!1 &983292877
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,6 +952,7 @@ MonoBehaviour:
   targetWaypoint: {fileID: 497689699}
   fireRate: 1
   arrowSpeed: 5
+  damageAmount: 1
 --- !u!1 &1043311799
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,8 @@ public class TowerArcher : MonoBehaviour
     private List<GameObject> activeArrows = new List<GameObject>(); // List to hold active arrows
     private bool shouldFire = true; // A flag to determine if the tower should fire
 
+    public int damageAmount = 1; // The damage the arrow will do to the enemy
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +56,11 @@ public class TowerArcher : MonoBehaviour
                 else if (enemy != null && Vector3.Distance(arrow.transform.position, enemy.transform.position) <= 0.5f)
                 {
                     // Handle the arrow hitting the enemy
+                    EnemyHealthManager enemyHealthManager = enemy.GetComponent<EnemyHealthManager>();
+                    if(enemyHealthManager != null)
+                    {
+                        enemyHealthManager.TakeDamage(damageAmount); //subtract the dagameAmount from the enemy's health
+                    }
                     inactiveArrows.Add(arrow);
                     Destroy(arrow);
                 }
