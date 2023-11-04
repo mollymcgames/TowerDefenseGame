@@ -43,8 +43,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Towers
-    uniqueID: 3573694941
+  - name: Background
+    uniqueID: 2309615227
+    locked: 0
+  - name: Paths
+    uniqueID: 1900908935
     locked: 0
   - name: Player
     uniqueID: 10883139
