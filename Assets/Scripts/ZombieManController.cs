@@ -2,13 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class ZombieManController : MonoBehaviour
 {
     private Animator myAnimator; //The animator component
     public Transform targetWaypoint; //The waypoint the enemy is moving towards
+    public HealthManagerUI healthManager; //The health manager script
+    // private bool healthReduced = false;
+    private bool hasStartedMoving = false; // Check if the enemy has started moving
+
 
     NavMeshAgent agent;
+    private bool hasReachedWaypoint = false; //Check if the enemy has reached the target
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +34,23 @@ public class ZombieManController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Update: agent.remainingDistance: " + agent.remainingDistance);
+        Debug.Log("Update: agent.stoppingDistance: " + agent.stoppingDistance);
         FollowTarget();
+        if (hasStartedMoving && !hasReachedWaypoint && agent.remainingDistance <= agent.stoppingDistance) //Check if the enemy has reached the targe    
+        {
+            hasReachedWaypoint = true;
+            healthManager.ReduceHealth(); //Reduce the health by 1
+            // healthReduced = true;
+            Debug.Log("Reached Waypoint");
+
+        }
+        else if (hasReachedWaypoint && agent.remainingDistance > agent.stoppingDistance) //Check if the enemy has reached the target
+        {
+            hasReachedWaypoint = false;
+        }
+
+        hasStartedMoving = true;
     }
 
     public void FollowTarget()
@@ -50,4 +72,5 @@ public class ZombieManController : MonoBehaviour
             myAnimator.SetBool("isMoving", false);
         }
     }
+
 }
