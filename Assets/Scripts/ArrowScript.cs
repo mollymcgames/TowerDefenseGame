@@ -14,7 +14,7 @@ public class ArrowScript : MonoBehaviour
             EnemyHealthManager enemyHealthManager = enemy.GetComponent<EnemyHealthManager>();
             if(enemyHealthManager != null)
             {
-                enemyHealthManager.TakeDamage(damageAmount); //Change the value if needed
+                enemyHealthManager.TakeDamage(damageAmount); // Change the value if needed
             }
         }
     }
