@@ -43,40 +43,10 @@ public class TowerArcher : MonoBehaviour
         {
             if (arrow != null)
             {
-                GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
-                if (enemy != null)
+                ArrowScript arrowScript = arrow.GetComponent<ArrowScript>();
+                if (arrowScript != null)
                 {
-                    NavMeshAgent enemyAgent = enemy.GetComponent<NavMeshAgent>();
-                    if (enemyAgent != null && targetWaypoint != null)
-                    {
-                        if (Vector3.Distance(enemyAgent.transform.position, targetWaypoint.position) <= 1.2f)
-                        {
-                            // Stop firing when the enemy reaches the waypoint
-                            shouldFire = false;
-                            inactiveArrows.Add(arrow);
-                            Destroy(arrow);
-                            // Debug.Log("Enemy is very close to the waypoint. Stopping fire.");
-                        }
-                        else if (Vector3.Distance(arrow.transform.position, enemyAgent.transform.position) <= 0.5f)
-                        {
-                            // Handle the arrow hitting the enemy
-                            ArrowScript arrowScript = arrow.GetComponent<ArrowScript>();
-                            if (arrowScript != null)
-                            {
-                                arrowScript.DealDamage();
-                            }
-                            inactiveArrows.Add(arrow);
-                            Destroy(arrow);
-                            // Debug.Log("Enemy is not close to the waypoint and in this loop.");
-                            // Debug.Log("The arrows should be stopping fire as the enemy should have reached the taget but its not so were checking it has reached the target." + Vector3.Distance(enemyAgent.transform.position, targetWaypoint.position) + " " + enemyAgent.transform.position + " " + targetWaypoint.position);
-
-                        }
-                        else if (shouldFire)
-                        {
-                            arrow.transform.position = Vector3.MoveTowards(arrow.transform.position, enemyAgent.transform.position, arrowSpeed * Time.deltaTime);
-                            // Debug.Log("Enemy is not close to the waypoint.");                        
-                        }
-                    }
+                    arrowScript.ArrowBehaviour(targetWaypoint, shouldFire, inactiveArrows, arrowSpeed);
                 }
             }
         }
