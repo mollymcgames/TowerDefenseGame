@@ -334,6 +334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetWaypoint: {fileID: 497689699}
   healthManager: {fileID: 2107320858}
+  speed: 3
 --- !u!95 &184488746
 Animator:
   serializedVersion: 7
@@ -1486,6 +1487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetWaypoint: {fileID: 497689699}
   healthManager: {fileID: 2107320858}
+  speed: 1
 --- !u!95 &962847912
 Animator:
   serializedVersion: 7
@@ -1645,8 +1647,8 @@ MonoBehaviour:
   arrowPrefab: {fileID: 818338797150954617, guid: 35c7b707d35018d4e94da8c3173714e1, type: 3}
   firePoint: {fileID: 983292879}
   targetWaypoint: {fileID: 497689699}
-  fireRate: 1
-  arrowSpeed: 5
+  fireRate: 0.5
+  arrowSpeed: 7
 --- !u!1 &1043311799
 GameObject:
   m_ObjectHideFlags: 0

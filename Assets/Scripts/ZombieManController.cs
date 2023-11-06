@@ -11,6 +11,8 @@ public class ZombieManController : MonoBehaviour
     public HealthManagerUI healthManager; //The health manager script
     private bool hasStartedMoving = false; // Check if the enemy has started moving
 
+    [SerializeField] private float speed = 3.0f ; //The speed at which the enemy moves
+
 
     NavMeshAgent agent;
     private bool hasReachedWaypoint = false; //Check if the enemy has reached the target
@@ -20,6 +22,7 @@ public class ZombieManController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>(); //Get the NavMeshAgent component
         agent.updateRotation = false; //Stop the NavMeshAgent component from rotating the enemy
         agent.updateUpAxis = false; //Stop the NavMeshAgent component from rotating the enemy
+        agent.speed = speed; //Set the speed of the NavMeshAgent component
 
         myAnimator = GetComponent<Animator>(); //Get the animator component
 
