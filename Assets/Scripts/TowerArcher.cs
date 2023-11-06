@@ -10,7 +10,7 @@ public class TowerArcher : MonoBehaviour
     public Transform targetWaypoint; // The target waypoint the enemy moves towards
 
     [SerializeField] private float fireRate = 1.0f; // The rate of fire
-    [SerializeField] private float arrowSpeed = 5f; // The speed of the arrow
+    [SerializeField] private float arrowSpeed = 2f; // The speed of the arrow
 
     private float timeUntilFire; // Timer to keep track of when to fire
     private List<GameObject> activeArrows = new List<GameObject>(); // List to hold active arrows

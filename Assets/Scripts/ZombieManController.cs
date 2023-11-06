@@ -7,8 +7,10 @@ using UnityEngine.UI;
 public class ZombieManController : MonoBehaviour
 {
     private Animator myAnimator; //The animator component
-    public Transform targetWaypoint; //The waypoint the enemy is moving towards
-    public HealthManagerUI healthManager; //The health manager script
+    [SerializeField] private Transform targetWaypoint; //The waypoint the enemy is moving towards
+    private HealthManagerUI healthManager; //The health manager script
+
+    // [SerializeField] private HealthManagerUI healthManager; //The health manager script
     private bool hasStartedMoving = false; // Check if the enemy has started moving
 
     [SerializeField] private float speed = 3.0f ; //The speed at which the enemy moves
@@ -25,6 +27,14 @@ public class ZombieManController : MonoBehaviour
         agent.speed = speed; //Set the speed of the NavMeshAgent component
 
         myAnimator = GetComponent<Animator>(); //Get the animator component
+
+        // Set the targetWaypoint to the desired Vector3 position
+        GameObject targetWaypointObject = new GameObject("TargetWaypoint");
+        targetWaypoint = targetWaypointObject.transform;
+        targetWaypoint.position = new Vector3(6.07f, -2.58f, 0.5f); //hardcoded position of the target waypoint
+
+        // Get the HealthManagerUI component
+        healthManager = FindObjectOfType<HealthManagerUI>();        
 
         if (targetWaypoint == null)
         {
@@ -75,8 +85,8 @@ public class ZombieManController : MonoBehaviour
 
     void DestroyEnemy()
     {
-        if(gameObject != null)
-        {
+        if(gameObject != null && gameObject.activeSelf)
+        { 
             Destroy(gameObject); //Destroy the enemy game object
         }
     }
