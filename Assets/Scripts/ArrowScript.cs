@@ -22,28 +22,42 @@ public class ArrowScript : MonoBehaviour
 
     public void ArrowBehaviour(Transform targetWaypoint, bool shouldFire, List<GameObject> inactiveArrows, float arrowSpeed)
     {
-
-        GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
-        if (enemy != null)
+        //Similar logic to the TowerArcher.cs script of finding the closest enemy and dealing damage to it
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy"); // Get all the enemies on the scene
+        GameObject closestEnemy = null; // The closest enemy
+        float closestDistance = Mathf.Infinity; // The distance to the closest enemy
+        foreach (GameObject enemy in enemies)
         {
-            UnityEngine.AI.NavMeshAgent enemyAgent = enemy.GetComponent<UnityEngine.AI.NavMeshAgent>();
-            if (enemyAgent != null && targetWaypoint != null)
+            if (enemy != null)
             {
-                if (Vector3.Distance(enemyAgent.transform.position, targetWaypoint.position) <= 1.2f)
+                float distance = Vector3.Distance(transform.position, enemy.transform.position); // Calculate the distance between the tower and the enemy
+                if (distance < closestDistance) // If the distance is less than the closest distance
+                {
+                    closestDistance = distance; // Set the closest distance to the distance
+                    closestEnemy = enemy; // Set the closest enemy to the enemy
+                }
+            }
+        }
+        if(closestEnemy != null)
+        {
+            UnityEngine.AI.NavMeshAgent enemyAgent = closestEnemy.GetComponent<UnityEngine.AI.NavMeshAgent>();
+            if(enemyAgent != null && targetWaypoint != null)
+            {
+                if(Vector3.Distance(enemyAgent.transform.position, targetWaypoint.position) <= 1.2f)
                 {
                     // Stop firing when the enemy reaches the waypoint
                     shouldFire = false;
                     inactiveArrows.Add(gameObject);
                     Destroy(gameObject);
                 }
-                else if (Vector3.Distance(transform.position, enemyAgent.transform.position) <= 0.5f)
+                else if(Vector3.Distance(transform.position, enemyAgent.transform.position) <= 0.5f)
                 {
                     // Handle the arrow hitting the enemy
-                    DealDamage();
+                    DealDamage(closestEnemy);
                     inactiveArrows.Add(gameObject);
                     Destroy(gameObject);
                 }
-                else if (shouldFire)
+                else if(shouldFire)
                 {
                     transform.position = Vector3.MoveTowards(transform.position, enemyAgent.transform.position, arrowSpeed * Time.deltaTime);
                 }
@@ -51,9 +65,10 @@ public class ArrowScript : MonoBehaviour
         }
     }
 
-    public void DealDamage()
+
+    public void DealDamage(GameObject enemy)
     {
-        GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
+        // GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
         if(enemy != null)
         {
             EnemyHealthManager enemyHealthManager = enemy.GetComponent<EnemyHealthManager>();

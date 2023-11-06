@@ -9,7 +9,6 @@ public class ZombieManController : MonoBehaviour
     private Animator myAnimator; //The animator component
     public Transform targetWaypoint; //The waypoint the enemy is moving towards
     public HealthManagerUI healthManager; //The health manager script
-    // private bool healthReduced = false;
     private bool hasStartedMoving = false; // Check if the enemy has started moving
 
 
@@ -41,9 +40,6 @@ public class ZombieManController : MonoBehaviour
         {
             hasReachedWaypoint = true;
             healthManager.ReduceHealth(); //Reduce the health by 1
-            // healthReduced = true;
-            Debug.Log("Reached Waypoint");
-
         }
         else if (hasReachedWaypoint && agent.remainingDistance > agent.stoppingDistance) //Check if the enemy has reached the target
         {

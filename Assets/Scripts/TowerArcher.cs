@@ -60,11 +60,25 @@ public class TowerArcher : MonoBehaviour
 
     private void FireArrow()
     {
-        // Find the closest object with the tag "Enemy"
-        GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
-        if (enemy != null)
+        // The Tower should find the closest enemy before firing an arrow. If there are multiple enemies on the scene it will prioritize the nearest one.
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy"); // Get all the enemies on the scene
+        GameObject closestEnemy = null; // The closest enemy
+        float closestDistance = Mathf.Infinity; // The distance to the closest enemy
+        foreach (GameObject enemy in enemies)
         {
-            NavMeshAgent enemyAgent = enemy.GetComponent<NavMeshAgent>();
+            if (enemy != null)
+            {
+                float distance = Vector3.Distance(transform.position, enemy.transform.position); // Calculate the distance between the tower and the enemy
+                if (distance < closestDistance) // If the distance is less than the closest distance
+                {
+                    closestDistance = distance; // Set the closest distance to the distance
+                    closestEnemy = enemy; // Set the closest enemy to the enemy
+                }
+            }
+        }
+        if (closestEnemy != null)
+        {
+            NavMeshAgent enemyAgent = closestEnemy.GetComponent<NavMeshAgent>();
 
             // Instantiate an arrow prefab at the fire point position and rotation
             GameObject arrow = Instantiate(arrowPrefab, firePoint.position, firePoint.rotation);
