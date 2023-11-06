@@ -40,6 +40,7 @@ public class ZombieManController : MonoBehaviour
         {
             hasReachedWaypoint = true;
             healthManager.ReduceHealth(); //Reduce the health by 1
+            Destroy(gameObject); //Destroy the enemy game object
         }
         else if (hasReachedWaypoint && agent.remainingDistance > agent.stoppingDistance) //Check if the enemy has reached the target
         {
@@ -66,6 +67,14 @@ public class ZombieManController : MonoBehaviour
         else
         {
             myAnimator.SetBool("isMoving", false);
+        }
+    }
+
+    void DestroyEnemy()
+    {
+        if(gameObject != null)
+        {
+            Destroy(gameObject); //Destroy the enemy game object
         }
     }
 
