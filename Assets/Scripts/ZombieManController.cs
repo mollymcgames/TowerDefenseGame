@@ -46,8 +46,8 @@ public class ZombieManController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Update: agent.remainingDistance: " + agent.remainingDistance);
-        Debug.Log("Update: agent.stoppingDistance: " + agent.stoppingDistance);
+        // Debug.Log("Update: agent.remainingDistance: " + agent.remainingDistance);
+        // Debug.Log("Update: agent.stoppingDistance: " + agent.stoppingDistance);
         FollowTarget();
         if (hasStartedMoving && !hasReachedWaypoint && agent.remainingDistance <= agent.stoppingDistance) //Check if the enemy has reached the targe    
         {
