@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 // using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class HealthManagerUI : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class HealthManagerUI : MonoBehaviour
         {
             //Do something when the player dies
             Debug.Log("Game Over");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
