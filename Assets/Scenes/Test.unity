@@ -1658,8 +1658,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1607208529561209343, guid: 0651ce8fc41958c44963d986a74e5990, type: 3}
-  spawnPosition: {x: -5.57, y: 1.32, z: 0}
-  spawnPoints: []
+  spawnPositions:
+  - {x: -5.57, y: 1.32, z: 0}
+  - {x: -5.87, y: -2.68, z: 0}
+  - {x: -5.93, y: -4.19, z: 0}
   spawnInterval: 5
   isSpawning: 1
 --- !u!114 &1336093400
@@ -20969,11 +20971,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8779941759918479512, guid: 0651ce8fc41958c44963d986a74e5990, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.57
+      value: -5.85
       objectReference: {fileID: 0}
     - target: {fileID: 8779941759918479512, guid: 0651ce8fc41958c44963d986a74e5990, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.32
+      value: 0.83
       objectReference: {fileID: 0}
     - target: {fileID: 8779941759918479512, guid: 0651ce8fc41958c44963d986a74e5990, type: 3}
       propertyPath: m_LocalPosition.z
