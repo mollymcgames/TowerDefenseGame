@@ -10,6 +10,8 @@ public class ZombieManController : MonoBehaviour
     [SerializeField] private Transform targetWaypoint; //The waypoint the enemy is moving towards
     private HealthManagerUI healthManager; //The health manager script
 
+    private WaveController waveController;
+
     // [SerializeField] private HealthManagerUI healthManager; //The health manager script
     private bool hasStartedMoving = false; // Check if the enemy has started moving
 
@@ -54,6 +56,15 @@ public class ZombieManController : MonoBehaviour
         {
             hasReachedWaypoint = true;
             healthManager.ReduceHealth(); //Reduce the health by 1
+
+            Debug.Log("Bad guy beat ya!");
+            waveController = FindFirstObjectByType<WaveController>();
+            List<GameObject> activeEnemies = waveController.activeEnemies;
+            Debug.Log("A dude WON but they're no longer active so...active enemies BEFORE processing:"+activeEnemies.Count);                    
+            activeEnemies.Remove(gameObject);
+            Debug.Log("A dude WON but they're no longer active so...active enemies AFTER processing:"+activeEnemies.Count);
+            // return activeEnemies.count;
+
             Destroy(gameObject); //Destroy the enemy game object
         }
         else if (hasReachedWaypoint && agent.remainingDistance > agent.stoppingDistance) //Check if the enemy has reached the target

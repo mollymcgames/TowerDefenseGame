@@ -14,9 +14,13 @@ public class EnemySpawner : MonoBehaviour
     private int enemiesPerWaveIncrement = 1; //The amount of enemies to be incremented per wave
     private int currentEnemiesPerWave = 1; //The current amount of enemies per wave
 
+    public List<GameObject> activeEnemies;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("INITIAL Active enemies IN SPAWNER:"+activeEnemies.Count);        
         StartCoroutine(SpawnEnemy()); //Start spawning enemies
     }
 
@@ -33,6 +37,8 @@ public class EnemySpawner : MonoBehaviour
                 Vector3 spawnPosition = spawnPositions[spawnIndex]; //Get the spawn position at the random index
                 GameObject newEnemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity); //Spawn the enemy at the specified position
                 newEnemy.SetActive(true); //Set the enemy to active
+                activeEnemies.Add(newEnemy);
+                Debug.Log("SPAWNER  Active enemies: "+activeEnemies.Count);                        
                 totalEnemiesSpawned++; //Increment the total amount of enemies spawned
             }
             currentEnemiesPerWave += enemiesPerWaveIncrement; //Increment the current amount of enemies per wave

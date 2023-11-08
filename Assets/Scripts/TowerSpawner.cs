@@ -25,8 +25,8 @@ public class TowerSpawner : MonoBehaviour
         // Check if the left mouse button is clicked
         if (Input.GetMouseButtonDown(0) && (currentTowers < maxTowers))
         {
-            Debug.Log("current towers is" + currentTowers);
-            Debug.Log("max towers is" + maxTowers);
+            // Debug.Log("current towers is" + currentTowers);
+            // Debug.Log("max towers is" + maxTowers);
             // Get the mouse position
             Vector3 mousePosition = Input.mousePosition;
             // Convert the mouse position from screen space to world space

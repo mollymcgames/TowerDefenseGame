@@ -8,6 +8,9 @@ public class EnemyHealthManager : MonoBehaviour
     public int maxHealth = 10;
     public int currentHealth;
 
+    private WaveController waveController;
+
+
     public Slider slider; //reference to the healthbar
     void Start()
     {
@@ -27,6 +30,11 @@ public class EnemyHealthManager : MonoBehaviour
 
     private void Die()
     {
+        waveController = FindFirstObjectByType<WaveController>();
+        List<GameObject> activeEnemies = waveController.activeEnemies;
+        Debug.Log("A dude DIED, active enemies BEFORE processing:"+activeEnemies.Count);                    
+        activeEnemies.Remove(gameObject);
+        Debug.Log("A dude DIED, active enemies AFTER processing:"+activeEnemies.Count);        
         Destroy(gameObject); //Destroy the enemy game object
     }
 
