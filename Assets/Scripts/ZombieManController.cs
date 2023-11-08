@@ -25,6 +25,7 @@ public class ZombieManController : MonoBehaviour
         agent.updateRotation = false; //Stop the NavMeshAgent component from rotating the enemy
         agent.updateUpAxis = false; //Stop the NavMeshAgent component from rotating the enemy
         agent.speed = speed; //Set the speed of the NavMeshAgent component
+        agent.stoppingDistance = 0.5f; //Set the stopping distance of the NavMeshAgent component we might need to change this later but for now it works
 
         myAnimator = GetComponent<Animator>(); //Get the animator component
 
