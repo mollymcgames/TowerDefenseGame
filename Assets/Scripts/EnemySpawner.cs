@@ -16,7 +16,7 @@ public class EnemySpawner : MonoBehaviour
         StartCoroutine(SpawnEnemy()); //Start spawning enemies
     }
  
-    private IEnumerator SpawnEnemy()
+    public IEnumerator SpawnEnemy()
     {
         while (isSpawning) //Check if the enemy is spawning
         {

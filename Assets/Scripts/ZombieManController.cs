@@ -34,7 +34,7 @@ public class ZombieManController : MonoBehaviour
         targetWaypoint.position = new Vector3(6.07f, -2.58f, 0.5f); //hardcoded position of the target waypoint
 
         // Get the HealthManagerUI component
-        healthManager = FindObjectOfType<HealthManagerUI>();        
+        healthManager = FindFirstObjectByType<HealthManagerUI>();        
 
         if (targetWaypoint == null)
         {
