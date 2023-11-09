@@ -12,6 +12,11 @@ public class TowerSpawner : MonoBehaviour
 
     public TextMeshProUGUI towerArcherCountText; // Reference to the tower archer count text
 
+    // public Transform[] allowedPositions;   //Define the specific positions where the towers can be added
+
+    public Vector3[] allowedPositions; //The positions at which the enemy can be spawned
+
+
     // // Start is called before the first frame update
     void Start()
     {
@@ -33,14 +38,37 @@ public class TowerSpawner : MonoBehaviour
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
             // Set the z position to 0
             worldPosition.z = 0;
-            // Instantiate the tower prefab at the mouse position
-            Instantiate(towerPrefab, worldPosition, Quaternion.identity);
 
-            //Increment the current number of towers
-            currentTowers++;
+            //Check if the clicked position is within the allowed positions
+            foreach (Vector3 position in allowedPositions)
+            {
+                //calculate the distance between the clicked position and the allowed position
+                if (Vector3.Distance(worldPosition, position) < 0.5f)
+                {
+                    //if the distance is less than 0.5f then the clicked position is within the allowed position
+                    //so we can place the tower
 
-            //Update the tower count text in the canvas UI
-            UpdateTowerCountText();
+                    //Instantiate the tower prefab at the mouse position
+                    Instantiate(towerPrefab, position, Quaternion.identity);
+
+                    //Increment the current number of towers
+                    currentTowers++;
+
+                    //Update the tower count text in the canvas UI
+                    UpdateTowerCountText();
+                    break;
+
+                }
+            }
+
+            // // Instantiate the tower prefab at the mouse position
+            // Instantiate(towerPrefab, worldPosition, Quaternion.identity);
+
+            // //Increment the current number of towers
+            // currentTowers++;
+
+            // //Update the tower count text in the canvas UI
+            // UpdateTowerCountText();
         }
         
     }
