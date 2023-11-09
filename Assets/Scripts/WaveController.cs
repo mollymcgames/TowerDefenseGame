@@ -45,7 +45,7 @@ public class WaveController : MonoBehaviour
             if (activeEnemies.Count == 0)
             {
                 Debug.Log("Won it all!");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1); //might need to change this logic as it loads the next screen in the build index
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +2); //might need to change this logic as it loads the next screen in the build index
             }
         }
 
