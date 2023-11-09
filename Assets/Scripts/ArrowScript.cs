@@ -8,11 +8,24 @@ public class ArrowScript : MonoBehaviour
 
     private Rigidbody2D arrowRigidbody; // The arrow's rigidbody component
 
+    public float range = 2.0f; // The range of the arrow. Will be time based
+    private float timer = 0.0f; // The timer for the arrow which will countdown the range
+
 
     private void Start()
     {
         arrowRigidbody = GetComponent<Rigidbody2D>(); // Get the arrow's rigidbody component
+        timer = range; // Set the timer to the range
 
+    }
+
+    void FixedUpdate()
+    {
+        timer -= Time.deltaTime; // Decrement the timer
+        if(timer <= 0.0f) // If the timer is less than or equal to 0
+        {
+            Destroy(gameObject); // Destroy the arrow
+        }
     }
 
     public void ShootArrow(Vector3 direction, float speed)
