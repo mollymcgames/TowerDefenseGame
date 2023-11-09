@@ -8,7 +8,7 @@ public class WaveController : MonoBehaviour
 {
 
     private int currentWave = 1; //The current wave number we assume starts from 1
-    private int maxWaves = 3; //The maximum number of waves in the game in this level we assume 1 level so far
+    private int maxWaves = 4; //The maximum number of waves in the game in this level we assume 1 level so far
     public TextMeshProUGUI waveText; // Reference to the wave count text
     public EnemySpawner enemySpawner; // Reference to the enemy spawner
 
@@ -41,7 +41,7 @@ public class WaveController : MonoBehaviour
         {
             Debug.Log("Reached max waves. stop spawning enemies");
             enemySpawner.StopSpawning(); //Stop spawning enemies
-            yield return new WaitForSeconds(6.0f); //Wait for 6 seconds
+            yield return new WaitForSeconds(8.0f); //Wait for 6 seconds
             if (activeEnemies.Count == 0)
             {
                 Debug.Log("Won it all!");
