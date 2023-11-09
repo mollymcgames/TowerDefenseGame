@@ -29,13 +29,6 @@ public class ArrowScript : MonoBehaviour
         }
     }
 
-    public void ShootArrow(Vector3 direction, float speed)
-    {
-        initialDirection = direction; // Set the initial direction of the arrow to be the direction where the enemy is
-        arrowRigidbody.velocity = direction * speed; // Set the arrow's velocity to the direction and speed 
-        //make the arrow face the enemy 
-        transform.rotation = Quaternion.LookRotation(Vector3.forward, direction); 
-    }
 
     public void ArrowBehaviour(Transform targetWaypoint, bool shouldFire, List<GameObject> inactiveArrows, float arrowSpeed)
     {
@@ -76,17 +69,7 @@ public class ArrowScript : MonoBehaviour
                 }
                 else if(shouldFire)
                 {
-                    //If not facing the enemy just use this
-                    // transform.position = Vector3.MoveTowards(transform.position, enemyAgent.transform.position, arrowSpeed * Time.deltaTime);
-
-                    //move the arrow in the inital direction without tracking the enemy 
                     transform.position += initialDirection * arrowSpeed * Time.deltaTime;
-
-                    // Get the arrow to face the enemy
-                    // Vector3 targetDirection = transform.position - closestEnemy.transform.position;
-                    // transform.right = targetDirection.normalized;
-                
-                    //Get the arrow to face the enemy uncomment this code and comment out line above
                 }
             }
         }

@@ -79,12 +79,20 @@ public class TowerArcher : MonoBehaviour
         if (closestEnemy != null)
         {
             NavMeshAgent enemyAgent = closestEnemy.GetComponent<NavMeshAgent>();
+            ShootArrow(enemyAgent);
+        }
+    }
 
+
+    public void ShootArrow(NavMeshAgent enemyAgent)
+    {
             // Instantiate an arrow prefab at the fire point position and rotation
             GameObject arrow = Instantiate(arrowPrefab, firePoint.position, firePoint.rotation);
 
             // Calculate the direction towards the enemy agent
             Vector3 direction = (enemyAgent.transform.position - firePoint.position).normalized;
+
+            arrow.transform.rotation = Quaternion.LookRotation(Vector3.forward, direction) * Quaternion.Euler(0, 0, 270);
 
             // Get the arrow component
             Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
@@ -95,6 +103,5 @@ public class TowerArcher : MonoBehaviour
                 rb.velocity = direction * arrowSpeed;
                 activeArrows.Add(arrow); // Add the arrow to the list of active arrows
             }
-        }
     }
 }
