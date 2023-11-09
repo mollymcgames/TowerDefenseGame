@@ -923,7 +923,7 @@ MonoBehaviour:
   firePoint: {fileID: 983292879}
   targetWaypoint: {fileID: 497689699}
   fireRate: 1
-  arrowSpeed: 2
+  arrowSpeed: 4
 --- !u!1 &1043311799
 GameObject:
   m_ObjectHideFlags: 0

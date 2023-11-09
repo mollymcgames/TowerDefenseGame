@@ -10,6 +10,7 @@ public class ArrowScript : MonoBehaviour
 
     public float range = 2.0f; // The range of the arrow. Will be time based
     private float timer = 0.0f; // The timer for the arrow which will countdown the range
+    private Vector3 initialDirection; // The initial direction of the arrow
 
 
     private void Start()
@@ -19,7 +20,7 @@ public class ArrowScript : MonoBehaviour
 
     }
 
-    void FixedUpdate()
+    void FixedUpdate() 
     {
         timer -= Time.deltaTime; // Decrement the timer
         if(timer <= 0.0f) // If the timer is less than or equal to 0
@@ -30,7 +31,10 @@ public class ArrowScript : MonoBehaviour
 
     public void ShootArrow(Vector3 direction, float speed)
     {
-        arrowRigidbody.velocity = direction * speed; // Set the arrow's velocity to the direction and speed
+        initialDirection = direction; // Set the initial direction of the arrow to be the direction where the enemy is
+        arrowRigidbody.velocity = direction * speed; // Set the arrow's velocity to the direction and speed 
+        //make the arrow face the enemy 
+        transform.rotation = Quaternion.LookRotation(Vector3.forward, direction); 
     }
 
     public void ArrowBehaviour(Transform targetWaypoint, bool shouldFire, List<GameObject> inactiveArrows, float arrowSpeed)
@@ -73,13 +77,28 @@ public class ArrowScript : MonoBehaviour
                 else if(shouldFire)
                 {
                     //If not facing the enemy just use this
-                    transform.position = Vector3.MoveTowards(transform.position, enemyAgent.transform.position, arrowSpeed * Time.deltaTime);
-                }
-                    //Get the arrow to face the enemy uncomment this code and comment out line above
+                    // transform.position = Vector3.MoveTowards(transform.position, enemyAgent.transform.position, arrowSpeed * Time.deltaTime);
+
+                    //move the arrow in the inital direction without tracking the enemy 
+                    transform.position += initialDirection * arrowSpeed * Time.deltaTime;
+
+                    // Get the arrow to face the enemy
                     // Vector3 targetDirection = transform.position - closestEnemy.transform.position;
                     // transform.right = targetDirection.normalized;
-                    // transform.position = Vector3.MoveTowards(transform.position, enemyAgent.transform.position, arrowSpeed * Time.deltaTime);
+                
+                    //Get the arrow to face the enemy uncomment this code and comment out line above
+                }
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            DealDamage(collision.gameObject);
+            // inactiveArrows.Add(gameObject);
+            Destroy(gameObject);
         }
     }
 
