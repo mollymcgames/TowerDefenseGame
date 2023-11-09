@@ -41,7 +41,7 @@ public class WaveController : MonoBehaviour
         {
             Debug.Log("Reached max waves. stop spawning enemies");
             enemySpawner.StopSpawning(); //Stop spawning enemies
-            yield return new WaitForSeconds(8.0f); //Wait for 6 seconds
+            yield return new WaitForSeconds(12.0f); //Wait for 6 seconds
             if (activeEnemies.Count == 0)
             {
                 Debug.Log("Won it all!");

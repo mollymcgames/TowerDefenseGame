@@ -72,8 +72,13 @@ public class ArrowScript : MonoBehaviour
                 }
                 else if(shouldFire)
                 {
+                    //If not facing the enemy just use this
                     transform.position = Vector3.MoveTowards(transform.position, enemyAgent.transform.position, arrowSpeed * Time.deltaTime);
                 }
+                    //Get the arrow to face the enemy uncomment this code and comment out line above
+                    // Vector3 targetDirection = transform.position - closestEnemy.transform.position;
+                    // transform.right = targetDirection.normalized;
+                    // transform.position = Vector3.MoveTowards(transform.position, enemyAgent.transform.position, arrowSpeed * Time.deltaTime);
             }
         }
     }
