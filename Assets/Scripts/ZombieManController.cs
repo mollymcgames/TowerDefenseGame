@@ -34,7 +34,8 @@ public class ZombieManController : MonoBehaviour
         // Set the targetWaypoint to the desired Vector3 position
         GameObject targetWaypointObject = new GameObject("TargetWaypoint");
         targetWaypoint = targetWaypointObject.transform;
-        targetWaypoint.position = new Vector3(6.07f, -2.58f, 0.5f); //hardcoded position of the target waypoint
+        // targetWaypoint.position = new Vector3(6.07f, -2.58f, 0.5f); //hardcoded position of the target waypoint
+        targetWaypoint.position = new Vector3(9.67f, -3.92f, 0.5f); //hardcoded position of the target waypoint
 
         // Get the HealthManagerUI component
         healthManager = FindFirstObjectByType<HealthManagerUI>();        
