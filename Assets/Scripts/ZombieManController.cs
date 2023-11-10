@@ -64,7 +64,6 @@ public class ZombieManController : MonoBehaviour
             Debug.Log("A dude WON but they're no longer active so...active enemies BEFORE processing:"+activeEnemies.Count);                    
             activeEnemies.Remove(gameObject);
             Debug.Log("A dude WON but they're no longer active so...active enemies AFTER processing:"+activeEnemies.Count);
-            // return activeEnemies.count;
 
             Destroy(gameObject); //Destroy the enemy game object
         }
