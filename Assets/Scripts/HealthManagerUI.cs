@@ -31,7 +31,7 @@ public class HealthManagerUI : MonoBehaviour
         {
             //Do something when the player dies
             Debug.Log("Game Over");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene("GameOver");
         }
     }
 

@@ -925,6 +925,75 @@ MonoBehaviour:
   fireRate: 0.5
   arrowSpeed: 7
   firingRange: 6
+--- !u!1001 &989885734
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2727529182134312188, guid: 3ff0334b6c81fb341ab78013bdfa5fd0, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2727529182134312188, guid: 3ff0334b6c81fb341ab78013bdfa5fd0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 2727529182134312188, guid: 3ff0334b6c81fb341ab78013bdfa5fd0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2727529182134312188, guid: 3ff0334b6c81fb341ab78013bdfa5fd0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2727529182134312188, guid: 3ff0334b6c81fb341ab78013bdfa5fd0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2727529182134312188, guid: 3ff0334b6c81fb341ab78013bdfa5fd0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2727529182134312188, guid: 3ff0334b6c81fb341ab78013bdfa5fd0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2727529182134312188, guid: 3ff0334b6c81fb341ab78013bdfa5fd0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2727529182134312188, guid: 3ff0334b6c81fb341ab78013bdfa5fd0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2727529182134312188, guid: 3ff0334b6c81fb341ab78013bdfa5fd0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2727529182134312188, guid: 3ff0334b6c81fb341ab78013bdfa5fd0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649999620572225815, guid: 3ff0334b6c81fb341ab78013bdfa5fd0, type: 3}
+      propertyPath: m_Name
+      value: GoblinRider
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480012152830437939, guid: 3ff0334b6c81fb341ab78013bdfa5fd0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480012152830437939, guid: 3ff0334b6c81fb341ab78013bdfa5fd0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3ff0334b6c81fb341ab78013bdfa5fd0, type: 3}
 --- !u!1 &1043311799
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,7 +1210,7 @@ GameObject:
   - component: {fileID: 1336093398}
   - component: {fileID: 1336093400}
   - component: {fileID: 1336093401}
-  - component: {fileID: 1336093399}
+  - component: {fileID: 1336093402}
   m_Layer: 0
   m_Name: GameControllers
   m_TagString: Untagged
@@ -1164,27 +1233,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1336093399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1336093397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee0613f58fe658447adeefc8c85eb3bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1607208529561209343, guid: 0651ce8fc41958c44963d986a74e5990, type: 3}
-  spawnPositions:
-  - {x: -7.98, y: -4.21, z: 0}
-  - {x: -8.08, y: 1.57, z: 0}
-  - {x: 3.06, y: 3.85, z: 0}
-  spawnInterval: 5
-  isSpawning: 1
-  amountOfEnemiesSpawnedPerWave: 1
-  activeEnemies: []
 --- !u!114 &1336093400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1220,7 +1268,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveText: {fileID: 105612443}
   enemySpawners:
-  - {fileID: 1336093399}
+  - {fileID: 1336093402}
+  activeEnemies: []
+--- !u!114 &1336093402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336093397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee0613f58fe658447adeefc8c85eb3bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 5649999620572225815, guid: 3ff0334b6c81fb341ab78013bdfa5fd0, type: 3}
+  spawnPositions:
+  - {x: -7.98, y: -4.21, z: 0}
+  - {x: -8.08, y: 1.57, z: 0}
+  - {x: 3.06, y: 3.85, z: 0}
+  spawnInterval: 5
+  isSpawning: 1
+  amountOfEnemiesSpawnedPerWave: 1
   activeEnemies: []
 --- !u!1 &1442993881
 GameObject:

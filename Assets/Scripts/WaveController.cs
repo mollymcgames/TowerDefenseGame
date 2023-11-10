@@ -50,11 +50,26 @@ public class WaveController : MonoBehaviour
                 enemySpawner.StopSpawning(); //Stop spawning enemies
             }
             // enemySpawner.StopSpawning(); //Stop spawning enemies
-            yield return new WaitForSeconds(12.0f); //Wait for 6 seconds
+            yield return new WaitForSeconds(10.0f); //Wait for 6 seconds
             if (activeEnemies.Count == 0)
             {
                 Debug.Log("Won it all!");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +2); //might need to change this logic as it loads the next screen in the build index
+
+
+                //Get the name of the active scene
+                string activeSceneName = SceneManager.GetActiveScene().name;
+
+                //Load different scenes based on the active scene name
+                switch (activeSceneName)
+                {
+                    case "Test":  //really need to change the name of this scene to Level1
+                        SceneManager.LoadScene("LevelTwo"); //might need to change this name too to Level2
+                        break;
+                    case "LevelTwo":
+                        SceneManager.LoadScene("Win");
+                        break;    
+                }
+                // SceneManager.LoadScene("Win"); //might need to change this logic as it loads the next screen in the build index
             }
         }
 

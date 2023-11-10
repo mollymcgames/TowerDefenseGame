@@ -10,7 +10,7 @@ public class GoblinRiderController : MonoBehaviour
     [SerializeField] private Transform targetWaypoint; //The waypoint the enemy is moving towards
     private HealthManagerUI healthManager; //The health manager script
 
-    // private WaveController waveController;
+    private WaveController waveController;
 
     private bool hasStartedMoving = false; // Check if the enemy has started moving
 
@@ -58,10 +58,10 @@ public class GoblinRiderController : MonoBehaviour
             healthManager.ReduceHealth(); //Reduce the health by 1
 
             Debug.Log("Bad guy beat ya!");
-            // waveController = FindFirstObjectByType<WaveController>();
-            // List<GameObject> activeEnemies = waveController.activeEnemies;
+            waveController = FindFirstObjectByType<WaveController>();
+            List<GameObject> activeEnemies = waveController.activeEnemies;
             // Debug.Log("A dude WON but they're no longer active so...active enemies BEFORE processing:"+activeEnemies.Count);                    
-            // activeEnemies.Remove(gameObject);
+            activeEnemies.Remove(gameObject);
             // Debug.Log("A dude WON but they're no longer active so...active enemies AFTER processing:"+activeEnemies.Count);
             // return activeEnemies.count;
 
