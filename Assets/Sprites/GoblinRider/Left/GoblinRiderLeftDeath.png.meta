@@ -1,0 +1,380 @@
+fileFormatVersion: 2
+guid: c08245cc5f55ec346829c63273132b22
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1763430099423452628
+    second: GoblinRiderLeftDeath_0
+  - first:
+      213: -1246751282992572750
+    second: GoblinRiderLeftDeath_1
+  - first:
+      213: 3499359355212904213
+    second: GoblinRiderLeftDeath_2
+  - first:
+      213: 8231904985578973691
+    second: GoblinRiderLeftDeath_3
+  - first:
+      213: -3976447873766621069
+    second: GoblinRiderLeftDeath_4
+  - first:
+      213: -4833763745128688910
+    second: GoblinRiderLeftDeath_5
+  - first:
+      213: -5200628585573771952
+    second: GoblinRiderLeftDeath_6
+  - first:
+      213: -7225101102687907846
+    second: GoblinRiderLeftDeath_7
+  - first:
+      213: 5960509801132248043
+    second: GoblinRiderLeftDeath_8
+  - first:
+      213: 4991633525193073202
+    second: GoblinRiderLeftDeath_9
+  - first:
+      213: 4244354131106201474
+    second: GoblinRiderLeftDeath_10
+  - first:
+      213: 230124592693389182
+    second: GoblinRiderLeftDeath_11
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GoblinRiderLeftDeath_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 4
+        width: 79
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2222a9eaa90787e0800000000000000
+      internalID: -1763430099423452628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoblinRiderLeftDeath_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 4
+        width: 79
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b617fd4056a2bee0800000000000000
+      internalID: -1246751282992572750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoblinRiderLeftDeath_2
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 4
+        width: 79
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 517b7ec0bc8309030800000000000000
+      internalID: 3499359355212904213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoblinRiderLeftDeath_3
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 4
+        width: 79
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf9a33a48f99d3270800000000000000
+      internalID: 8231904985578973691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoblinRiderLeftDeath_4
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 4
+        width: 79
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37088481ab1d0d8c0800000000000000
+      internalID: -3976447873766621069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoblinRiderLeftDeath_5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 4
+        width: 79
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f25173fb750becb0800000000000000
+      internalID: -4833763745128688910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoblinRiderLeftDeath_6
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 4
+        width: 79
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05512240bd7a3d7b0800000000000000
+      internalID: -5200628585573771952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoblinRiderLeftDeath_7
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 4
+        width: 79
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aff010cc3d84bbb90800000000000000
+      internalID: -7225101102687907846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoblinRiderLeftDeath_8
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 4
+        width: 79
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bebc8b0851cf7b250800000000000000
+      internalID: 5960509801132248043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoblinRiderLeftDeath_9
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 4
+        width: 79
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 232601e8e38d54540800000000000000
+      internalID: 4991633525193073202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 61148e836a0078541bf2e156cf070b3c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      GoblinRiderLeftDeath_0: -1763430099423452628
+      GoblinRiderLeftDeath_1: -1246751282992572750
+      GoblinRiderLeftDeath_2: 3499359355212904213
+      GoblinRiderLeftDeath_3: 8231904985578973691
+      GoblinRiderLeftDeath_4: -3976447873766621069
+      GoblinRiderLeftDeath_5: -4833763745128688910
+      GoblinRiderLeftDeath_6: -5200628585573771952
+      GoblinRiderLeftDeath_7: -7225101102687907846
+      GoblinRiderLeftDeath_8: 5960509801132248043
+      GoblinRiderLeftDeath_9: 4991633525193073202
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
