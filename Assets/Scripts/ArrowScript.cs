@@ -96,6 +96,13 @@ public class ArrowScript : MonoBehaviour
             {
                 enemyHealthManager.TakeDamage(damageAmount); // Change the value if needed
             }
+
+            //@TODO: Remove this later as the health managers will merge
+            EnemyHealthBat enemyHealthBat = enemy.GetComponent<EnemyHealthBat>();
+            if(enemyHealthBat != null)
+            {
+                enemyHealthBat.TakeDamage(damageAmount); // Change the value if needed
+            }
         }
     }
 }

@@ -8,11 +8,10 @@ public class GoblinRiderController : MonoBehaviour
 {
     private Animator myAnimator; //The animator component
     [SerializeField] private Transform targetWaypoint; //The waypoint the enemy is moving towards
-    // private HealthManagerUI healthManager; //The health manager script
+    private HealthManagerUI healthManager; //The health manager script
 
     // private WaveController waveController;
 
-    // [SerializeField] private HealthManagerUI healthManager; //The health manager script
     private bool hasStartedMoving = false; // Check if the enemy has started moving
 
     [SerializeField] private float speed = 3.0f ; //The speed at which the enemy moves
@@ -38,7 +37,7 @@ public class GoblinRiderController : MonoBehaviour
         targetWaypoint.position = new Vector3(9.67f, -3.92f, 0.5f); //hardcoded position of the target waypoint
 
         // Get the HealthManagerUI component
-        // healthManager = FindFirstObjectByType<HealthManagerUI>();        
+        healthManager = FindFirstObjectByType<HealthManagerUI>();        
 
         if (targetWaypoint == null)
         {
@@ -56,7 +55,7 @@ public class GoblinRiderController : MonoBehaviour
         if (hasStartedMoving && !hasReachedWaypoint && agent.remainingDistance <= agent.stoppingDistance) //Check if the enemy has reached the targe    
         {
             hasReachedWaypoint = true;
-            // healthManager.ReduceHealth(); //Reduce the health by 1
+            healthManager.ReduceHealth(); //Reduce the health by 1
 
             Debug.Log("Bad guy beat ya!");
             // waveController = FindFirstObjectByType<WaveController>();
@@ -66,7 +65,7 @@ public class GoblinRiderController : MonoBehaviour
             // Debug.Log("A dude WON but they're no longer active so...active enemies AFTER processing:"+activeEnemies.Count);
             // return activeEnemies.count;
 
-            // Destroy(gameObject); //Destroy the enemy game object
+            Destroy(gameObject); //Destroy the enemy game object
         }
         else if (hasReachedWaypoint && agent.remainingDistance > agent.stoppingDistance) //Check if the enemy has reached the target
         {
