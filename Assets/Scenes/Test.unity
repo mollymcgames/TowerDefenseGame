@@ -919,11 +919,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1519c4650bd6f6b469f718156ba0f38f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowPrefab: {fileID: 1657661529652280091, guid: acf45f9537c83bc4192563b649d8b2d2, type: 3}
+  arrowPrefab: {fileID: 818338797150954617, guid: 35c7b707d35018d4e94da8c3173714e1, type: 3}
   firePoint: {fileID: 983292879}
   targetWaypoint: {fileID: 497689699}
-  fireRate: 1
+  fireRate: 0.5
   arrowSpeed: 7
+  firingRange: 6
 --- !u!1 &1043311799
 GameObject:
   m_ObjectHideFlags: 0

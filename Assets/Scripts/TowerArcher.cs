@@ -11,6 +11,7 @@ public class TowerArcher : MonoBehaviour
 
     [SerializeField] private float fireRate = 1.0f; // The rate of fire
     [SerializeField] private float arrowSpeed = 2f; // The speed of the arrow
+    [SerializeField] private float firingRange = 5f; // The desired firing range
 
     private float timeUntilFire; // Timer to keep track of when to fire
     private List<GameObject> activeArrows = new List<GameObject>(); // List to hold active arrows
@@ -69,7 +70,8 @@ public class TowerArcher : MonoBehaviour
             if (enemy != null)
             {
                 float distance = Vector3.Distance(transform.position, enemy.transform.position); // Calculate the distance between the tower and the enemy
-                if (distance < closestDistance) // If the distance is less than the closest distance
+                //we will also use this for the ifcheck 
+                if (distance < closestDistance && distance <= firingRange) // If the distance is less than the closest distance
                 {
                     closestDistance = distance; // Set the closest distance to the distance
                     closestEnemy = enemy; // Set the closest enemy to the enemy

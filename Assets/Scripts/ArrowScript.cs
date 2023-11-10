@@ -8,7 +8,7 @@ public class ArrowScript : MonoBehaviour
 
     private Rigidbody2D arrowRigidbody; // The arrow's rigidbody component
 
-    public float range = 2.0f; // The range of the arrow. Will be time based
+    public float range = 1.0f; // The range of the arrow. Will be time based. Was 2 before
     private float timer = 0.0f; // The timer for the arrow which will countdown the range
     private Vector3 initialDirection; // The initial direction of the arrow
 
