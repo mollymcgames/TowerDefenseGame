@@ -43,7 +43,8 @@ public class WaveController : MonoBehaviour
             UpdateWaveText(); //Update the wave count text in the canvas UI
         }
         if(currentWave == maxWaves)
-        {
+        {                
+            yield return new WaitForSeconds(2.0f); //Wait for bug
             Debug.Log("Reached max waves. stop spawning enemies");
             foreach (EnemySpawner enemySpawner in enemySpawners)
             {
