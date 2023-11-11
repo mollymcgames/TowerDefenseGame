@@ -67,8 +67,11 @@ public class WaveController : MonoBehaviour
                         SceneManager.LoadScene("LevelTwo"); //might need to change this name too to Level2
                         break;
                     case "LevelTwo":
+                        SceneManager.LoadScene("LevelThree");
+                        break;
+                    case "LevelThree":
                         SceneManager.LoadScene("Win");
-                        break;    
+                        break;     
                 }
                 // SceneManager.LoadScene("Win"); //might need to change this logic as it loads the next screen in the build index
             }
