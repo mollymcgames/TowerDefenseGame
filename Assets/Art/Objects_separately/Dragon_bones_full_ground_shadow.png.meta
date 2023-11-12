@@ -188,7 +188,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dragon_bones_full_ground_shadow_0: 7780535436640591674
+      Dragon_bones_full_ground_shadow_1: -6602773533453590962
+      Dragon_bones_full_ground_shadow_2: 3332384038780458461
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

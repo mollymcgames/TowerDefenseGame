@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Liana_bridges5_grass_shadow_0: 7592506450694834848
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

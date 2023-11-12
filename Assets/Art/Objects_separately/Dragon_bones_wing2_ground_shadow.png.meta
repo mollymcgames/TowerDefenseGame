@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dragon_bones_wing2_ground_shadow_0: -2663989013845093024
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

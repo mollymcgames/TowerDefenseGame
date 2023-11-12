@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Black_mushrooms2_grass_shadow_0: -3713799321484324261
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

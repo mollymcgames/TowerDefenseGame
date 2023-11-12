@@ -22,6 +22,7 @@ public class EnemyHealthManager : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        Debug.Log("Enemy ["+gameObject.GetInstanceID()+"] took damage");
         if(currentHealth <= 0)
         {
             Die();
@@ -31,10 +32,9 @@ public class EnemyHealthManager : MonoBehaviour
     private void Die()
     {
         waveController = FindFirstObjectByType<WaveController>();
-        List<GameObject> activeEnemies = waveController.activeEnemies;
-        Debug.Log("A dude DIED, active enemies BEFORE processing:"+activeEnemies.Count);                    
-        activeEnemies.Remove(gameObject);
-        Debug.Log("A dude DIED, active enemies AFTER processing:"+activeEnemies.Count);        
+        Debug.Log("A dude DIED, active enemies BEFORE processing:"+waveController.GetActiveEnemies().Count);                    
+        waveController.RemoveEnemy(gameObject);
+        Debug.Log("A dude DIED, active enemies AFTER processing:"+waveController.GetActiveEnemies().Count);        
         Destroy(gameObject); //Destroy the enemy game object
     }
 

@@ -14,7 +14,7 @@ public class GoblinRiderController : MonoBehaviour
 
     private bool hasStartedMoving = false; // Check if the enemy has started moving
 
-    [SerializeField] private float speed = 3.0f ; //The speed at which the enemy moves
+    [SerializeField] private float speed = 0.5f ; //The speed at which the enemy moves
 
 
     NavMeshAgent agent;
@@ -44,31 +44,41 @@ public class GoblinRiderController : MonoBehaviour
             Debug.LogError("Waypoint is null");
         }
 
+        // NavMeshPath path = new NavMeshPath();
+        // agent.CalculatePath(targetWaypoint.position, path);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Debug.Log("Update: agent.remainingDistance: " + agent.remainingDistance);
-        // Debug.Log("Update: agent.stoppingDistance: " + agent.stoppingDistance);
+        Debug.Log("Tracking GOB bad guy with ID: "+gameObject.GetInstanceID() + " and their remaining distance is: "+agent.remainingDistance);
+        // Debug.Log("Update: GOB agent.remainingDistance: " + agent.remainingDistance);
+        // Debug.Log("Update: GOB agent.stoppingDistance: " + agent.stoppingDistance);
         FollowTarget();
-        if (hasStartedMoving && !hasReachedWaypoint && agent.remainingDistance <= agent.stoppingDistance) //Check if the enemy has reached the targe    
+        if ( agent.pathPending == true || agent.remainingDistance <= 0.0009f) 
+        {
+            Debug.Log("GOB ["+gameObject.GetInstanceID()+"] THINKING about where to go!");
+        }
+        else if (hasStartedMoving && agent.remainingDistance <= agent.stoppingDistance) //Check if the enemy has reached the targe    
         {
             hasReachedWaypoint = true;
             healthManager.ReduceHealth(); //Reduce the health by 1
 
             Debug.Log("Bad guy beat ya!");
             waveController = FindFirstObjectByType<WaveController>();
-            List<GameObject> activeEnemies = waveController.activeEnemies;
-            // Debug.Log("A dude WON but they're no longer active so...active enemies BEFORE processing:"+activeEnemies.Count);                    
-            activeEnemies.Remove(gameObject);
-            // Debug.Log("A dude WON but they're no longer active so...active enemies AFTER processing:"+activeEnemies.Count);
-            // return activeEnemies.count;
+            // List<GameObject> activeEnemies = waveController.GetActiveEnemies();
+            Debug.Log("A GOB ["+gameObject.GetInstanceID()+"] WON but they're no longer active so...active enemies BEFORE processing:"+waveController.GetActiveEnemies().Count);
+            waveController.RemoveEnemy(gameObject);
+            Debug.Log("A GOB ["+gameObject.GetInstanceID()+"] WON but they're no longer active so...active enemies AFTER processing:"+waveController.GetActiveEnemies().Count);
+
 
             Destroy(gameObject); //Destroy the enemy game object
+            return;
         }
         else if (hasReachedWaypoint && agent.remainingDistance > agent.stoppingDistance) //Check if the enemy has reached the target
         {
+            Debug.Log("WAYPOINT REACHED GOB with ID: "+gameObject.GetInstanceID() + " and their remaining distance is: "+agent.remainingDistance);
             hasReachedWaypoint = false;
         }
 
@@ -99,6 +109,7 @@ public class GoblinRiderController : MonoBehaviour
     {
         if(gameObject != null && gameObject.activeSelf)
         { 
+            Debug.Log("Destroying GOB: "+gameObject.GetInstanceID());            
             Destroy(gameObject); //Destroy the enemy game object
         }
     }

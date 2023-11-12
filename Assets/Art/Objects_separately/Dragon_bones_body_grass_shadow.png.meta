@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dragon_bones_body_grass_shadow_0: -7825986043061883811
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

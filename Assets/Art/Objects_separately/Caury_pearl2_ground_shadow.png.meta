@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Caury_pearl2_ground_shadow_0: -657232981585762218
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

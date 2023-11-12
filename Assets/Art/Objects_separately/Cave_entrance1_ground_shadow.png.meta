@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cave_entrance1_ground_shadow_0: -1808137209076744991
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

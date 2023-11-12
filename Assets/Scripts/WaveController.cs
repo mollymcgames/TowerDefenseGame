@@ -14,7 +14,7 @@ public class WaveController : MonoBehaviour
 
     public List<EnemySpawner> enemySpawners; // Reference to the enemy spawners
 
-    public List<GameObject> activeEnemies;
+    private List<GameObject> activeEnemies;
 
 
     // Start is called before the first frame update
@@ -35,23 +35,27 @@ public class WaveController : MonoBehaviour
             foreach (EnemySpawner enemySpawner in enemySpawners)
             {
                 yield return new WaitForSeconds(5.0f); //Wait for 5 seconds
-                enemySpawner.SpawnEnemy(); //Spawn an enemy
+                enemySpawner.SpawnEnemy(this); //Spawn an enemy
                 Debug.Log("Active enemies:" + activeEnemies.Count);
             }
 
             currentWave++; //Increment the current wave
             UpdateWaveText(); //Update the wave count text in the canvas UI
         }
-        if(currentWave == maxWaves)
+        if (currentWave == maxWaves)
         {                
             yield return new WaitForSeconds(2.0f); //Wait for bug
             Debug.Log("Reached max waves. stop spawning enemies");
             foreach (EnemySpawner enemySpawner in enemySpawners)
             {
+                Debug.Log("Active enemies STOP SPAWNING:" + activeEnemies.Count);
                 enemySpawner.StopSpawning(); //Stop spawning enemies
             }
             // enemySpawner.StopSpawning(); //Stop spawning enemies
-            yield return new WaitForSeconds(10.0f); //Wait for 6 seconds
+            // yield return new WaitForSeconds(10.0f); //Wait for 6 seconds
+            yield return new WaitUntil(() => activeEnemies.Count == 0); //Wait until all enemies are dead
+            Debug.Log("Active enemies AFTER STOP SPAWNING:" + activeEnemies.Count);
+
             if (activeEnemies.Count == 0)
             {
                 Debug.Log("Won it all!");
@@ -64,20 +68,50 @@ public class WaveController : MonoBehaviour
                 switch (activeSceneName)
                 {
                     case "Test":  //really need to change the name of this scene to Level1
+                        this.ClearEnemies();
                         SceneManager.LoadScene("LevelTwo"); //might need to change this name too to Level2
                         break;
                     case "LevelTwo":
+                        this.ClearEnemies();
                         SceneManager.LoadScene("LevelThree");
                         break;
                     case "LevelThree":
+                        this.ClearEnemies();
                         SceneManager.LoadScene("Win");
-                        break;     
+                        break;
                 }
                 // SceneManager.LoadScene("Win"); //might need to change this logic as it loads the next screen in the build index
             }
         }
 
         Debug.Log("Game appears to be over, and you seem to have survived! The final enemy count: " + activeEnemies.Count);
+    }
+
+    public List<GameObject> GetActiveEnemies()
+    {
+        Debug.Log("WaveController active enemies count: "+activeEnemies.Count);
+        return activeEnemies;
+    }
+
+    public void RemoveEnemy(GameObject thingToRemove)
+    {
+        Debug.Log("WaveController REMOVE BEFORE active enemies count: "+activeEnemies.Count);
+        activeEnemies.Remove(thingToRemove);
+        Debug.Log("WaveController REMOVE AFTER active enemies count: "+activeEnemies.Count);        
+    }
+
+    public void AddEnemy(GameObject thingToAdd)
+    {
+        Debug.Log("WaveController ADD BEFORE active enemies count: "+activeEnemies.Count);
+        activeEnemies.Add(thingToAdd);
+        Debug.Log("WaveController ADD AFTER active enemies count: "+activeEnemies.Count);        
+    }
+
+    public void ClearEnemies()
+    {
+        Debug.Log("WaveController CLEAR BEFORE active enemies count: "+activeEnemies.Count);
+        activeEnemies.Clear();
+        Debug.Log("WaveController CLEAR AFTER active enemies count: "+activeEnemies.Count);        
     }
 
     private void UpdateWaveText()

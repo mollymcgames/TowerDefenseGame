@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      heart pixel art 254x254_0: 7611919021688551150
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

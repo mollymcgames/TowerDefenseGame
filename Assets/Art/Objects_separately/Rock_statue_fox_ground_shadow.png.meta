@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Rock_statue_fox_ground_shadow_0: -5216528490894049404
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

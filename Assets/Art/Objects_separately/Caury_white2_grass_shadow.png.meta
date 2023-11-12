@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Caury_white2_grass_shadow_0: 1658460047761843650
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

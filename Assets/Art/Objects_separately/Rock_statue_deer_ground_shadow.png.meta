@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Rock_statue_deer_ground_shadow_0: 5228344440895509635
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

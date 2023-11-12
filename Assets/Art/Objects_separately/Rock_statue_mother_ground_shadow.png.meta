@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Rock_statue_mother_ground_shadow_0: -8289708426707539586
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

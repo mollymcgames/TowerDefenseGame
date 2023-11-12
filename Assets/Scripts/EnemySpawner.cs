@@ -21,10 +21,10 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         Debug.Log("INITIAL Active enemies IN SPAWNER:"+activeEnemies.Count);        
-        StartCoroutine(SpawnEnemy()); //Start spawning enemies
+        StartCoroutine(SpawnEnemy(FindFirstObjectByType<WaveController>())); //Start spawning enemies
     }
 
-    public IEnumerator SpawnEnemy()
+    public IEnumerator SpawnEnemy(WaveController wc)
     {
         yield return new WaitForSeconds(0.5f); //Wait for half a second to let it load in @TODO might have to fix this later so no delay is present but enemy was invisible otherwise
         System.Random random = new System.Random(); //Create a new random number generator for the enemies to be spawned at random positions
@@ -37,8 +37,9 @@ public class EnemySpawner : MonoBehaviour
                 Vector3 spawnPosition = spawnPositions[spawnIndex]; //Get the spawn position at the random index
                 GameObject newEnemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity); //Spawn the enemy at the specified position
                 newEnemy.SetActive(true); //Set the enemy to active
-                activeEnemies.Add(newEnemy);
-                Debug.Log("SPAWNER  Active enemies: "+activeEnemies.Count);                        
+                wc.AddEnemy(newEnemy);
+                // activeEnemies.Add(newEnemy);
+                Debug.Log("SPAWNER  Active enemies: "+wc.GetActiveEnemies().Count); 
                 totalEnemiesSpawned++; //Increment the total amount of enemies spawned
             }
             currentEnemiesPerWave += enemiesPerWaveIncrement; //Increment the current amount of enemies per wave

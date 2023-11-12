@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Orange_mushrooms2_grass_shadow_0: -750134686417085091
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

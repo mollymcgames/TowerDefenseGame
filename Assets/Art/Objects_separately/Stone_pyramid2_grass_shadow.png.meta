@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Stone_pyramid2_grass_shadow_0: -109571288525435690
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

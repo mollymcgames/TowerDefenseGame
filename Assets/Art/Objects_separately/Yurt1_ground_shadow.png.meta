@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Yurt1_ground_shadow_0: -3024230121980518703
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

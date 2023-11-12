@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Rock_statue_old_man_ground_shadow_0: 1021734176774914618
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

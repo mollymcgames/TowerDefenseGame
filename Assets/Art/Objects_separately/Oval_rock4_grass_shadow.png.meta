@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Oval_rock4_grass_shadow_0: -6097915016809682279
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

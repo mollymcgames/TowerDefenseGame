@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Orange_mushrooms1_ground_shadow_0: -4325492861668253233
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

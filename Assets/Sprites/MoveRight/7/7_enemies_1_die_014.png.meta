@@ -140,7 +140,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      7_enemies_1_die_014_0: -7787002211028041855
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
