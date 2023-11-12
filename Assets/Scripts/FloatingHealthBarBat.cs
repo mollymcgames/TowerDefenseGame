@@ -8,7 +8,7 @@ public class FloatingHealthBarBat : MonoBehaviour
     // Start is called before the first frame update    
 
     [SerializeField] private Slider slider;
-    public EnemyHealthBat enemyHealthBat;
+    public EnemyHealthGoblinRider enemyHealthBat;
 
 
     void Start()

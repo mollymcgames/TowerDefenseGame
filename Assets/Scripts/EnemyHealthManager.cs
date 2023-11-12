@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyHealthManager : MonoBehaviour
+public abstract class EnemyHealthManager : MonoBehaviour
 {
     public int maxHealth = 10;
     public int currentHealth;
@@ -34,7 +34,7 @@ public class EnemyHealthManager : MonoBehaviour
         waveController = FindFirstObjectByType<WaveController>();
         Debug.Log("A dude DIED, active enemies BEFORE processing:"+waveController.GetActiveEnemies().Count);                    
         waveController.RemoveEnemy(gameObject);
-        Debug.Log("A dude DIED, active enemies AFTER processing:"+waveController.GetActiveEnemies().Count);        
+        Debug.Log("A dude DIED, active enemies AFTER processing:"+waveController.GetActiveEnemies().Count);           
         Destroy(gameObject); //Destroy the enemy game object
     }
 

@@ -9,10 +9,9 @@ public class WaveController : MonoBehaviour
 
     private int currentWave = 1; //The current wave number we assume starts from 1
     private int maxWaves = 4; //The maximum number of waves in the game in this level we assume 1 level so far
-    public TextMeshProUGUI waveText; // Reference to the wave count text
-    // public EnemySpawner enemySpawner; // Reference to the enemy spawner
+    [SerializeField] private TextMeshProUGUI waveText; // Reference to the wave count text
 
-    public List<EnemySpawner> enemySpawners; // Reference to the enemy spawners
+    [SerializeField] private List<EnemySpawner> enemySpawners; // Reference to the enemy spawners
 
     private List<GameObject> activeEnemies;
 
@@ -50,8 +49,6 @@ public class WaveController : MonoBehaviour
                 Debug.Log("Active enemies STOP SPAWNING:" + activeEnemies.Count);
                 enemySpawner.StopSpawning(); //Stop spawning enemies
             }
-            // enemySpawner.StopSpawning(); //Stop spawning enemies
-            // yield return new WaitForSeconds(10.0f); //Wait for 6 seconds
             yield return new WaitUntil(() => activeEnemies.Count == 0); //Wait until all enemies are dead
             //TODO - WAIT UNTIL PLAYER CLICKS CONTINUE dialogue button
             //Click Continue to start the next wave 
@@ -71,19 +68,15 @@ public class WaveController : MonoBehaviour
                 switch (activeSceneName)
                 {
                     case "Test":  //really need to change the name of this scene to Level1
-                        this.ClearEnemies();
                         SceneManager.LoadScene("LevelTwo"); //might need to change this name too to Level2
                         break;
                     case "LevelTwo":
-                        this.ClearEnemies();
                         SceneManager.LoadScene("LevelThree");
                         break;
                     case "LevelThree":
-                        this.ClearEnemies();
                         SceneManager.LoadScene("Win");
                         break;
                 }
-                // SceneManager.LoadScene("Win"); //might need to change this logic as it loads the next screen in the build index
             }
         }
 

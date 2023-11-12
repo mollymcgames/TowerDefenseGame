@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetWaypoint: {fileID: 0}
-  speed: 1
+  speed: 3
 --- !u!114 &5812516109523695535
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1118,7 +1118,6 @@ MonoBehaviour:
   waveText: {fileID: 105612443}
   enemySpawners:
   - {fileID: 1336093399}
-  activeEnemies: []
 --- !u!1 &1442993881
 GameObject:
   m_ObjectHideFlags: 0

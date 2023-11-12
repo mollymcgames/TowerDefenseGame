@@ -91,14 +91,14 @@ public class ArrowScript : MonoBehaviour
         // GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
         if(enemy != null)
         {
-            EnemyHealthManager enemyHealthManager = enemy.GetComponent<EnemyHealthManager>();
+            EnemyHealthZombie enemyHealthManager = enemy.GetComponent<EnemyHealthZombie>();
             if(enemyHealthManager != null)
             {
                 enemyHealthManager.TakeDamage(damageAmount); // Change the value if needed
             }
 
             //@TODO: Remove this later as the health managers will merge
-            EnemyHealthBat enemyHealthBat = enemy.GetComponent<EnemyHealthBat>();
+            EnemyHealthGoblinRider enemyHealthBat = enemy.GetComponent<EnemyHealthGoblinRider>();
             if(enemyHealthBat != null)
             {
                 enemyHealthBat.TakeDamage(damageAmount); // Change the value if needed
