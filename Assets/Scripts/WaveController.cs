@@ -22,7 +22,6 @@ public class WaveController : MonoBehaviour
     {
         activeEnemies = new List<GameObject>();
         Debug.Log("INITIAL Active enemies:" + activeEnemies.Count);
-        // enemySpawner.activeEnemies = activeEnemies;
         UpdateWaveText(); //Update the wave count text in the canvas UI from the start
         StartCoroutine(SpawnWave()); //Start spawning enemies
     }
@@ -54,6 +53,10 @@ public class WaveController : MonoBehaviour
             // enemySpawner.StopSpawning(); //Stop spawning enemies
             // yield return new WaitForSeconds(10.0f); //Wait for 6 seconds
             yield return new WaitUntil(() => activeEnemies.Count == 0); //Wait until all enemies are dead
+            //TODO - WAIT UNTIL PLAYER CLICKS CONTINUE dialogue button
+            //Click Continue to start the next wave 
+            yield return new WaitForSeconds(2.0f); //TODO simuluating button press for now. 
+            //Remove when pressing buttons done 
             Debug.Log("Active enemies AFTER STOP SPAWNING:" + activeEnemies.Count);
 
             if (activeEnemies.Count == 0)
