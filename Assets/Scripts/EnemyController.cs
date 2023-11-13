@@ -44,17 +44,13 @@ public abstract class EnemyController : MonoBehaviour
             Debug.LogError("Waypoint is null");
         }
 
-        // NavMeshPath path = new NavMeshPath();
-        // agent.CalculatePath(targetWaypoint.position, path);
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Tracking GOB bad guy with ID: "+gameObject.GetInstanceID() + " and their remaining distance is: "+agent.remainingDistance);
-        // Debug.Log("Update: GOB agent.remainingDistance: " + agent.remainingDistance);
-        // Debug.Log("Update: GOB agent.stoppingDistance: " + agent.stoppingDistance);
+        // Debug.Log("Tracking GOB bad guy with ID: "+gameObject.GetInstanceID() + " and their remaining distance is: "+agent.remainingDistance);
+
         FollowTarget();
         if ( agent.pathPending == true || agent.remainingDistance <= 0.0009f) 
         {
