@@ -7,6 +7,8 @@ public abstract class EnemyHealthManager : MonoBehaviour
 {
     public int maxHealth = 10;
     public int currentHealth;
+    private MoneyCounter moneyCounter;
+
 
     private WaveController waveController;
 
@@ -16,6 +18,7 @@ public abstract class EnemyHealthManager : MonoBehaviour
     {
         currentHealth = maxHealth;
         UpdateHealthbar();
+        moneyCounter = FindFirstObjectByType<MoneyCounter>();
 
     }
 
@@ -34,7 +37,8 @@ public abstract class EnemyHealthManager : MonoBehaviour
         waveController = FindFirstObjectByType<WaveController>();
         Debug.Log("A dude DIED, active enemies BEFORE processing:"+waveController.GetActiveEnemies().Count);                    
         waveController.RemoveEnemy(gameObject);
-        Debug.Log("A dude DIED, active enemies AFTER processing:"+waveController.GetActiveEnemies().Count);           
+        Debug.Log("A dude DIED, active enemies AFTER processing:"+waveController.GetActiveEnemies().Count);  
+        moneyCounter.AddMoney(1);  //Add money when the enemy dies      
         Destroy(gameObject); //Destroy the enemy game object
     }
 

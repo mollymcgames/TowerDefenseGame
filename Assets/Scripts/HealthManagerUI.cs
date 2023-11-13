@@ -8,15 +8,16 @@ using UnityEngine.SceneManagement;
 
 public class HealthManagerUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     public TextMeshProUGUI healthText; //The text that displays the health
     private int currentHearts; //How many hearts you have currently
     private int maxHearts = 5; //How many hearts you have in total
+
+    private MoneyCounter moneyCounter;
     void Start()
     {
         currentHearts = maxHearts; //Set the current health to the max health
         UpdateHealthText(); //Update the health text on start
+        moneyCounter = FindFirstObjectByType<MoneyCounter>();
     }
 
     //reduce the health by 1
@@ -29,9 +30,9 @@ public class HealthManagerUI : MonoBehaviour
         }
         if (currentHearts <= 0) //Check if the current health is less than or equal to 0
         {
-            //Do something when the player dies
             Debug.Log("Game Over");
-            SceneManager.LoadScene("GameOver");
+            moneyCounter.GameOver(); //reset the money counter by clearing the player prefs
+            SceneManager.LoadScene("GameOver"); //Load the game over scene
         }
     }
 
