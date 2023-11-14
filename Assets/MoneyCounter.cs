@@ -22,7 +22,9 @@ public class MoneyCounter : MonoBehaviour
 
     private void UpdateMoneyText()
     {
-        moneyText.text = "Money: £" + money.ToString();
+        moneyText.text = money.ToString();
+        // moneyText.text = "Money: £" + money.ToString();
+
     }
 
     private void SaveMoney()
