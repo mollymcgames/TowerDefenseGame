@@ -1,40 +1,43 @@
 fileFormatVersion: 2
-guid: 23cb61971c972c140be80b98dfea825e
+guid: 22406ceb762c30c4f82e7f8c2bdeb38b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4227435001158437254
-    second: RedMoonTower_free_idle_animation._0
+      213: -7585660988095454295
+    second: EnergyBall_0
   - first:
-      213: -4233646917209677197
-    second: RedMoonTower_free_idle_animation._1
+      213: -3331487606584094558
+    second: EnergyBall_1
   - first:
-      213: -7343736504891969453
-    second: RedMoonTower_free_idle_animation._2
+      213: 767724539417163884
+    second: EnergyBall_2
   - first:
-      213: -6083554418270614127
-    second: RedMoonTower_free_idle_animation._3
+      213: -1559554707437419804
+    second: EnergyBall_3
   - first:
-      213: -7114993313860212086
-    second: RedMoonTower_free_idle_animation._4
+      213: 1432958139363966512
+    second: EnergyBall_4
   - first:
-      213: -5564170900477571125
-    second: RedMoonTower_free_idle_animation._5
+      213: 5049448342586675666
+    second: EnergyBall_5
   - first:
-      213: 4447534075942178317
-    second: RedMoonTower_free_idle_animation._6
+      213: -5686064151849331640
+    second: EnergyBall_6
   - first:
-      213: 7834845600494809709
-    second: RedMoonTower_free_idle_animation._7
+      213: -309615286884111360
+    second: EnergyBall_7
   - first:
-      213: -698412963896224032
-    second: RedMoonTower_free_idle_animation._8
+      213: 963973627931636530
+    second: EnergyBall_8
   - first:
-      213: -2173200318115679039
-    second: RedMoonTower_free_idle_animation._9
+      213: -6988257778069995187
+    second: EnergyBall_9
   - first:
-      213: 4213756085002500049
-    second: RedMoonTower_free_idle_animation._10
+      213: 6461593570364748312
+    second: EnergyBall_10
+  - first:
+      213: 7496036457165579053
+    second: EnergyBall_11
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -81,7 +84,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 46
+  spritePixelsToUnits: 130
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -125,6 +128,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -140,13 +155,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RedMoonTower_free_idle_animation._0
+      name: EnergyBall_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 4
-        width: 70
-        height: 91
+        x: 1
+        y: 34
+        width: 120
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,20 +169,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a76f5eca3422555c0800000000000000
-      internalID: -4227435001158437254
+      spriteID: 9a3280a95815ab690800000000000000
+      internalID: -7585660988095454295
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedMoonTower_free_idle_animation._1
+      name: EnergyBall_1
       rect:
         serializedVersion: 2
-        x: 115
-        y: 4
-        width: 70
-        height: 91
+        x: 129
+        y: 34
+        width: 120
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,20 +190,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3722a434f801f35c0800000000000000
-      internalID: -4233646917209677197
+      spriteID: 2a050fb3cad24c1d0800000000000000
+      internalID: -3331487606584094558
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedMoonTower_free_idle_animation._2
+      name: EnergyBall_2
       rect:
         serializedVersion: 2
-        x: 215
-        y: 4
-        width: 70
-        height: 91
+        x: 257
+        y: 34
+        width: 120
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,20 +211,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 35078ddbe8ec51a90800000000000000
-      internalID: -7343736504891969453
+      spriteID: c687f49a66187aa00800000000000000
+      internalID: 767724539417163884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedMoonTower_free_idle_animation._3
+      name: EnergyBall_3
       rect:
         serializedVersion: 2
-        x: 315
-        y: 4
-        width: 70
-        height: 91
+        x: 385
+        y: 34
+        width: 120
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,20 +232,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 19dc8371d7fd29ba0800000000000000
-      internalID: -6083554418270614127
+      spriteID: 4e28767a1495b5ae0800000000000000
+      internalID: -1559554707437419804
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedMoonTower_free_idle_animation._4
+      name: EnergyBall_4
       rect:
         serializedVersion: 2
-        x: 415
-        y: 4
-        width: 70
-        height: 91
+        x: 513
+        y: 34
+        width: 120
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,20 +253,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a8a25142747724d90800000000000000
-      internalID: -7114993313860212086
+      spriteID: 03e3bcae5d3e2e310800000000000000
+      internalID: 1432958139363966512
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedMoonTower_free_idle_animation._5
+      name: EnergyBall_5
       rect:
         serializedVersion: 2
-        x: 515
-        y: 4
-        width: 70
-        height: 91
+        x: 641
+        y: 34
+        width: 120
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,20 +274,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bcf0877db0818c2b0800000000000000
-      internalID: -5564170900477571125
+      spriteID: 2d15093b38e331640800000000000000
+      internalID: 5049448342586675666
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedMoonTower_free_idle_animation._6
+      name: EnergyBall_6
       rect:
         serializedVersion: 2
-        x: 615
-        y: 4
-        width: 70
-        height: 91
+        x: 769
+        y: 34
+        width: 120
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,20 +295,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d0e8af29da0d8bd30800000000000000
-      internalID: 4447534075942178317
+      spriteID: 84410faa7ca0711b0800000000000000
+      internalID: -5686064151849331640
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedMoonTower_free_idle_animation._7
+      name: EnergyBall_7
       rect:
         serializedVersion: 2
-        x: 715
-        y: 4
-        width: 70
-        height: 91
+        x: 897
+        y: 34
+        width: 120
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,20 +316,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d6276871096fabc60800000000000000
-      internalID: 7834845600494809709
+      spriteID: 00ced38798604bbf0800000000000000
+      internalID: -309615286884111360
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RedMoonTower_free_idle_animation._8
+      name: EnergyBall_8
       rect:
         serializedVersion: 2
-        x: 815
-        y: 4
-        width: 70
-        height: 91
+        x: 1025
+        y: 34
+        width: 120
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -322,50 +337,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0e610741c1dbe46f0800000000000000
-      internalID: -698412963896224032
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedMoonTower_free_idle_animation._9
-      rect:
-        serializedVersion: 2
-        x: 915
-        y: 4
-        width: 70
-        height: 91
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1c4f2f423dd37d1e0800000000000000
-      internalID: -2173200318115679039
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RedMoonTower_free_idle_animation._10
-      rect:
-        serializedVersion: 2
-        x: 1015
-        y: 4
-        width: 70
-        height: 91
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1d7f6b875d44a7a30800000000000000
-      internalID: 4213756085002500049
+      spriteID: 233b5b148e8b06d00800000000000000
+      internalID: 963973627931636530
       vertices: []
       indices: 
       edges: []
@@ -373,7 +346,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 57d5ffa4c358ffe44812c7e3431f660b
     internalID: 0
     vertices: []
     indices: 
@@ -381,17 +354,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      RedMoonTower_free_idle_animation._0: -4227435001158437254
-      RedMoonTower_free_idle_animation._1: -4233646917209677197
-      RedMoonTower_free_idle_animation._10: 4213756085002500049
-      RedMoonTower_free_idle_animation._2: -7343736504891969453
-      RedMoonTower_free_idle_animation._3: -6083554418270614127
-      RedMoonTower_free_idle_animation._4: -7114993313860212086
-      RedMoonTower_free_idle_animation._5: -5564170900477571125
-      RedMoonTower_free_idle_animation._6: 4447534075942178317
-      RedMoonTower_free_idle_animation._7: 7834845600494809709
-      RedMoonTower_free_idle_animation._8: -698412963896224032
-      RedMoonTower_free_idle_animation._9: -2173200318115679039
+      EnergyBall_0: -7585660988095454295
+      EnergyBall_1: -3331487606584094558
+      EnergyBall_2: 767724539417163884
+      EnergyBall_3: -1559554707437419804
+      EnergyBall_4: 1432958139363966512
+      EnergyBall_5: 5049448342586675666
+      EnergyBall_6: -5686064151849331640
+      EnergyBall_7: -309615286884111360
+      EnergyBall_8: 963973627931636530
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
