@@ -6,7 +6,6 @@ using UnityEngine.UI;
 using System.Diagnostics;
 
 
-
 //have more than one tower with text for this tower updating individually
 [System.Serializable]
 public class TowerInfo
@@ -22,8 +21,6 @@ public class TowerInfo
 
 public class TowerSpawner : MonoBehaviour
 {
-
-    // public List<GameObject> towerPrefabs; // List of all the towers in the scene
     public List<TowerInfo> towerInfos; // List of all the towers in the scene
     public int maxTowers = 3; // The maximum number of towers the player can place
     private int currentTowers = 0; // The current number of towers the player has placed
@@ -37,11 +34,13 @@ public class TowerSpawner : MonoBehaviour
 
     public int currentTowerIndex = 0; //The index of the currently selected tower in the towerPrefabs list
 
+    private Dictionary<Vector3,string> towerPositions = new Dictionary<Vector3,string>();
 
     // // Start is called before the first frame update
     void Start()
     {
-        // Set the maximum towers for each tower type
+        //TODO this needs to change to be dynamic
+        // Set the maximum towers for each tower type. This is assuming that the towerInfos list is in the same order as the towerPrefabs list
         towerInfos[0].maxTowersPerTower = 5;   // Assuming element 0 is for "towerarcher"
         towerInfos[1].maxTowersPerTower = 3;   // Assuming element 1 is for "redmoon tower"
         UpdateTowerCountText();
@@ -64,7 +63,7 @@ public class TowerSpawner : MonoBehaviour
             foreach (Vector3 position in allowedPositions)
             {
                 //calculate the distance between the clicked position and the allowed position
-                if (Vector3.Distance(worldPosition, position) < 0.5f)
+                if (Vector3.Distance(worldPosition, position) < 0.5f && !towerPositions.ContainsKey(position))
                 {
                     //if the distance is less than 0.5f then the clicked position is within the allowed position
                     //so we can place the tower
@@ -72,9 +71,7 @@ public class TowerSpawner : MonoBehaviour
                     //Instantiate the tower prefab at the mouse position
                     Instantiate(towerInfos[currentTowerIndex].towerPrefab, worldPosition, Quaternion.identity);
                     towerInfos[currentTowerIndex].currentTowers++;
-
-                    //Increment the current number of towers
-                    // currentTowers++;
+                    towerPositions.Add(position, "occupied");
 
                     //Update the tower count text in the canvas UI
                     UpdateTowerCountText();
@@ -95,8 +92,6 @@ public class TowerSpawner : MonoBehaviour
     private void UpdateTowerCountText()
     {
         // //Update the tower count text in the canvas UI
-        // int remainingTowers = maxTowers - currentTowers;
-        // towerArcherCountText.text = remainingTowers.ToString();
 
         foreach (var towerInfo in towerInfos)
         {
@@ -109,11 +104,6 @@ public class TowerSpawner : MonoBehaviour
     {
         //Switch to the next tower type in the list
         currentTowerIndex = (currentTowerIndex + 1) % towerInfos.Count;
-        // currentTowerIndex++;
-        // if (currentTowerIndex >= towerPrefabs.Count)
-        // {
-        //     currentTowerIndex = 0;
-        // }
     }
 
 }
