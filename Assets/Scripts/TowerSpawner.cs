@@ -5,11 +5,21 @@ using TMPro;
 using UnityEngine.UI;
 using System.Diagnostics;
 
+
+
+//have more than one tower with text for this tower updating individually
+[System.Serializable]
+public class TowerInfo
+{
+    public GameObject towerPrefab;
+    public TextMeshProUGUI towerCountText;
+}
+
 public class TowerSpawner : MonoBehaviour
 {
-    // public GameObject towerPrefab; // Reference to the tower prefab
 
-    public List<GameObject> towerPrefabs; // List of all the towers in the scene
+    // public List<GameObject> towerPrefabs; // List of all the towers in the scene
+    public List<TowerInfo> towerInfos; // List of all the towers in the scene
     public int maxTowers = 3; // The maximum number of towers the player can place
     private int currentTowers = 0; // The current number of towers the player has placed
 
@@ -52,7 +62,7 @@ public class TowerSpawner : MonoBehaviour
                     //so we can place the tower
 
                     //Instantiate the tower prefab at the mouse position
-                    Instantiate(towerPrefabs[currentTowerIndex], worldPosition, Quaternion.identity);
+                    Instantiate(towerInfos[currentTowerIndex].towerPrefab, worldPosition, Quaternion.identity);
 
                     //Increment the current number of towers
                     currentTowers++;
@@ -75,21 +85,28 @@ public class TowerSpawner : MonoBehaviour
 
     private void UpdateTowerCountText()
     {
-        //Update the tower count text in the canvas UI
-        int remainingTowers = maxTowers - currentTowers;
-        towerArcherCountText.text = remainingTowers.ToString();
+        // //Update the tower count text in the canvas UI
+        // int remainingTowers = maxTowers - currentTowers;
+        // towerArcherCountText.text = remainingTowers.ToString();
+
+        foreach (var towerInfo in towerInfos)
+        {
+            int remainingTowers = maxTowers - currentTowers;
+            towerInfo.towerCountText.text = remainingTowers.ToString();
+        }
     }
 
     private void SwitchTower()
     {
         //Switch to the next tower type in the list
-        currentTowerIndex = (currentTowerIndex + 1) % towerPrefabs.Count;
+        currentTowerIndex = (currentTowerIndex + 1) % towerInfos.Count;
         // currentTowerIndex++;
         // if (currentTowerIndex >= towerPrefabs.Count)
         // {
         //     currentTowerIndex = 0;
         // }
     }
+
 }
 
 
