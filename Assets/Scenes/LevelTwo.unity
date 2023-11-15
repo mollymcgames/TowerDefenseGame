@@ -1233,7 +1233,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c88d785e2ccce142b491661804f34ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 6823036319373539303, guid: 96fdb40e9653da54e950c6334c951aa1, type: 3}
+  towerPrefabs:
+  - {fileID: 6823036319373539303, guid: 96fdb40e9653da54e950c6334c951aa1, type: 3}
+  - {fileID: 4366553996290726124, guid: 2699dbc2d9624ee4dbbb10df5cf17a33, type: 3}
   maxTowers: 5
   towerArcherCountText: {fileID: 1720392727}
   allowedPositions:
@@ -1242,6 +1244,7 @@ MonoBehaviour:
   - {x: -2.32, y: -3.83, z: 0}
   - {x: 7.1, y: -1.42, z: 0}
   - {x: 4.23, y: -1.5, z: 0}
+  currentTowerIndex: 0
 --- !u!114 &1336093401
 MonoBehaviour:
   m_ObjectHideFlags: 0
