@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8450661235334861950
 SpriteRenderer:
@@ -120,3 +120,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bfca6631a5b3914c8184462a43fafa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  energyBallPrefab: {fileID: 1467487188596121710, guid: 20f93df6c6760364e828073d08a4021d, type: 3}
+  firePoint: {fileID: 1179449272704955379}
+  targetWaypoint: {fileID: 0}
+  fireRate: 0.5
+  energyBallSpeed: 7
+  firingRange: 6
+  activeEnergyBalls: []
