@@ -13,6 +13,11 @@ public class TowerInfo
 {
     public GameObject towerPrefab;
     public TextMeshProUGUI towerCountText;
+
+
+    //Individual counts for each tower prefab 
+    public int maxTowersPerTower;
+    public int currentTowers;
 }
 
 public class TowerSpawner : MonoBehaviour
@@ -36,6 +41,9 @@ public class TowerSpawner : MonoBehaviour
     // // Start is called before the first frame update
     void Start()
     {
+        // Set the maximum towers for each tower type
+        towerInfos[0].maxTowersPerTower = 5;   // Assuming element 0 is for "towerarcher"
+        towerInfos[1].maxTowersPerTower = 3;   // Assuming element 1 is for "redmoon tower"
         UpdateTowerCountText();
     }
 
@@ -44,7 +52,7 @@ public class TowerSpawner : MonoBehaviour
     {
         //Only allow the player to add towers if the number of towers is less than the max number of towers
         // Check if the left mouse button is clicked
-        if (Input.GetMouseButtonDown(0) && (currentTowers < maxTowers))
+        if (Input.GetMouseButtonDown(0) && (towerInfos[currentTowerIndex].currentTowers < towerInfos[currentTowerIndex].maxTowersPerTower))
         {
             // Debug.Log("current towers is" + currentTowers);
             // Debug.Log("max towers is" + maxTowers);
@@ -63,9 +71,10 @@ public class TowerSpawner : MonoBehaviour
 
                     //Instantiate the tower prefab at the mouse position
                     Instantiate(towerInfos[currentTowerIndex].towerPrefab, worldPosition, Quaternion.identity);
+                    towerInfos[currentTowerIndex].currentTowers++;
 
                     //Increment the current number of towers
-                    currentTowers++;
+                    // currentTowers++;
 
                     //Update the tower count text in the canvas UI
                     UpdateTowerCountText();
@@ -91,7 +100,7 @@ public class TowerSpawner : MonoBehaviour
 
         foreach (var towerInfo in towerInfos)
         {
-            int remainingTowers = maxTowers - currentTowers;
+            int remainingTowers = towerInfo.maxTowersPerTower - towerInfo.currentTowers;
             towerInfo.towerCountText.text = remainingTowers.ToString();
         }
     }

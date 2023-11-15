@@ -1416,8 +1416,12 @@ MonoBehaviour:
   towerInfos:
   - towerPrefab: {fileID: 6823036319373539303, guid: 96fdb40e9653da54e950c6334c951aa1, type: 3}
     towerCountText: {fileID: 1720392727}
+    maxTowersPerTower: 0
+    currentTowers: 0
   - towerPrefab: {fileID: 4366553996290726124, guid: 2699dbc2d9624ee4dbbb10df5cf17a33, type: 3}
     towerCountText: {fileID: 970311657}
+    maxTowersPerTower: 0
+    currentTowers: 0
   maxTowers: 5
   towerArcherCountText: {fileID: 1720392727}
   allowedPositions:
