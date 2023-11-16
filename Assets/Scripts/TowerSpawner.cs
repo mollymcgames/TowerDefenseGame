@@ -13,6 +13,8 @@ public class TowerInfo
     public GameObject towerPrefab;
     public TextMeshProUGUI towerCountText;
 
+    public Button towerButton; // Add a reference to the tower button in the canvas
+
 
     //Individual counts for each tower prefab 
     public int maxTowersPerTower;
@@ -44,6 +46,12 @@ public class TowerSpawner : MonoBehaviour
         towerInfos[0].maxTowersPerTower = 5;   // Assuming element 0 is for "towerarcher"
         towerInfos[1].maxTowersPerTower = 3;   // Assuming element 1 is for "redmoon tower"
         UpdateTowerCountText();
+
+        //Add onClick listeners to the tower buttons
+        foreach (var towerInfo in towerInfos)
+        {
+            towerInfo.towerButton.onClick.AddListener(() => SwitchTower(towerInfo)); // Add a listener to the tower button
+        }
     }
 
     // Update is called once per frame
@@ -65,28 +73,17 @@ public class TowerSpawner : MonoBehaviour
                 //calculate the distance between the clicked position and the allowed position
                 if (Vector3.Distance(worldPosition, position) < 0.5f && !towerPositions.ContainsKey(position))
                 {
-                    //if the distance is less than 0.5f then the clicked position is within the allowed position
-                    //so we can place the tower
-
-                    //Instantiate the tower prefab at the mouse position
-                    Instantiate(towerInfos[currentTowerIndex].towerPrefab, worldPosition, Quaternion.identity);
+                    //If the distance is less than 0.5f then the clicked position is within the allowed position so we can place the tower
+                    Instantiate(towerInfos[currentTowerIndex].towerPrefab, worldPosition, Quaternion.identity); //Instantiate the tower prefab at the mouse position
                     towerInfos[currentTowerIndex].currentTowers++;
                     towerPositions.Add(position, "occupied");
 
-                    //Update the tower count text in the canvas UI
-                    UpdateTowerCountText();
+                    UpdateTowerCountText(); //Update the tower count text in the canvas UI
                     break;
 
                 }
             }
         }
-
-        // Check if the player wants to switch to the next tower type
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            SwitchTower();
-        }
-        
     }
 
     private void UpdateTowerCountText()
@@ -100,10 +97,14 @@ public class TowerSpawner : MonoBehaviour
         }
     }
 
-    private void SwitchTower()
+    private void SwitchTower(TowerInfo selectedTower)
     {
-        //Switch to the next tower type in the list
-        currentTowerIndex = (currentTowerIndex + 1) % towerInfos.Count;
+        int newIndex = towerInfos.IndexOf(selectedTower);   //find the index of the selected tower in the towerInfos list
+        //Switch to the selected tower type
+        if (newIndex != -1)
+        {
+            currentTowerIndex = newIndex;
+        }
     }
 
 }
