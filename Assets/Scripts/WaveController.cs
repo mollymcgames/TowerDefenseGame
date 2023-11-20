@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class WaveController : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class WaveController : MonoBehaviour
 
     [SerializeField] private List<EnemySpawner> enemySpawners; // Reference to the enemy spawners
 
+    [SerializeField] private Button continueButton; //Reference to the continue button
+
     private List<GameObject> activeEnemies;
 
 
@@ -21,8 +24,12 @@ public class WaveController : MonoBehaviour
     {
         activeEnemies = new List<GameObject>();
         Debug.Log("INITIAL Active enemies:" + activeEnemies.Count);
+        continueButton.gameObject.SetActive(false); //Hide the continue button in the UI from the start
         UpdateWaveText(); //Update the wave count text in the canvas UI from the start
         StartCoroutine(SpawnWave()); //Start spawning enemies
+
+        //add an onlcick listener for the continue button
+        continueButton.onClick.AddListener(OnContinueButtonClicked);
     }
 
     public IEnumerator SpawnWave()
@@ -52,35 +59,55 @@ public class WaveController : MonoBehaviour
             yield return new WaitUntil(() => activeEnemies.Count == 0); //Wait until all enemies are dead
             //TODO - WAIT UNTIL PLAYER CLICKS CONTINUE dialogue button
             //Click Continue to start the next wave 
-            yield return new WaitForSeconds(2.0f); //TODO simuluating button press for now. 
-            //Remove when pressing buttons done 
-            Debug.Log("Active enemies AFTER STOP SPAWNING:" + activeEnemies.Count);
+            // yield return new WaitForSeconds(2.0f); //TODO simuluating button press for now. 
 
-            if (activeEnemies.Count == 0)
-            {
-                Debug.Log("Won it all!");
+            continueButton.gameObject.SetActive(true); // Show the continue button in the UI
 
+            // Wait until the continue button is clicked
+            yield return new WaitUntil(() => continueButtonClicked);
 
-                //Get the name of the active scene
-                string activeSceneName = SceneManager.GetActiveScene().name;
+            Debug.Log("Continue button clicked!");
 
-                //Load different scenes based on the active scene name
-                switch (activeSceneName)
-                {
-                    case "Test":  //really need to change the name of this scene to Level1
-                        SceneManager.LoadScene("LevelTwo"); //might need to change this name too to Level2
-                        break;
-                    case "LevelTwo":
-                        SceneManager.LoadScene("LevelThree");
-                        break;
-                    case "LevelThree":
-                        SceneManager.LoadScene("Win");
-                        break;
-                }
-            }
+            // Load the next level
+            LoadNextLevel();
         }
 
         Debug.Log("Game appears to be over, and you seem to have survived! The final enemy count: " + activeEnemies.Count);
+    }
+
+    private void LoadNextLevel()
+    {
+        if (activeEnemies.Count == 0)
+        {
+            Debug.Log("Won it all!");
+
+
+            //Get the name of the active scene
+            string activeSceneName = SceneManager.GetActiveScene().name;
+
+            //Load different scenes based on the active scene name
+            switch (activeSceneName)
+            {
+                case "Test":  //really need to change the name of this scene to Level1 
+                    continueButton.gameObject.SetActive(true); //Show the continue button in the UI
+                    SceneManager.LoadScene("LevelTwo"); //might need to change this name too to Level2
+                    break;
+                case "LevelTwo":
+                    SceneManager.LoadScene("LevelThree");
+                    break;
+                case "LevelThree":
+                    continueButton.gameObject.SetActive(false); //Hide the continue button to just go straight to the win screen
+                    SceneManager.LoadScene("Win");
+                    break;
+            }
+        }        
+    }
+
+    private bool continueButtonClicked = false;
+
+    private void OnContinueButtonClicked()
+    {
+        continueButtonClicked = true;
     }
 
     public List<GameObject> GetActiveEnemies()
