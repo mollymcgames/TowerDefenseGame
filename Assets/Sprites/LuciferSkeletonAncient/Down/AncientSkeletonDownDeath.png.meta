@@ -1,0 +1,511 @@
+fileFormatVersion: 2
+guid: aaad09e13f49d234aa01abdfc677b4c3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6185369676582319462
+    second: AncientSkeletonDownDeath_0
+  - first:
+      213: -9210604495168621816
+    second: AncientSkeletonDownDeath_1
+  - first:
+      213: -7580182372910798246
+    second: AncientSkeletonDownDeath_2
+  - first:
+      213: -8317573763366231314
+    second: AncientSkeletonDownDeath_3
+  - first:
+      213: -1886147007505306380
+    second: AncientSkeletonDownDeath_4
+  - first:
+      213: 4727533358930411410
+    second: AncientSkeletonDownDeath_5
+  - first:
+      213: -2271125077517415094
+    second: AncientSkeletonDownDeath_6
+  - first:
+      213: -6079198536287638939
+    second: AncientSkeletonDownDeath_7
+  - first:
+      213: 8378337792768236956
+    second: AncientSkeletonDownDeath_8
+  - first:
+      213: 5702032976920417837
+    second: AncientSkeletonDownDeath_9
+  - first:
+      213: -1385510015214804066
+    second: AncientSkeletonDownDeath_10
+  - first:
+      213: -1806529482837587663
+    second: AncientSkeletonDownDeath_11
+  - first:
+      213: -5682593538345577753
+    second: AncientSkeletonDownDeath_12
+  - first:
+      213: 7477726510087092348
+    second: AncientSkeletonDownDeath_13
+  - first:
+      213: -967807912810768180
+    second: AncientSkeletonDownDeath_14
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AncientSkeletonDownDeath_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 16
+        width: 37
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 665792903f8d6d550800000000000000
+      internalID: 6185369676582319462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AncientSkeletonDownDeath_1
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 9
+        width: 50
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 803bbd2f20c5d2080800000000000000
+      internalID: -9210604495168621816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AncientSkeletonDownDeath_2
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 1
+        width: 56
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a69f91b48cdc690800000000000000
+      internalID: -7580182372910798246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AncientSkeletonDownDeath_3
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 46
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee262790bba029c80800000000000000
+      internalID: -8317573763366231314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AncientSkeletonDownDeath_4
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 59
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fcea773a4f03d5e0800000000000000
+      internalID: -1886147007505306380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AncientSkeletonDownDeath_5
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 70
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29f3bdada829b9140800000000000000
+      internalID: 4727533358930411410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AncientSkeletonDownDeath_6
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 68
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4dc71266c75b70e0800000000000000
+      internalID: -2271125077517415094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AncientSkeletonDownDeath_7
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 73
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56a2085e32952aba0800000000000000
+      internalID: -6079198536287638939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AncientSkeletonDownDeath_8
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 0
+        width: 27
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9d5e2a05d5d54470800000000000000
+      internalID: 8378337792768236956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AncientSkeletonDownDeath_9
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 65
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2697e628c0b12f40800000000000000
+      internalID: 5702032976920417837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AncientSkeletonDownDeath_10
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 0
+        width: 27
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e93206e5bfda5cce0800000000000000
+      internalID: -1385510015214804066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AncientSkeletonDownDeath_11
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 0
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 139023bb10bede6e0800000000000000
+      internalID: -1806529482837587663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AncientSkeletonDownDeath_12
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 0
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e25bf7d84f5321b0800000000000000
+      internalID: -5682593538345577753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AncientSkeletonDownDeath_13
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 0
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c78334964a836c760800000000000000
+      internalID: 7477726510087092348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AncientSkeletonDownDeath_14
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 0
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc81a1ab4d7a192f0800000000000000
+      internalID: -967807912810768180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      AncientSkeletonDownDeath_0: 6185369676582319462
+      AncientSkeletonDownDeath_1: -9210604495168621816
+      AncientSkeletonDownDeath_10: -1385510015214804066
+      AncientSkeletonDownDeath_11: -1806529482837587663
+      AncientSkeletonDownDeath_12: -5682593538345577753
+      AncientSkeletonDownDeath_13: 7477726510087092348
+      AncientSkeletonDownDeath_14: -967807912810768180
+      AncientSkeletonDownDeath_2: -7580182372910798246
+      AncientSkeletonDownDeath_3: -8317573763366231314
+      AncientSkeletonDownDeath_4: -1886147007505306380
+      AncientSkeletonDownDeath_5: 4727533358930411410
+      AncientSkeletonDownDeath_6: -2271125077517415094
+      AncientSkeletonDownDeath_7: -6079198536287638939
+      AncientSkeletonDownDeath_8: 8378337792768236956
+      AncientSkeletonDownDeath_9: 5702032976920417837
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
