@@ -89,10 +89,7 @@ public class WaveController : MonoBehaviour
                 enemySpawner.StopSpawning(); //Stop spawning enemies
             }
             yield return new WaitUntil(() => activeEnemies.Count == 0); //Wait until all enemies are dead
-            //TODO - WAIT UNTIL PLAYER CLICKS CONTINUE dialogue button
             //Click Continue to start the next wave 
-            // yield return new WaitForSeconds(2.0f); //TODO simuluating button press for now. 
-
             continueButton.gameObject.SetActive(true); // Show the continue button in the UI
 
             // Wait until the continue button is clicked
