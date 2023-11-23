@@ -31,10 +31,20 @@ public abstract class EnemyController : MonoBehaviour
         myAnimator = GetComponent<Animator>(); //Get the animator component
 
         // Set the targetWaypoint to the desired Vector3 position
-        GameObject targetWaypointObject = new GameObject("TargetWaypoint");
-        targetWaypoint = targetWaypointObject.transform;
-        // targetWaypoint.position = new Vector3(6.07f, -2.58f, 0.5f); //hardcoded position of the target waypoint
-        targetWaypoint.position = new Vector3(9.67f, -3.92f, 0.5f); //hardcoded position of the target waypoint
+        //find the first object with the "Target" tag
+        GameObject targetWaypointObject = GameObject.FindGameObjectWithTag("Target");
+        if (targetWaypointObject != null)
+        {
+            targetWaypoint = targetWaypointObject.transform;
+        }
+        else
+        {
+            Debug.Log("Cannot find 'Target' tag");
+        }
+        // GameObject targetWaypointObject = new GameObject("TargetWaypoint");
+        // targetWaypoint = targetWaypointObject.transform;
+        // // targetWaypoint.position = new Vector3(6.07f, -2.58f, 0.5f); //hardcoded position of the target waypoint
+        // targetWaypoint.position = new Vector3(9.67f, -3.92f, 0.5f); //hardcoded position of the target waypoint
 
         // Get the HealthManagerUI component
         healthManager = FindFirstObjectByType<HealthManagerUI>();        
@@ -100,15 +110,5 @@ public abstract class EnemyController : MonoBehaviour
             myAnimator.SetBool("isMoving", false);
         }
     }
-
-    //we can delete this probably 
-    // void DestroyEnemy()
-    // {
-    //     if(gameObject != null && gameObject.activeSelf)
-    //     { 
-    //         Debug.Log("Destroying GOB: "+gameObject.GetInstanceID());            
-    //         Destroy(gameObject); //Destroy the enemy game object
-    //     }
-    // }
 
 }
