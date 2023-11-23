@@ -5,7 +5,7 @@ public class MoneyCounter : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI moneyText;
 
-    private int money = 0;
+    private int money = 10;
 
     private void Start()
     {
