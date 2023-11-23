@@ -20,6 +20,13 @@ public class MoneyCounter : MonoBehaviour
         UpdateMoneyText();
     }
 
+    public void SubtractMoney(int amount)
+    {
+        money = Mathf.Max(0, money - amount); //ensure the money doesn't go below 0
+        SaveMoney(); // Save the updated money value
+        UpdateMoneyText();
+    }
+
     private void UpdateMoneyText()
     {
         moneyText.text = money.ToString();

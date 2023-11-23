@@ -30,15 +30,14 @@ public class TowerSpawner : MonoBehaviour
     public TextMeshProUGUI towerArcherCountText; // Reference to the tower archer count text
 
 
-    // public Transform[] allowedPositions;   //Define the specific positions where the towers can be added
-
     public Vector3[] allowedPositions; //The positions at which the enemy can be spawned
 
     public int currentTowerIndex = 0; //The index of the currently selected tower in the towerPrefabs list
 
     private Dictionary<Vector3,string> towerPositions = new Dictionary<Vector3,string>();
 
-    // // Start is called before the first frame update
+    public MoneyCounter moneyCounter; // Reference to the money counter script
+
     void Start()
     {
         //TODO this needs to change to be dynamic
@@ -79,6 +78,8 @@ public class TowerSpawner : MonoBehaviour
                     towerPositions.Add(position, "occupied");
 
                     UpdateTowerCountText(); //Update the tower count text in the canvas UI
+
+                    moneyCounter.SubtractMoney(1); //subtract one coin when the tower is placed
                     break;
 
                 }

@@ -2133,6 +2133,7 @@ MonoBehaviour:
   - {x: 7.1, y: -1.42, z: 0}
   - {x: 4.23, y: -1.5, z: 0}
   currentTowerIndex: 0
+  moneyCounter: {fileID: 1247871481}
 --- !u!114 &1336093401
 MonoBehaviour:
   m_ObjectHideFlags: 0
