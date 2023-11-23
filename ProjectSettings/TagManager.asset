@@ -18,8 +18,8 @@ TagManager:
   - 
   - Ground
   - SpawnPoint
-  - 
-  - 
+  - GroundEnemy
+  - FlyingEnemy
   - 
   - 
   - 
@@ -52,6 +52,12 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 10883139
+    locked: 0
+  - name: GroundEnemy
+    uniqueID: 3528202881
+    locked: 0
+  - name: FlyingEnemy
+    uniqueID: 1924486833
     locked: 0
   - name: UI
     uniqueID: 729910619

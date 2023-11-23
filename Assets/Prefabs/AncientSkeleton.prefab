@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 3338429706899075847}
   - component: {fileID: 95037986495541859}
   - component: {fileID: 2018985999490524445}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AncientSkeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,8 +190,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 10883139
-  m_SortingLayer: 3
+  m_SortingLayerID: -766764415
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -6054980857752379783, guid: 71bbb0d4e8020f0408c958b8472190c1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

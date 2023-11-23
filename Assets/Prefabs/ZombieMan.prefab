@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7525248952333990834}
   - component: {fileID: 5812516109523695535}
   - component: {fileID: 8305683934008229956}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ZombieMan
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ Transform:
   m_Children:
   - {fileID: 4937656788698091115}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3753921999732216298
 SpriteRenderer:
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 10883139
-  m_SortingLayer: 3
+  m_SortingLayerID: -766764415
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7584634881795952504, guid: 51c55327afa978b479e48d68578c6365, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
