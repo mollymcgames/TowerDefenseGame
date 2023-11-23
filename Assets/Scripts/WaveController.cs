@@ -14,9 +14,18 @@ public class WaveController : MonoBehaviour
 
     [SerializeField] private List<EnemySpawner> enemySpawners; // Reference to the enemy spawners
 
+    [SerializeField] private Button startButton; //Reference to the start button
+
     [SerializeField] private Button continueButton; //Reference to the continue button
 
     private List<GameObject> activeEnemies;
+
+    private bool startButtonClicked = false; //Track if the start button has been clicked
+
+    public bool IsStartButtonClicked()
+    {
+        return startButtonClicked;
+    }
 
 
     // Start is called before the first frame update
@@ -26,10 +35,29 @@ public class WaveController : MonoBehaviour
         Debug.Log("INITIAL Active enemies:" + activeEnemies.Count);
         continueButton.gameObject.SetActive(false); //Hide the continue button in the UI from the start
         UpdateWaveText(); //Update the wave count text in the canvas UI from the start
-        StartCoroutine(SpawnWave()); //Start spawning enemies
+        // StartCoroutine(SpawnWave()); //Start spawning enemies
+
+
+        //add an onlcick listener for the start button
+        startButton.onClick.AddListener(OnStartButtonClicked);
 
         //add an onlcick listener for the continue button
         continueButton.onClick.AddListener(OnContinueButtonClicked);
+
+
+    }
+
+    void OnStartButtonClicked()
+    {
+        if (currentWave == 1 && !startButtonClicked) //Check if the current wave is 1
+        {
+            startButtonClicked = true; //Set the start button clicked to true
+            Debug.Log("Start button clicked!");
+            startButton.gameObject.SetActive(false); //Hide the start button in the UI
+            currentWave = 1; //Set the current wave to 1
+            StartCoroutine(SpawnWave()); //Start spawning enemies
+        }
+        // startButtonClicked = true;
     }
 
     public IEnumerator SpawnWave()
@@ -37,11 +65,15 @@ public class WaveController : MonoBehaviour
         yield return new WaitForSeconds(0.5f); //Wait for half a second to let it load in @TODO might have to fix this later so no delay is present but enemy was invisible otherwise  
         while (currentWave < maxWaves) //Check if the current wave is less than the maximum number of waves
         {
-            foreach (EnemySpawner enemySpawner in enemySpawners)
+            if (startButtonClicked)
             {
-                yield return new WaitForSeconds(5.0f); //Wait for 5 seconds
-                enemySpawner.SpawnEnemy(this); //Spawn an enemy
-                Debug.Log("Active enemies:" + activeEnemies.Count);
+ 
+                foreach (EnemySpawner enemySpawner in enemySpawners)
+                {
+                    yield return new WaitForSeconds(5.0f); //Wait for 5 seconds
+                    enemySpawner.SpawnEnemy(this); //Spawn an enemy
+                    Debug.Log("Active enemies:" + activeEnemies.Count);
+                }
             }
 
             currentWave++; //Increment the current wave

@@ -26,11 +26,14 @@ public class EnemySpawner : MonoBehaviour
 
     public IEnumerator SpawnEnemy(WaveController wc)
     {
+        yield return new WaitUntil(() => wc.IsStartButtonClicked()); // Wait until the start button is clicked
         yield return new WaitForSeconds(0.5f); //Wait for half a second to let it load in @TODO might have to fix this later so no delay is present but enemy was invisible otherwise
         System.Random random = new System.Random(); //Create a new random number generator for the enemies to be spawned at random positions
         int totalEnemiesSpawned = 1; //The total amount of enemies spawned
         while (isSpawning) //Check if the enemy is spawning
         {
+            // if (wc.IsStartButtonClicked())
+            // {
             for (int i = 0; i < currentEnemiesPerWave; i++) //Loop through the amount of enemies to be spawned per wave
             {
                 int spawnIndex = random.Next(spawnPositions.Length); //Get a random index for the spawn position
@@ -42,6 +45,7 @@ public class EnemySpawner : MonoBehaviour
                 Debug.Log("SPAWNER  Active enemies: "+wc.GetActiveEnemies().Count); 
                 totalEnemiesSpawned++; //Increment the total amount of enemies spawned
             }
+            // }
             currentEnemiesPerWave += enemiesPerWaveIncrement; //Increment the current amount of enemies per wave
             yield return new WaitForSeconds(spawnInterval); //Wait for the spawn interval
         }
