@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Waypoint
   - Target
+  - IntermediateWaypoint
   layers:
   - Default
   - TransparentFX

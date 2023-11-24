@@ -8,6 +8,8 @@ public abstract class EnemyController : MonoBehaviour
 {
     private Animator myAnimator; //The animator component
     [SerializeField] private Transform targetWaypoint; //The waypoint the enemy is moving towards
+
+    [SerializeField] private Transform intermediateWaypoint; //The waypoint the enemy is moving towards
     private HealthManagerUI healthManager; //The health manager script
 
     private WaveController waveController;
@@ -18,6 +20,8 @@ public abstract class EnemyController : MonoBehaviour
 
 
     NavMeshAgent agent;
+
+    private bool hasReachedIntermediateWaypoint = false; //Check if the enemy has reached the target
     private bool hasReachedWaypoint = false; //Check if the enemy has reached the target
     // Start is called before the first frame update
     void Start()
@@ -30,7 +34,17 @@ public abstract class EnemyController : MonoBehaviour
 
         myAnimator = GetComponent<Animator>(); //Get the animator component
 
-        // Set the targetWaypoint to the desired Vector3 position
+        // Find the intermediate waypoint with teh "IntermediateWaypoint" tag
+        GameObject intermediateWaypointObject = GameObject.FindGameObjectWithTag("IntermediateWaypoint");
+        if (intermediateWaypointObject != null)
+        {
+            intermediateWaypoint = intermediateWaypointObject.transform;
+        }
+        else
+        {
+            Debug.Log("Cannot find 'IntermediateWaypoint' tag");
+        }
+
         //find the first object with the "Target" tag
         GameObject targetWaypointObject = GameObject.FindGameObjectWithTag("Target");
         if (targetWaypointObject != null)
@@ -41,17 +55,13 @@ public abstract class EnemyController : MonoBehaviour
         {
             Debug.Log("Cannot find 'Target' tag");
         }
-        // GameObject targetWaypointObject = new GameObject("TargetWaypoint");
-        // targetWaypoint = targetWaypointObject.transform;
-        // // targetWaypoint.position = new Vector3(6.07f, -2.58f, 0.5f); //hardcoded position of the target waypoint
-        // targetWaypoint.position = new Vector3(9.67f, -3.92f, 0.5f); //hardcoded position of the target waypoint
 
         // Get the HealthManagerUI component
         healthManager = FindFirstObjectByType<HealthManagerUI>();        
 
-        if (targetWaypoint == null)
+        if (targetWaypoint == null || intermediateWaypoint == null)
         {
-            Debug.LogError("Waypoint is null");
+            Debug.Log("Waypoint is null"); //can change to debug log otherwise
         }
 
     }
@@ -59,9 +69,33 @@ public abstract class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Debug.Log("Tracking GOB bad guy with ID: "+gameObject.GetInstanceID() + " and their remaining distance is: "+agent.remainingDistance);
 
-        FollowTarget();
+        //Move towards the intermediate waypoint first
+        if(intermediateWaypoint != null && !hasReachedIntermediateWaypoint)
+        {
+            MoveToIntermediateWaypoint();
+        }
+        else
+        {
+            //Move towards the target waypoint after reaching the intermediate waypoint
+            MoveToTargetWaypoint();
+        }
+
+    }
+
+    void MoveToIntermediateWaypoint()
+    {
+        FollowWaypoint(intermediateWaypoint);
+        if (!hasReachedIntermediateWaypoint && agent.remainingDistance <= agent.stoppingDistance) //Check if the enemy has reached the target
+        {
+            hasReachedIntermediateWaypoint = true;
+        }
+    }
+
+    void MoveToTargetWaypoint()
+    {
+        FollowWaypoint(targetWaypoint);
+
         if ( agent.pathPending == true || agent.remainingDistance <= 0.0009f) 
         {
             Debug.Log("GOB ["+gameObject.GetInstanceID()+"] THINKING about where to go!");
@@ -89,6 +123,26 @@ public abstract class EnemyController : MonoBehaviour
         }
 
         hasStartedMoving = true;
+    }
+
+    void FollowWaypoint(Transform waypoint)
+    {
+        if (waypoint != null)
+        {
+            agent.SetDestination(waypoint.position);
+            myAnimator.SetBool("isMoving", true);
+            myAnimator.SetFloat("moveX", (waypoint.position.x - transform.position.x));
+            myAnimator.SetFloat("moveY", (waypoint.position.y - transform.position.y));
+
+            if (agent.remainingDistance <= agent.stoppingDistance) //Check if the enemy has reached the target
+            { 
+                myAnimator.SetBool("isMoving", false); // Set isMoving to false to stop the animation
+            }
+        }
+        else
+        {
+            myAnimator.SetBool("isMoving", false);
+        }
     }
 
     public virtual void FollowTarget()
