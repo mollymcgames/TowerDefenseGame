@@ -55,6 +55,9 @@ TagManager:
   - name: Player
     uniqueID: 10883139
     locked: 0
+  - name: ObjectsOverTower
+    uniqueID: 1158030647
+    locked: 0
   - name: GroundEnemy
     uniqueID: 3528202881
     locked: 0
