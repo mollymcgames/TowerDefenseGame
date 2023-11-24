@@ -256,7 +256,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -270,7 +270,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -294,7 +294,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -1904,7 +1904,81 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Tower 05 - Level 01 - Weapon_0: 594843728524060031
+      Tower 05 - Level 01 - Weapon_1: 6395758033342985489
+      Tower 05 - Level 01 - Weapon_10: -3782445360091804034
+      Tower 05 - Level 01 - Weapon_11: -7631991273995310029
+      Tower 05 - Level 01 - Weapon_12: 2009331588817659951
+      Tower 05 - Level 01 - Weapon_13: 184717569992772746
+      Tower 05 - Level 01 - Weapon_14: 4897259323888322787
+      Tower 05 - Level 01 - Weapon_15: -6895824813438197549
+      Tower 05 - Level 01 - Weapon_16: -7031409176076122227
+      Tower 05 - Level 01 - Weapon_17: 8130714602168133255
+      Tower 05 - Level 01 - Weapon_18: 1036983457528113318
+      Tower 05 - Level 01 - Weapon_19: -514372741489234717
+      Tower 05 - Level 01 - Weapon_2: -7037366596100782575
+      Tower 05 - Level 01 - Weapon_20: -4940525189327274363
+      Tower 05 - Level 01 - Weapon_21: 2719962511173220057
+      Tower 05 - Level 01 - Weapon_22: -3656526803121644130
+      Tower 05 - Level 01 - Weapon_23: 6997546952153367020
+      Tower 05 - Level 01 - Weapon_24: -7063923685668262059
+      Tower 05 - Level 01 - Weapon_25: -5353207532463675591
+      Tower 05 - Level 01 - Weapon_26: -5808562743618463571
+      Tower 05 - Level 01 - Weapon_27: 9072264328680620381
+      Tower 05 - Level 01 - Weapon_28: 3722879104706752325
+      Tower 05 - Level 01 - Weapon_29: -3512620033698256904
+      Tower 05 - Level 01 - Weapon_3: -7279282914794374474
+      Tower 05 - Level 01 - Weapon_30: -6027523465313751712
+      Tower 05 - Level 01 - Weapon_31: 3581812624812197913
+      Tower 05 - Level 01 - Weapon_32: -7434195974952900359
+      Tower 05 - Level 01 - Weapon_33: 8882158235698718441
+      Tower 05 - Level 01 - Weapon_34: -1471057073906448240
+      Tower 05 - Level 01 - Weapon_35: -7477692856329041165
+      Tower 05 - Level 01 - Weapon_36: 8211907969868195584
+      Tower 05 - Level 01 - Weapon_37: -4379177701159464711
+      Tower 05 - Level 01 - Weapon_38: -7013593072321324591
+      Tower 05 - Level 01 - Weapon_39: 6623871055757229065
+      Tower 05 - Level 01 - Weapon_4: -7689538836536808798
+      Tower 05 - Level 01 - Weapon_40: -563771206522048618
+      Tower 05 - Level 01 - Weapon_41: 7929271842879489135
+      Tower 05 - Level 01 - Weapon_42: 7317558543454819156
+      Tower 05 - Level 01 - Weapon_43: -9108007527227441452
+      Tower 05 - Level 01 - Weapon_44: -5269023338825130235
+      Tower 05 - Level 01 - Weapon_45: 8046225813178729680
+      Tower 05 - Level 01 - Weapon_46: 2203346809756160483
+      Tower 05 - Level 01 - Weapon_47: -2719627514161349981
+      Tower 05 - Level 01 - Weapon_48: 2957355214049257550
+      Tower 05 - Level 01 - Weapon_49: 349351945484986067
+      Tower 05 - Level 01 - Weapon_5: -7680338706875555628
+      Tower 05 - Level 01 - Weapon_50: 2207609066753615873
+      Tower 05 - Level 01 - Weapon_51: -445034910216893435
+      Tower 05 - Level 01 - Weapon_52: 3478696490851565863
+      Tower 05 - Level 01 - Weapon_53: 2574301419659422366
+      Tower 05 - Level 01 - Weapon_54: -5025009599116886397
+      Tower 05 - Level 01 - Weapon_55: 7428941972595834109
+      Tower 05 - Level 01 - Weapon_56: 9114155558379723435
+      Tower 05 - Level 01 - Weapon_57: -3638356883259626532
+      Tower 05 - Level 01 - Weapon_58: 4564111349066147843
+      Tower 05 - Level 01 - Weapon_59: 6160705921642292221
+      Tower 05 - Level 01 - Weapon_6: -4228652634676992006
+      Tower 05 - Level 01 - Weapon_60: 2191524743357028001
+      Tower 05 - Level 01 - Weapon_61: -5717505284682047166
+      Tower 05 - Level 01 - Weapon_62: -4951426596872377904
+      Tower 05 - Level 01 - Weapon_63: -1598003221005443618
+      Tower 05 - Level 01 - Weapon_64: 919913507394041750
+      Tower 05 - Level 01 - Weapon_65: 2275097159519728556
+      Tower 05 - Level 01 - Weapon_66: 645570352401219897
+      Tower 05 - Level 01 - Weapon_67: -2518189602907144398
+      Tower 05 - Level 01 - Weapon_68: -4369443605813970799
+      Tower 05 - Level 01 - Weapon_69: -5718163871925466595
+      Tower 05 - Level 01 - Weapon_7: -505464313621010637
+      Tower 05 - Level 01 - Weapon_70: -8020081332251477488
+      Tower 05 - Level 01 - Weapon_71: 2722787941874602727
+      Tower 05 - Level 01 - Weapon_72: 3282948134683892428
+      Tower 05 - Level 01 - Weapon_73: 5260069081705627588
+      Tower 05 - Level 01 - Weapon_8: -7078291486386312009
+      Tower 05 - Level 01 - Weapon_9: 7471763070065213506
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
