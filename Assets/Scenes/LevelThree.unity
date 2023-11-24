@@ -2240,12 +2240,12 @@ MonoBehaviour:
   - towerPrefab: {fileID: 6823036319373539303, guid: 96fdb40e9653da54e950c6334c951aa1, type: 3}
     towerCountText: {fileID: 1720392727}
     towerButton: {fileID: 90127610}
-    maxTowersPerTower: 0
+    maxTowersPerTower: 5
     currentTowers: 0
   - towerPrefab: {fileID: 4366553996290726124, guid: 2699dbc2d9624ee4dbbb10df5cf17a33, type: 3}
     towerCountText: {fileID: 1661187659}
     towerButton: {fileID: 655213928}
-    maxTowersPerTower: 0
+    maxTowersPerTower: 5
     currentTowers: 0
   maxTowers: 5
   towerArcherCountText: {fileID: 1720392727}

@@ -3609,27 +3609,27 @@ MonoBehaviour:
   - towerPrefab: {fileID: 3481428629827126645, guid: 639efb40ca62cb0489ba2712db7b2c02, type: 3}
     towerCountText: {fileID: 1720392727}
     towerButton: {fileID: 90127610}
-    maxTowersPerTower: 0
+    maxTowersPerTower: 2
     currentTowers: 0
   - towerPrefab: {fileID: 1118266316064701169, guid: 84fe37ff3d81b834c9ad3257430c2347, type: 3}
     towerCountText: {fileID: 1661187659}
     towerButton: {fileID: 655213928}
-    maxTowersPerTower: 0
+    maxTowersPerTower: 2
     currentTowers: 0
   - towerPrefab: {fileID: 6095447548306899476, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
     towerCountText: {fileID: 54473539}
     towerButton: {fileID: 643404722}
-    maxTowersPerTower: 0
+    maxTowersPerTower: 3
     currentTowers: 0
   - towerPrefab: {fileID: 8525667484170104877, guid: ce4416a89e37d244791e40b6e2bdaee6, type: 3}
     towerCountText: {fileID: 828145629}
     towerButton: {fileID: 1163483614}
-    maxTowersPerTower: 0
+    maxTowersPerTower: 1
     currentTowers: 0
   - towerPrefab: {fileID: 7960056260398471145, guid: c3d29b2fe90419c4486926ab14f662ad, type: 3}
     towerCountText: {fileID: 2026456206}
     towerButton: {fileID: 1543051326}
-    maxTowersPerTower: 0
+    maxTowersPerTower: 4
     currentTowers: 0
   maxTowers: 5
   towerArcherCountText: {fileID: 1720392727}
