@@ -46,6 +46,7 @@ public class TowerSpawner : MonoBehaviour
         towerInfos[1].maxTowersPerTower = 3;   // Assuming element 1 is for "redmoon tower"
         towerInfos[2].maxTowersPerTower = 2;   // Assuming element 2 is for "redmoon tower also"
         towerInfos[3].maxTowersPerTower = 3;   // Slingshot tower
+        towerInfos[4].maxTowersPerTower = 3;   // Slingshot tower also
         UpdateTowerCountText();
 
         //Add onClick listeners to the tower buttons

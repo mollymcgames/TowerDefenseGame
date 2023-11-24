@@ -3626,6 +3626,11 @@ MonoBehaviour:
     towerButton: {fileID: 1163483614}
     maxTowersPerTower: 0
     currentTowers: 0
+  - towerPrefab: {fileID: 7960056260398471145, guid: c3d29b2fe90419c4486926ab14f662ad, type: 3}
+    towerCountText: {fileID: 2026456206}
+    towerButton: {fileID: 1543051326}
+    maxTowersPerTower: 0
+    currentTowers: 0
   maxTowers: 5
   towerArcherCountText: {fileID: 1720392727}
   allowedPositions:
@@ -21376,7 +21381,7 @@ GameObject:
   - component: {fileID: 1543051327}
   - component: {fileID: 1543051326}
   m_Layer: 5
-  m_Name: Button
+  m_Name: SlingshotButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

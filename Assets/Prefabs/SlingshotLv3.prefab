@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3529550025647881653}
   - component: {fileID: 8935306996226024587}
+  - component: {fileID: 3313060803653203186}
   m_Layer: 0
   m_Name: SlingshotLv3
   m_TagString: Untagged
@@ -115,7 +116,7 @@ Transform:
   m_Children:
   - {fileID: 357319880096910028}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8935306996226024587
 SpriteRenderer:
@@ -169,3 +170,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3313060803653203186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7960056260398471145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfca6631a5b3914c8184462a43fafa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyBallPrefab: {fileID: 8524396129093612259, guid: d1fd36b772aca5c4f988b7685ff5fb29, type: 3}
+  firePoint: {fileID: 3529550025647881653}
+  targetWaypoint: {fileID: 0}
+  fireRate: 0.5
+  energyBallSpeed: 7
+  firingRange: 6
+  activeEnergyBalls: []
