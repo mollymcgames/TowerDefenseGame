@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5839531627714822607}
   - component: {fileID: 4934651903318112286}
+  - component: {fileID: 6263203901899912399}
   m_Layer: 0
   m_Name: MagicTowerRed
   m_TagString: Untagged
@@ -115,7 +116,7 @@ Transform:
   m_Children:
   - {fileID: 8035112620034753390}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4934651903318112286
 SpriteRenderer:
@@ -169,3 +170,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6263203901899912399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6095447548306899476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfca6631a5b3914c8184462a43fafa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyBallPrefab: {fileID: 1467487188596121710, guid: 20f93df6c6760364e828073d08a4021d, type: 3}
+  firePoint: {fileID: 5839531627714822607}
+  targetWaypoint: {fileID: 0}
+  fireRate: 0.5
+  energyBallSpeed: 7
+  firingRange: 6
+  activeEnergyBalls: []
