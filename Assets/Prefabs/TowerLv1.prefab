@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 395909338593279259}
   - component: {fileID: 2061398190543001471}
+  - component: {fileID: 9043433141081649057}
   m_Layer: 0
   m_Name: TowerLv1
   m_TagString: Untagged
@@ -169,3 +170,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &9043433141081649057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6368675066605825484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1519c4650bd6f6b469f718156ba0f38f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowPrefab: {fileID: 1657661529652280091, guid: acf45f9537c83bc4192563b649d8b2d2, type: 3}
+  firePoint: {fileID: 395909338593279259}
+  targetWaypoint: {fileID: 0}
+  fireRate: 0.5
+  arrowSpeed: 6
+  firingRange: 6
