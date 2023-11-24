@@ -42,9 +42,10 @@ public class TowerSpawner : MonoBehaviour
     {
         //TODO this needs to change to be dynamic
         // Set the maximum towers for each tower type. This is assuming that the towerInfos list is in the same order as the towerPrefabs list
-        towerInfos[0].maxTowersPerTower = 5;   // Assuming element 0 is for "towerarcher"
+        towerInfos[0].maxTowersPerTower = 3;   // Assuming element 0 is for "towerarcher"
         towerInfos[1].maxTowersPerTower = 3;   // Assuming element 1 is for "redmoon tower"
         towerInfos[2].maxTowersPerTower = 2;   // Assuming element 2 is for "redmoon tower also"
+        towerInfos[3].maxTowersPerTower = 3;   // Slingshot tower
         UpdateTowerCountText();
 
         //Add onClick listeners to the tower buttons
