@@ -47,14 +47,15 @@ public abstract class EnemyController : MonoBehaviour
 
         //find the first object with the "Target" tag
         GameObject targetWaypointObject = GameObject.FindGameObjectWithTag("Target");
-        if (targetWaypointObject != null)
-        {
-            targetWaypoint = targetWaypointObject.transform;
-        }
-        else
-        {
-            Debug.Log("Cannot find 'Target' tag");
-        }
+        SetTarget(targetWaypointObject);
+        // if (targetWaypointObject != null)
+        // {
+        //     targetWaypoint = targetWaypointObject.transform;
+        // }
+        // else
+        // {
+        //     Debug.Log("Cannot find 'Target' tag");
+        // }
 
         // Get the HealthManagerUI component
         healthManager = FindFirstObjectByType<HealthManagerUI>();        
@@ -144,6 +145,18 @@ public abstract class EnemyController : MonoBehaviour
             myAnimator.SetBool("isMoving", false);
         }
     }
+
+    public virtual void SetTarget(GameObject inputTargetWaypoint)
+    {
+        // Set the targetWaypoint to the desired Vector3 position
+        targetWaypoint = inputTargetWaypoint.transform;
+    }
+
+    public virtual void SetTarget(string inputTargetWaypointTag)
+    {
+        SetTarget(GameObject.FindGameObjectWithTag(inputTargetWaypointTag));
+    }
+
 
     public virtual void FollowTarget()
     {

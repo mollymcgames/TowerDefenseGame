@@ -129,6 +129,8 @@ GameObject:
   - component: {fileID: 3338429706899075847}
   - component: {fileID: 95037986495541859}
   - component: {fileID: 2018985999490524445}
+  - component: {fileID: 7702528754167092990}
+  - component: {fileID: 4799876807095528441}
   m_Layer: 10
   m_Name: AncientSkeleton
   m_TagString: Untagged
@@ -150,7 +152,7 @@ Transform:
   m_Children:
   - {fileID: 941211653914403314}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4301870671714457750
 SpriteRenderer:
@@ -191,7 +193,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -766764415
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -6054980857752379783, guid: 71bbb0d4e8020f0408c958b8472190c1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -312,6 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetWaypoint: {fileID: 0}
+  intermediateWaypoint: {fileID: 0}
   speed: 1
 --- !u!114 &95037986495541859
 MonoBehaviour:
@@ -350,6 +353,43 @@ NavMeshAgent:
   m_BaseOffset: 0.890625
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &7702528754167092990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3311450265585854099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff214767a4e608f4aaf75c87f6749afa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions: []
+  currentAction: {fileID: 0}
+--- !u!114 &4799876807095528441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3311450265585854099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebad822982b36944785694140c727ab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Go to the end
+  cost: 1
+  target: {fileID: 0}
+  targetTag: Target
+  duration: 0
+  preConditionsWorldState: []
+  afterEffectsWorldState:
+  - key: isAtTargetWaypoint
+    value: 0
+  agent: {fileID: 0}
+  running: 0
 --- !u!1 &5109110753394735292
 GameObject:
   m_ObjectHideFlags: 0
