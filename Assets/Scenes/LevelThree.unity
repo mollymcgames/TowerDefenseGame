@@ -3284,7 +3284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerInfos:
-  - towerPrefab: {fileID: 6823036319373539303, guid: 96fdb40e9653da54e950c6334c951aa1, type: 3}
+  - towerPrefab: {fileID: 3481428629827126645, guid: 639efb40ca62cb0489ba2712db7b2c02, type: 3}
     towerCountText: {fileID: 1720392727}
     towerButton: {fileID: 90127610}
     maxTowersPerTower: 5
@@ -3292,6 +3292,16 @@ MonoBehaviour:
   - towerPrefab: {fileID: 4366553996290726124, guid: 2699dbc2d9624ee4dbbb10df5cf17a33, type: 3}
     towerCountText: {fileID: 1661187659}
     towerButton: {fileID: 655213928}
+    maxTowersPerTower: 5
+    currentTowers: 0
+  - towerPrefab: {fileID: 1118266316064701169, guid: 84fe37ff3d81b834c9ad3257430c2347, type: 3}
+    towerCountText: {fileID: 1095431695}
+    towerButton: {fileID: 206899604}
+    maxTowersPerTower: 5
+    currentTowers: 0
+  - towerPrefab: {fileID: 7960056260398471145, guid: c3d29b2fe90419c4486926ab14f662ad, type: 3}
+    towerCountText: {fileID: 913831451}
+    towerButton: {fileID: 1222712125}
     maxTowersPerTower: 5
     currentTowers: 0
   maxTowers: 5
