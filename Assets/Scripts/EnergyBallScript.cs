@@ -102,6 +102,11 @@ public class EnergyBallScript : MonoBehaviour
             {
                 enemyHealthBat.TakeDamage(damageAmount); // Change the value if needed
             }
+            EnemyHealthNecromancer enemyHealthNecromancer = enemy.GetComponent<EnemyHealthNecromancer>();
+            if(enemyHealthNecromancer != null)
+            {
+                enemyHealthNecromancer.TakeDamage(damageAmount); // Change the value if needed
+            }
         }
     }
 }
