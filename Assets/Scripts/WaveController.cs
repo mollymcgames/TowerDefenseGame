@@ -125,6 +125,10 @@ public class WaveController : MonoBehaviour
                     SceneManager.LoadScene("LevelThree");
                     break;
                 case "LevelThree":
+                    // continueButton.gameObject.SetActive(false);
+                    SceneManager.LoadScene("LevelFour");
+                    break;
+                case "LevelFour":
                     continueButton.gameObject.SetActive(false); //Hide the continue button to just go straight to the win screen
                     SceneManager.LoadScene("Win");
                     break;
