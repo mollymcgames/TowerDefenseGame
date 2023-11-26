@@ -3571,6 +3571,7 @@ GameObject:
   - component: {fileID: 1336093401}
   - component: {fileID: 1336093402}
   - component: {fileID: 1336093403}
+  - component: {fileID: 1336093404}
   m_Layer: 0
   m_Name: GameControllers
   m_TagString: Untagged
@@ -3702,6 +3703,25 @@ MonoBehaviour:
   - {x: -10.6, y: 2.24, z: 0}
   - {x: 12.2, y: 2.78, z: 0}
   spawnInterval: 10
+  isSpawning: 1
+  amountOfEnemiesSpawnedPerWave: 1
+  activeEnemies: []
+--- !u!114 &1336093404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336093397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee0613f58fe658447adeefc8c85eb3bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 9064619126924730254, guid: db61c7ab22cb6144098d6c349ed304c2, type: 3}
+  spawnPositions:
+  - {x: -11.208521, y: 1.6758907, z: 0}
+  spawnInterval: 20
   isSpawning: 1
   amountOfEnemiesSpawnedPerWave: 1
   activeEnemies: []
