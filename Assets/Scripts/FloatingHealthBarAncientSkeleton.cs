@@ -22,4 +22,9 @@ public class FloatingHealthBarAncientSkeleton : MonoBehaviour
         slider.value = enemyHealthAncientSkeleton.currentHealth;
 
     }
+
+    public void UpdateHealthBar()
+    {
+        slider.value = enemyHealthAncientSkeleton.currentHealth;
+    }
 }

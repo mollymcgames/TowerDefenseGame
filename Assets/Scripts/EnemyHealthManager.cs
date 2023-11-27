@@ -9,6 +9,9 @@ public abstract class EnemyHealthManager : MonoBehaviour
     public int currentHealth;
     private MoneyCounter moneyCounter;
 
+    //ADD
+    private GoapAgent ga;
+
 
     private WaveController waveController;
 
@@ -16,6 +19,8 @@ public abstract class EnemyHealthManager : MonoBehaviour
     public Slider slider; //reference to the healthbar
     void Start()
     {
+        //ADD
+        ga = gameObject.GetComponent<CleverEnemy>();
         currentHealth = maxHealth;
         UpdateHealthbar();
         moneyCounter = FindFirstObjectByType<MoneyCounter>();

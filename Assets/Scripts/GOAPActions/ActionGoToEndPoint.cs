@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActionGoToHealth : GoapAction
+public class ActionGoToEndPoint : GoapAction
 {
-    public EnemyController zmc;
+    EnemyController zmc;
 
     public override bool PrePerform()
     {
+        zmc = gameObject.GetComponent<EnemyController>();   // gets component from -this- gameobject
         zmc.SetTarget(targetTag);
         return true;
     }

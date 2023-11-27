@@ -18,11 +18,18 @@ public abstract class EnemyController : MonoBehaviour
 
     [SerializeField] private float speed = 0.5f ; //The speed at which the enemy moves
 
+    //ADD+
+    EnemyController zmc;
+
+    EnemyHealthManager ehm; //ADD
+
 
     NavMeshAgent agent;
 
     private bool hasReachedIntermediateWaypoint = false; //Check if the enemy has reached the target
     private bool hasReachedWaypoint = false; //Check if the enemy has reached the target
+
+    private bool hasBeenHealed = false; //ADD+
     // Start is called before the first frame update
     void Start()
     {
@@ -103,28 +110,69 @@ public abstract class EnemyController : MonoBehaviour
         }
         else if (hasStartedMoving && agent.remainingDistance <= agent.stoppingDistance) //Check if the enemy has reached the targe    
         {
-            hasReachedWaypoint = true;
-            healthManager.ReduceHealth(); //Reduce the health by 1
 
-            Debug.Log("Bad guy beat ya!");
-            waveController = FindFirstObjectByType<WaveController>();
-            // List<GameObject> activeEnemies = waveController.GetActiveEnemies();
-            Debug.Log("A GOB ["+gameObject.GetInstanceID()+"] WON but they're no longer active so...active enemies BEFORE processing:"+waveController.GetActiveEnemies().Count);
-            waveController.RemoveEnemy(gameObject);
-            Debug.Log("A GOB ["+gameObject.GetInstanceID()+"] WON but they're no longer active so...active enemies AFTER processing:"+waveController.GetActiveEnemies().Count);
+            //ADD+
+            if (targetWaypoint.tag == "HealthWaypoint" && hasBeenHealed == false)
+            {
+                ehm = gameObject.GetComponent<EnemyHealthAncientSkeleton>(); //NOT WORKING CANT USE ENEMY HEALTH MANAGER OR ENEMY HEALTH ANCIENT SKELETON
+                zmc = gameObject.GetComponent<EnemyController>();
+                
+                int healAmount = (int)((float)ehm.currentHealth * 0.60f);
+                if (healAmount > ehm.maxHealth)
+                {
+                    healAmount = ehm.maxHealth;
+                }
+                else if (healAmount <= 0)
+                {
+                    healAmount = 15;
+                }
+
+                Debug.Log("GOB ["+gameObject.GetInstanceID()+"] HEALED for: "+healAmount);
+                ehm.currentHealth += healAmount;
+                zmc.UpdateSpeed(2);
+                hasBeenHealed = true;
+                Debug.Log("From action, current HEALED health: "+ehm.currentHealth);
+
+                //Update the healthbar for ancient skeleton
+                FloatingHealthBarAncientSkeleton floatingHealthBar = GetComponent<FloatingHealthBarAncientSkeleton>();
+                if (floatingHealthBar != null)
+                {
+                    floatingHealthBar.UpdateHealthBar();
+                }
+            }
+            else if(targetWaypoint.tag != "HealthWaypoint")
+            {
+                hasReachedWaypoint = true;
+                healthManager.ReduceHealth(); //Reduce the health by 1
+
+                Debug.Log("Bad guy beat ya!");
+                waveController = FindFirstObjectByType<WaveController>();
+                // List<GameObject> activeEnemies = waveController.GetActiveEnemies();
+                Debug.Log("A GOB ["+gameObject.GetInstanceID()+"] WON but they're no longer active so...active enemies BEFORE processing:"+waveController.GetActiveEnemies().Count);
+                waveController.RemoveEnemy(gameObject);
+                Debug.Log("A GOB ["+gameObject.GetInstanceID()+"] WON but they're no longer active so...active enemies AFTER processing:"+waveController.GetActiveEnemies().Count);
 
 
-            Destroy(gameObject); //Destroy the enemy game object
-            return;
+                Destroy(gameObject); //Destroy the enemy game object
+                return;
+            }  
         }
         else if (hasReachedWaypoint && agent.remainingDistance > agent.stoppingDistance) //Check if the enemy has reached the target
         {
             Debug.Log("WAYPOINT REACHED GOB with ID: "+gameObject.GetInstanceID() + " and their remaining distance is: "+agent.remainingDistance);
             hasReachedWaypoint = false;
+            hasBeenHealed = false;
         }
 
         hasStartedMoving = true;
     }
+
+    //ADD+
+    public void UpdateSpeed(float newSpeed)
+    {
+        speed = newSpeed;
+        agent.speed = speed;
+    }    
 
     void FollowWaypoint(Transform waypoint)
     {
@@ -146,13 +194,13 @@ public abstract class EnemyController : MonoBehaviour
         }
     }
 
-    public virtual void SetTarget(GameObject inputTargetWaypoint)
+    public void SetTarget(GameObject inputTargetWaypoint)
     {
         // Set the targetWaypoint to the desired Vector3 position
         targetWaypoint = inputTargetWaypoint.transform;
     }
 
-    public virtual void SetTarget(string inputTargetWaypointTag)
+    public void SetTarget(string inputTargetWaypointTag)
     {
         SetTarget(GameObject.FindGameObjectWithTag(inputTargetWaypointTag));
     }
