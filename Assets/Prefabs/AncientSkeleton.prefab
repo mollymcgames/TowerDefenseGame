@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 4799876807095528441}
   m_Layer: 10
   m_Name: AncientSkeleton
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,7 +152,7 @@ Transform:
   m_Children:
   - {fileID: 941211653914403314}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4301870671714457750
 SpriteRenderer:
@@ -240,7 +240,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.035941124, y: 0.023960829}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -250,7 +250,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.15625, y: 1.78125}
+  m_Size: {x: 0.8926811, y: 1.3020339}
   m_EdgeRadius: 0
 --- !u!95 &5080989804318477121
 Animator:
@@ -315,7 +315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetWaypoint: {fileID: 0}
   intermediateWaypoint: {fileID: 0}
-  speed: 1
+  speed: 2
 --- !u!114 &95037986495541859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3797afa3f2440b141b5fec9602921bcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 20
   currentHealth: 0
   slider: {fileID: 1720136085643593876}
 --- !u!195 &2018985999490524445
@@ -579,6 +579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1219368226697709361}
   - component: {fileID: 1720136085643593876}
+  - component: {fileID: 9189538888126989157}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -659,3 +660,17 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &9189538888126989157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7502361522581697628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5efd628163f047e43b61a46c98f92bdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1720136085643593876}
+  enemyHealthAncientSkeleton: {fileID: 95037986495541859}
