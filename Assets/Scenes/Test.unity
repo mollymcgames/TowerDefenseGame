@@ -914,7 +914,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6451302975531269622, guid: 5ae7afac82fd2d04abb4503f87fcf74d, type: 3}
+  m_Sprite: {fileID: 7137051265237317857, guid: 66e1294fb11cbb94aba8946cda3cb375, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3070,15 +3070,15 @@ MonoBehaviour:
     towerButton: {fileID: 2021515811}
     maxTowersPerTower: 3
     currentTowers: 0
-  - towerPrefab: {fileID: 1118266316064701169, guid: 84fe37ff3d81b834c9ad3257430c2347, type: 3}
+  - towerPrefab: {fileID: 1990585967791283988, guid: 19921dcf0a2385a45b493f2155133759, type: 3}
     towerCountText: {fileID: 1410008000}
     towerButton: {fileID: 1722163459}
-    maxTowersPerTower: 3
+    maxTowersPerTower: 0
     currentTowers: 0
-  - towerPrefab: {fileID: 7960056260398471145, guid: c3d29b2fe90419c4486926ab14f662ad, type: 3}
+  - towerPrefab: {fileID: 2641895231052056892, guid: 701a45e81e9797c4a83c9a3533483bf1, type: 3}
     towerCountText: {fileID: 970311657}
     towerButton: {fileID: 1926014456}
-    maxTowersPerTower: 2
+    maxTowersPerTower: 0
     currentTowers: 0
   maxTowers: 5
   towerArcherCountText: {fileID: 1720392727}
@@ -28920,7 +28920,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -695514455031465082, guid: 44510bae682dcb64daa22640cea61782, type: 3}
+  m_Sprite: {fileID: 2420523524425883932, guid: 476c00481c6d5e547905f506c5fbfd34, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
