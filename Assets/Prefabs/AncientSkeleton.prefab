@@ -329,8 +329,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3797afa3f2440b141b5fec9602921bcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
-  currentHealth: 0
+  maxHealth: 30
+  currentHealth: 30
   slider: {fileID: 1720136085643593876}
 --- !u!195 &2018985999490524445
 NavMeshAgent:
@@ -386,7 +386,7 @@ MonoBehaviour:
   targetTag: Target
   duration: 0
   preConditionsWorldState:
-  - key: 
+  - key: isHealthyEnough
     value: 0
   afterEffectsWorldState:
   - key: isAtTargetWaypoint
@@ -410,8 +410,12 @@ MonoBehaviour:
   target: {fileID: 0}
   targetTag: HealthWaypoint
   duration: 0
-  preConditionsWorldState: []
-  afterEffectsWorldState: []
+  preConditionsWorldState:
+  - key: needsHealing
+    value: 0
+  afterEffectsWorldState:
+  - key: isHealthyEnough
+    value: 0
   agent: {fileID: 0}
   running: 0
 --- !u!1 &5109110753394735292

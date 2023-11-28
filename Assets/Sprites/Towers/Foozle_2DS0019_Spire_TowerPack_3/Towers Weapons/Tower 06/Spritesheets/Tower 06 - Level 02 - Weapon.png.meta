@@ -52,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -66,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 52
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -90,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -272,7 +272,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Tower 06 - Level 02 - Weapon_0: -8577808720157553590
+      Tower 06 - Level 02 - Weapon_1: 8091164402433630060
+      Tower 06 - Level 02 - Weapon_2: -2656934444379714083
+      Tower 06 - Level 02 - Weapon_3: -4337138398907388
+      Tower 06 - Level 02 - Weapon_4: -3956072418905320944
+      Tower 06 - Level 02 - Weapon_5: 1107327269323675833
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

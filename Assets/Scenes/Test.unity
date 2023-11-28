@@ -275,14 +275,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AncientSkeleton
       objectReference: {fileID: 0}
-    - target: {fileID: 3338429706899075847, guid: 89140a83874a18c42b74fa0a0551185c, type: 3}
-      propertyPath: targetWaypoint
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4799876807095528441, guid: 89140a83874a18c42b74fa0a0551185c, type: 3}
-      propertyPath: preConditionsWorldState.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4799876807095528441, guid: 89140a83874a18c42b74fa0a0551185c, type: 3}
       propertyPath: preConditionsWorldState.Array.data[0].key
       value: isHealthyEnough
@@ -28556,71 +28548,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1926014454}
   m_CullTransparentMesh: 1
---- !u!1001 &1954109693
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5839531627714822607, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5839531627714822607, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 5839531627714822607, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 5839531627714822607, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5839531627714822607, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5839531627714822607, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5839531627714822607, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5839531627714822607, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5839531627714822607, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5839531627714822607, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5839531627714822607, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6095447548306899476, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
-      propertyPath: m_Name
-      value: MagicTowerRed
-      objectReference: {fileID: 0}
-    - target: {fileID: 6263203901899912399, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
-      propertyPath: energyBallPrefab
-      value: 
-      objectReference: {fileID: 7462628717162768362, guid: 141ece80490bb8344b2cd8fbe9950d6b, type: 3}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
 --- !u!1 &1971946808
 GameObject:
   m_ObjectHideFlags: 0
