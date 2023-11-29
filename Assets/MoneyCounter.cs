@@ -32,6 +32,11 @@ public class MoneyCounter : MonoBehaviour
         return money >= amount; //check if the player has enough money
     }
 
+    public int GetMoney()
+    {
+        return money;
+    }
+
     private void UpdateMoneyText()
     {
         moneyText.text = money.ToString();
