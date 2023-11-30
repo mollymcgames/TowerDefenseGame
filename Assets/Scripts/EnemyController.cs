@@ -14,6 +14,8 @@ public abstract class EnemyController : MonoBehaviour
 
     private WaveController waveController;
 
+    private MoneyCounter moneyCounter; // Reference to the MoneyCounter script
+
     private bool hasStartedMoving = false; // Check if the enemy has started moving
 
     [SerializeField] private float speed = 0.5f ; //The speed at which the enemy moves
@@ -55,17 +57,11 @@ public abstract class EnemyController : MonoBehaviour
         //find the first object with the "Target" tag
         GameObject targetWaypointObject = GameObject.FindGameObjectWithTag("Target");
         SetTarget(targetWaypointObject);
-        // if (targetWaypointObject != null)
-        // {
-        //     targetWaypoint = targetWaypointObject.transform;
-        // }
-        // else
-        // {
-        //     Debug.Log("Cannot find 'Target' tag");
-        // }
 
         // Get the HealthManagerUI component
-        healthManager = FindFirstObjectByType<HealthManagerUI>();        
+        healthManager = FindFirstObjectByType<HealthManagerUI>();       
+
+        moneyCounter = FindFirstObjectByType<MoneyCounter>(); // Find the MoneyCounter component 
 
         if (targetWaypoint == null || intermediateWaypoint == null)
         {
@@ -154,6 +150,8 @@ public abstract class EnemyController : MonoBehaviour
 
 
                 Destroy(gameObject); //Destroy the enemy game object
+                //subtract money here
+                moneyCounter.SubtractMoney(1);
                 return;
             }  
         }

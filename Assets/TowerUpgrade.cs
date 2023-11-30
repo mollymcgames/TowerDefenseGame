@@ -13,13 +13,32 @@ public class TowerUpgrade : MonoBehaviour
 
     [SerializeField] private int uniqueCost; //Set the unique cost of the tower in the inspector
     public TextMeshProUGUI costText;
+
+    private bool buttonVisible = false; 
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        //Hide the button on start 
+        upgradeButton.gameObject.SetActive(false);
+
+        // Subscribe to the tower click event using OnMouseDown
+        BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
+        if (boxCollider != null)
+        {
+            boxCollider.isTrigger = true; // Make sure the collider is set as a trigger
+        }        
+
         upgradeButton.onClick.AddListener(UpgradeTower);
 
         UpdateCostText();
+    }
+
+    void OnMouseDown()
+    {
+        // Show the upgrade button when the tower is clicked
+        upgradeButton.gameObject.SetActive(true);
+        buttonVisible = true;
     }
 
     void UpgradeTower()
