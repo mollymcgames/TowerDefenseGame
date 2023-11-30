@@ -50,9 +50,16 @@ public class MoneyCounter : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    private void LoadMoney()
+    public void LoadMoney()
     {
         money = PlayerPrefs.GetInt("Money", 0);
+
+        //Set the money to at least £10 if it is less than £10
+        if (money < 10)
+        {
+            money = 10;
+            SaveMoney(); //save the updated money value
+        }
     }
 
     public void ClearMoney()

@@ -13,11 +13,13 @@ public class HealthManagerUI : MonoBehaviour
     private int maxHearts = 5; //How many hearts you have in total
 
     private MoneyCounter moneyCounter;
+    private AudioManager audioManager; //reference to the audio manager that plays the bg music
     void Start()
     {
         currentHearts = maxHearts; //Set the current health to the max health
         UpdateHealthText(); //Update the health text on start
         moneyCounter = FindFirstObjectByType<MoneyCounter>();
+        audioManager = FindFirstObjectByType<AudioManager>();
     }
 
     //reduce the health by 1
@@ -32,6 +34,7 @@ public class HealthManagerUI : MonoBehaviour
         {
             Debug.Log("Game Over");
             moneyCounter.GameOver(); //reset the money counter by clearing the player prefs
+            audioManager.StopBackgroundMusic(); //stop the background music
             SceneManager.LoadScene("GameOver"); //Load the game over scene
         }
     }

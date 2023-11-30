@@ -22,6 +22,8 @@ public class WaveController : MonoBehaviour
 
     [SerializeField] private MoneyCounter moneyCounter; // Reference to the MoneyCounter script
 
+    private AudioManager audioManager; //reference to the audio manager that plays the bg music
+
 
     private bool startButtonClicked = false; //Track if the start button has been clicked
 
@@ -36,6 +38,8 @@ public class WaveController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = FindFirstObjectByType<AudioManager>();
+
         activeEnemies = new List<GameObject>();
         Debug.Log("INITIAL Active enemies:" + activeEnemies.Count);
         continueButton.gameObject.SetActive(false); //Hide the continue button in the UI from the start
@@ -44,16 +48,17 @@ public class WaveController : MonoBehaviour
 
 
         //Check you are in the first scene to add money
-        if (SceneManager.GetActiveScene().name == "Test") //change name of scene to Level1
-        {
+        // if (SceneManager.GetActiveScene().name == "Test") //change name of scene to Level1
+        // {
             //Find the MoneyCounter component
             moneyCounter = FindFirstObjectByType<MoneyCounter>();
 
-            if (moneyCounter.GetMoney() == 0)
-            {
-                moneyCounter.AddMoney(10); // Add £10 to the money counter
-            }
-        }
+        //     if (moneyCounter.GetMoney() == 0)
+        //     {
+        //         moneyCounter.AddMoney(10); // Add £10 to the money counter
+        //     }
+        // }
+        moneyCounter.LoadMoney(); // Load the money value when the script starts
 
         //add an onlcick listener for the start button
         startButton.onClick.AddListener(OnStartButtonClicked);
@@ -145,6 +150,7 @@ public class WaveController : MonoBehaviour
                     SceneManager.LoadScene("LevelTwo"); //might need to change this name too to Level2
                     break;
                 case "LevelTwo":
+                    audioManager.StopBackgroundMusic(); //stop the background music
                     SceneManager.LoadScene("LevelThree");
                     break;
                 case "LevelThree":
