@@ -94,24 +94,24 @@ public class ArrowScript : MonoBehaviour
             EnemyHealthZombie enemyHealthManager = enemy.GetComponent<EnemyHealthZombie>();
             if(enemyHealthManager != null)
             {
-                enemyHealthManager.TakeDamage(damageAmount); // Change the value if needed
+                enemyHealthManager.TakeDamage(1); // Change the value if needed
             }
 
             //@TODO: Remove this later as the health managers will merge
             EnemyHealthGoblinRider enemyHealthBat = enemy.GetComponent<EnemyHealthGoblinRider>();
             if(enemyHealthBat != null)
             {
-                enemyHealthBat.TakeDamage(damageAmount); // Change the value if needed
+                enemyHealthBat.TakeDamage(2); // Change the value if needed
             }
             EnemyHealthNecromancer enemyHealthNecromancer = enemy.GetComponent<EnemyHealthNecromancer>();
             if(enemyHealthNecromancer != null)
             {
-                enemyHealthNecromancer.TakeDamage(damageAmount); // Change the value if needed
+                enemyHealthNecromancer.TakeDamage(2); // Change the value if needed
             }
             EnemyHealthAncientSkeleton enemyHealthAncientSkeleton = enemy.GetComponent<EnemyHealthAncientSkeleton>();
             if(enemyHealthAncientSkeleton != null)
             {
-                enemyHealthAncientSkeleton.TakeDamage(damageAmount); // Change the value if needed
+                enemyHealthAncientSkeleton.TakeDamage(1); // Change the value if needed
             }
         }
     }
