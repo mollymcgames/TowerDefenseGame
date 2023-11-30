@@ -22,24 +22,47 @@ public class TowerUpgrade : MonoBehaviour
         //Hide the button on start 
         upgradeButton.gameObject.SetActive(false);
 
-        // Subscribe to the tower click event using OnMouseDown
-        BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
-        if (boxCollider != null)
-        {
-            boxCollider.isTrigger = true; // Make sure the collider is set as a trigger
-        }        
 
         upgradeButton.onClick.AddListener(UpgradeTower);
+        // Subscribe to the tower click event using OnMouseDown
+
+        // BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
+        // if (boxCollider != null)
+        // {
+        //     boxCollider.isTrigger = true; // Make sure the collider is set as a trigger
+        // }        
+
+        // upgradeButton.onClick.AddListener(UpgradeTower);
 
         UpdateCostText();
     }
 
-    void OnMouseDown()
+    void OnMouseOver()
     {
-        // Show the upgrade button when the tower is clicked
-        upgradeButton.gameObject.SetActive(true);
-        buttonVisible = true;
+        //show the upgrade button when the mouse is over the tower
+        if(!buttonVisible)
+        {
+            upgradeButton.gameObject.SetActive(true);
+            buttonVisible = true;
+        }
     }
+
+    void OnMouseExit()
+    {
+        //hide the upgrade button when the mouse is no longer over the tower
+        if(buttonVisible)
+        {
+            upgradeButton.gameObject.SetActive(false);
+            buttonVisible = false;
+        }
+    }
+
+    // void OnMouseDown()
+    // {
+    //     // Show the upgrade button when the tower is clicked
+    //     upgradeButton.gameObject.SetActive(true);
+    //     buttonVisible = true;
+    // }
 
     void UpgradeTower()
     {
