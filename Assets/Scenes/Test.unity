@@ -932,6 +932,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396256535}
   m_CullTransparentMesh: 1
+--- !u!1001 &399773233
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1118266316064701169, guid: 84fe37ff3d81b834c9ad3257430c2347, type: 3}
+      propertyPath: m_Name
+      value: MagicTowerBlue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221374220614693868, guid: 84fe37ff3d81b834c9ad3257430c2347, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221374220614693868, guid: 84fe37ff3d81b834c9ad3257430c2347, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221374220614693868, guid: 84fe37ff3d81b834c9ad3257430c2347, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221374220614693868, guid: 84fe37ff3d81b834c9ad3257430c2347, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221374220614693868, guid: 84fe37ff3d81b834c9ad3257430c2347, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221374220614693868, guid: 84fe37ff3d81b834c9ad3257430c2347, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221374220614693868, guid: 84fe37ff3d81b834c9ad3257430c2347, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221374220614693868, guid: 84fe37ff3d81b834c9ad3257430c2347, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221374220614693868, guid: 84fe37ff3d81b834c9ad3257430c2347, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221374220614693868, guid: 84fe37ff3d81b834c9ad3257430c2347, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221374220614693868, guid: 84fe37ff3d81b834c9ad3257430c2347, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218882637252244263, guid: 84fe37ff3d81b834c9ad3257430c2347, type: 3}
+      propertyPath: firingRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218882637252244263, guid: 84fe37ff3d81b834c9ad3257430c2347, type: 3}
+      propertyPath: energyBallSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 84fe37ff3d81b834c9ad3257430c2347, type: 3}
 --- !u!1 &424286101
 GameObject:
   m_ObjectHideFlags: 0
@@ -1597,6 +1666,75 @@ RectTransform:
   m_AnchoredPosition: {x: 12.6, y: 163.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &800451638
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4509486380980082570, guid: fa063add38272a945aa2565fd713e6fc, type: 3}
+      propertyPath: m_Name
+      value: MagicTowerOrange
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809599339768256769, guid: fa063add38272a945aa2565fd713e6fc, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809599339768256769, guid: fa063add38272a945aa2565fd713e6fc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809599339768256769, guid: fa063add38272a945aa2565fd713e6fc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809599339768256769, guid: fa063add38272a945aa2565fd713e6fc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809599339768256769, guid: fa063add38272a945aa2565fd713e6fc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809599339768256769, guid: fa063add38272a945aa2565fd713e6fc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809599339768256769, guid: fa063add38272a945aa2565fd713e6fc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809599339768256769, guid: fa063add38272a945aa2565fd713e6fc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809599339768256769, guid: fa063add38272a945aa2565fd713e6fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809599339768256769, guid: fa063add38272a945aa2565fd713e6fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809599339768256769, guid: fa063add38272a945aa2565fd713e6fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103296076764442084, guid: fa063add38272a945aa2565fd713e6fc, type: 3}
+      propertyPath: firingRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103296076764442084, guid: fa063add38272a945aa2565fd713e6fc, type: 3}
+      propertyPath: energyBallSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fa063add38272a945aa2565fd713e6fc, type: 3}
 --- !u!1 &866801982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1977,6 +2115,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 935287042}
   m_CullTransparentMesh: 1
+--- !u!1001 &962256599
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5839531627714822607, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839531627714822607, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839531627714822607, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839531627714822607, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839531627714822607, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839531627714822607, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839531627714822607, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839531627714822607, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839531627714822607, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839531627714822607, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5839531627714822607, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095447548306899476, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
+      propertyPath: m_Name
+      value: MagicTowerRed
+      objectReference: {fileID: 0}
+    - target: {fileID: 6263203901899912399, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
+      propertyPath: fireRate
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6263203901899912399, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
+      propertyPath: firingRange
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
 --- !u!1 &970311655
 GameObject:
   m_ObjectHideFlags: 0
