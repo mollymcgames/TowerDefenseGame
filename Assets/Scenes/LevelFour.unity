@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 54473540}
   - component: {fileID: 54473539}
   m_Layer: 5
-  m_Name: MagicText1
+  m_Name: TowerFourText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -448,7 +448,7 @@ GameObject:
   - component: {fileID: 90127611}
   - component: {fileID: 90127610}
   m_Layer: 5
-  m_Name: TowerArcherButton
+  m_Name: TowerTwoButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1212,7 +1212,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7306052183751200630, guid: 5ae7afac82fd2d04abb4503f87fcf74d, type: 3}
+  m_Sprite: {fileID: 7137051265237317857, guid: 66e1294fb11cbb94aba8946cda3cb375, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1936,7 +1936,7 @@ GameObject:
   - component: {fileID: 643404723}
   - component: {fileID: 643404722}
   m_Layer: 5
-  m_Name: TowerMagicButton1
+  m_Name: TowerFourButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2058,7 +2058,7 @@ GameObject:
   - component: {fileID: 655213929}
   - component: {fileID: 655213928}
   m_Layer: 5
-  m_Name: TowerMagicButton
+  m_Name: TowerFiveButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2487,7 +2487,7 @@ GameObject:
   - component: {fileID: 866801985}
   - component: {fileID: 866801984}
   m_Layer: 5
-  m_Name: TowerOneSlingshot
+  m_Name: TowerOne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2579,7 +2579,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2404426105890233472, guid: 44510bae682dcb64daa22640cea61782, type: 3}
+  m_Sprite: {fileID: -7760977651875881094, guid: 44510bae682dcb64daa22640cea61782, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2998,7 +2998,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -695514455031465082, guid: 44510bae682dcb64daa22640cea61782, type: 3}
+  m_Sprite: {fileID: 2420523524425883932, guid: 476c00481c6d5e547905f506c5fbfd34, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3327,7 +3327,7 @@ GameObject:
   - component: {fileID: 1163483615}
   - component: {fileID: 1163483614}
   m_Layer: 5
-  m_Name: TowerSlingshotButton
+  m_Name: TowerOneButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3572,6 +3572,7 @@ GameObject:
   - component: {fileID: 1336093402}
   - component: {fileID: 1336093403}
   - component: {fileID: 1336093404}
+  - component: {fileID: 1336093405}
   m_Layer: 0
   m_Name: GameControllers
   m_TagString: Untagged
@@ -3607,30 +3608,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerInfos:
-  - towerPrefab: {fileID: 3481428629827126645, guid: 639efb40ca62cb0489ba2712db7b2c02, type: 3}
+  - towerPrefab: {fileID: 1718041629675340823, guid: efec95d96409418419debbfda15c577e, type: 3}
+    towerCountText: {fileID: 828145629}
+    towerButton: {fileID: 1163483614}
+    maxTowersPerTower: 2
+    currentTowers: 0
+  - towerPrefab: {fileID: 6368675066605825484, guid: efc716b3df002c54793d45310fae47fb, type: 3}
     towerCountText: {fileID: 1720392727}
     towerButton: {fileID: 90127610}
     maxTowersPerTower: 2
     currentTowers: 0
+  - towerPrefab: {fileID: 2641895231052056892, guid: 701a45e81e9797c4a83c9a3533483bf1, type: 3}
+    towerCountText: {fileID: 2026456206}
+    towerButton: {fileID: 1543051326}
+    maxTowersPerTower: 3
+    currentTowers: 0
+  - towerPrefab: {fileID: 1990585967791283988, guid: 19921dcf0a2385a45b493f2155133759, type: 3}
+    towerCountText: {fileID: 54473539}
+    towerButton: {fileID: 643404722}
+    maxTowersPerTower: 0
+    currentTowers: 0
   - towerPrefab: {fileID: 1118266316064701169, guid: 84fe37ff3d81b834c9ad3257430c2347, type: 3}
     towerCountText: {fileID: 1661187659}
     towerButton: {fileID: 655213928}
-    maxTowersPerTower: 2
-    currentTowers: 0
-  - towerPrefab: {fileID: 6095447548306899476, guid: bd96ff8388a8ff54299a4f3e751e55b2, type: 3}
-    towerCountText: {fileID: 54473539}
-    towerButton: {fileID: 643404722}
     maxTowersPerTower: 3
-    currentTowers: 0
-  - towerPrefab: {fileID: 8525667484170104877, guid: ce4416a89e37d244791e40b6e2bdaee6, type: 3}
-    towerCountText: {fileID: 828145629}
-    towerButton: {fileID: 1163483614}
-    maxTowersPerTower: 1
-    currentTowers: 0
-  - towerPrefab: {fileID: 7960056260398471145, guid: c3d29b2fe90419c4486926ab14f662ad, type: 3}
-    towerCountText: {fileID: 2026456206}
-    towerButton: {fileID: 1543051326}
-    maxTowersPerTower: 4
     currentTowers: 0
   maxTowers: 5
   towerArcherCountText: {fileID: 1720392727}
@@ -3663,6 +3664,8 @@ MonoBehaviour:
   - {fileID: 1336093403}
   startButton: {fileID: 1293906612}
   continueButton: {fileID: 320816841}
+  moneyCounter: {fileID: 0}
+  winSoundEffect: {fileID: 1336093405}
 --- !u!114 &1336093402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3724,6 +3727,102 @@ MonoBehaviour:
   isSpawning: 1
   amountOfEnemiesSpawnedPerWave: 1
   activeEnemies: []
+--- !u!82 &1336093405
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336093397}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3cc0732307d08fb4491b861687f62767, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.6
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1442993881
 GameObject:
   m_ObjectHideFlags: 0
@@ -21310,7 +21409,7 @@ GameObject:
   - component: {fileID: 1543051327}
   - component: {fileID: 1543051326}
   m_Layer: 5
-  m_Name: SlingshotButton
+  m_Name: TowerThreeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21892,7 +21991,7 @@ GameObject:
   - component: {fileID: 1661187660}
   - component: {fileID: 1661187659}
   m_Layer: 5
-  m_Name: MagicText
+  m_Name: TowerFiveText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22027,7 +22126,7 @@ GameObject:
   - component: {fileID: 1720392728}
   - component: {fileID: 1720392727}
   m_Layer: 5
-  m_Name: TowerArcherCountText
+  m_Name: TowerTwoText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22293,7 +22392,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3822625856424177854, guid: 695f43681a5e9ad43a8210f7d36c70f7, type: 3}
+  m_Sprite: {fileID: 7759423379314550557, guid: 695f43681a5e9ad43a8210f7d36c70f7, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -23474,7 +23573,7 @@ GameObject:
   - component: {fileID: 2026456207}
   - component: {fileID: 2026456206}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TowerThreeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

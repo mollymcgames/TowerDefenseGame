@@ -30,6 +30,8 @@ public class WaveController : MonoBehaviour
         return startButtonClicked;
     }
 
+    [SerializeField] private AudioSource winSoundEffect;
+
 
     // Start is called before the first frame update
     void Start()
@@ -106,6 +108,12 @@ public class WaveController : MonoBehaviour
             yield return new WaitUntil(() => activeEnemies.Count == 0); //Wait until all enemies are dead
             //Click Continue to start the next wave 
             continueButton.gameObject.SetActive(true); // Show the continue button in the UI
+
+            //sound play if there is an audio source attached
+            if (winSoundEffect != null)
+            {
+                winSoundEffect.Play();
+            }
 
             // Wait until the continue button is clicked
             yield return new WaitUntil(() => continueButtonClicked);

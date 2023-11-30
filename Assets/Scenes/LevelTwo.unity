@@ -753,7 +753,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6451302975531269622, guid: 5ae7afac82fd2d04abb4503f87fcf74d, type: 3}
+  m_Sprite: {fileID: 2420523524425883932, guid: 476c00481c6d5e547905f506c5fbfd34, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2390,7 +2390,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2404426105890233472, guid: 44510bae682dcb64daa22640cea61782, type: 3}
+  m_Sprite: {fileID: -7760977651875881094, guid: 44510bae682dcb64daa22640cea61782, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2799,6 +2799,7 @@ GameObject:
   - component: {fileID: 1336093400}
   - component: {fileID: 1336093401}
   - component: {fileID: 1336093402}
+  - component: {fileID: 1336093403}
   m_Layer: 0
   m_Name: GameControllers
   m_TagString: Untagged
@@ -2834,15 +2835,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerInfos:
-  - towerPrefab: {fileID: 3481428629827126645, guid: 639efb40ca62cb0489ba2712db7b2c02, type: 3}
+  - towerPrefab: {fileID: 1118266316064701169, guid: 84fe37ff3d81b834c9ad3257430c2347, type: 3}
+    towerCountText: {fileID: 216755525}
+    towerButton: {fileID: 1250615853}
+    maxTowersPerTower: 3
+    currentTowers: 0
+  - towerPrefab: {fileID: 6368675066605825484, guid: efc716b3df002c54793d45310fae47fb, type: 3}
     towerCountText: {fileID: 1720392727}
     towerButton: {fileID: 1454793496}
-    maxTowersPerTower: 5
+    maxTowersPerTower: 3
     currentTowers: 0
-  - towerPrefab: {fileID: 4366553996290726124, guid: 2699dbc2d9624ee4dbbb10df5cf17a33, type: 3}
+  - towerPrefab: {fileID: 1718041629675340823, guid: efec95d96409418419debbfda15c577e, type: 3}
+    towerCountText: {fileID: 292886474}
+    towerButton: {fileID: 1959816805}
+    maxTowersPerTower: 2
+    currentTowers: 0
+  - towerPrefab: {fileID: 2641895231052056892, guid: 701a45e81e9797c4a83c9a3533483bf1, type: 3}
+    towerCountText: {fileID: 515788314}
+    towerButton: {fileID: 892418173}
+    maxTowersPerTower: 2
+    currentTowers: 0
+  - towerPrefab: {fileID: 6324007116090604393, guid: 4fbf182331a1e99419d22f117af957cb, type: 3}
     towerCountText: {fileID: 1271672872}
     towerButton: {fileID: 553360599}
-    maxTowersPerTower: 5
+    maxTowersPerTower: 2
     currentTowers: 0
   maxTowers: 5
   towerArcherCountText: {fileID: 1720392727}
@@ -2871,6 +2887,8 @@ MonoBehaviour:
   - {fileID: 1336093402}
   startButton: {fileID: 903502793}
   continueButton: {fileID: 1086953382}
+  moneyCounter: {fileID: 0}
+  winSoundEffect: {fileID: 1336093403}
 --- !u!114 &1336093402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2892,6 +2910,102 @@ MonoBehaviour:
   isSpawning: 1
   amountOfEnemiesSpawnedPerWave: 1
   activeEnemies: []
+--- !u!82 &1336093403
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336093397}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3cc0732307d08fb4491b861687f62767, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.6
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1411966711
 GameObject:
   m_ObjectHideFlags: 0
@@ -21304,7 +21418,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3822625856424177854, guid: 695f43681a5e9ad43a8210f7d36c70f7, type: 3}
+  m_Sprite: {fileID: 7759423379314550557, guid: 695f43681a5e9ad43a8210f7d36c70f7, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -28890,7 +29004,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4227435001158437254, guid: 23cb61971c972c140be80b98dfea825e, type: 3}
+  m_Sprite: {fileID: 4086070975537395444, guid: 3e1b1bc6d9969f24e9f619096349b805, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
