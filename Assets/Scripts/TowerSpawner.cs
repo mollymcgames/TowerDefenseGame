@@ -57,29 +57,34 @@ public class TowerSpawner : MonoBehaviour
         // Check if the left mouse button is clicked
         if (Input.GetMouseButtonDown(0) && (towerInfos[currentTowerIndex].currentTowers < towerInfos[currentTowerIndex].MaxTowerPerTower))
         {
-            // Debug.Log("current towers is" + currentTowers);
-            // Debug.Log("max towers is" + maxTowers);
-            Vector3 mousePosition = Input.mousePosition; // Get the mouse position
-            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition); // Convert the mouse position from screen space to world space
-            worldPosition.z = 0; // Set the z position to 0
-
-            //Check if the clicked position is within the allowed positions
-            foreach (Vector3 position in allowedPositions)
+            //Check if the player has enough money to place a tower. TODO might change later as towers cost different amounts of money
+            if (moneyCounter.CanAfford(1))
             {
-                //calculate the distance between the clicked position and the allowed position
-                if (Vector3.Distance(worldPosition, position) < 0.5f && !towerPositions.ContainsKey(position))
+                Vector3 mousePosition = Input.mousePosition; // Get the mouse position
+                Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition); // Convert the mouse position from screen space to world space
+                worldPosition.z = 0; // Set the z position to 0
+
+                //Check if the clicked position is within the allowed positions
+                foreach (Vector3 position in allowedPositions)
                 {
-                    //If the distance is less than 0.5f then the clicked position is within the allowed position so we can place the tower
-                    Instantiate(towerInfos[currentTowerIndex].towerPrefab, worldPosition, Quaternion.identity); //Instantiate the tower prefab at the mouse position
-                    towerInfos[currentTowerIndex].currentTowers++;
-                    towerPositions.Add(position, "occupied");
+                    //calculate the distance between the clicked position and the allowed position
+                    if (Vector3.Distance(worldPosition, position) < 0.5f && !towerPositions.ContainsKey(position))
+                    {
+                        //If the distance is less than 0.5f then the clicked position is within the allowed position so we can place the tower
+                        Instantiate(towerInfos[currentTowerIndex].towerPrefab, worldPosition, Quaternion.identity); //Instantiate the tower prefab at the mouse position
+                        towerInfos[currentTowerIndex].currentTowers++;
+                        towerPositions.Add(position, "occupied");
 
-                    UpdateTowerCountText(); //Update the tower count text in the canvas UI
+                        UpdateTowerCountText(); //Update the tower count text in the canvas UI
 
-                    moneyCounter.SubtractMoney(1); //subtract one coin when the tower is placed
-                    break;
-
+                        moneyCounter.SubtractMoney(1); //subtract one coin when the tower is placed
+                        break;
+                    }
                 }
+            }
+            else
+            {
+                UnityEngine.Debug.Log("Not enough money to place a tower");
             }
         }
     }
