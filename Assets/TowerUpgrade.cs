@@ -9,9 +9,13 @@ public class TowerUpgrade : MonoBehaviour
 {
 
     public Button upgradeButton;
+
+    public Button sellButton; //Button to sell the tower
     public GameObject upgradedPrefab; // the upgraded tower prefab
 
     [SerializeField] private int uniqueCost; //Set the unique cost of the tower in the inspector
+
+    [SerializeField] private int sellValue; //Set the sell value of the tower in the inspector
     public TextMeshProUGUI costText;
 
     private bool buttonVisible = false; 
@@ -19,11 +23,14 @@ public class TowerUpgrade : MonoBehaviour
     void Start()
     {
 
-        //Hide the button on start 
+        //Hide the buttons on start 
         upgradeButton.gameObject.SetActive(false);
+        sellButton.gameObject.SetActive(false);
 
 
         upgradeButton.onClick.AddListener(UpgradeTower);
+        sellButton.onClick.AddListener(SellTower);
+        
         // Subscribe to the tower click event using OnMouseDown
 
         // BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
@@ -43,6 +50,7 @@ public class TowerUpgrade : MonoBehaviour
         if(!buttonVisible)
         {
             upgradeButton.gameObject.SetActive(true);
+            sellButton.gameObject.SetActive(true);
             buttonVisible = true;
         }
     }
@@ -53,6 +61,7 @@ public class TowerUpgrade : MonoBehaviour
         if(buttonVisible)
         {
             upgradeButton.gameObject.SetActive(false);
+            sellButton.gameObject.SetActive(false);
             buttonVisible = false;
         }
     }
@@ -80,6 +89,19 @@ public class TowerUpgrade : MonoBehaviour
         else
         {
             Debug.Log("Can't afford to upgrade tower!");
+        }
+    }
+
+    void SellTower()
+    {
+        //Add the sell value to the money counter when selling the tower
+        MoneyCounter moneyCounter = FindFirstObjectByType<MoneyCounter>();
+        if(moneyCounter != null)
+        {
+            moneyCounter.AddMoney(sellValue);
+            //Destroy the current tower
+            Destroy(gameObject);
+            Debug.Log("Tower sold!");
         }
     }
 
