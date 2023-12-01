@@ -561,7 +561,7 @@ MonoBehaviour:
   targetWaypoint: {fileID: 0}
   fireRate: 0.5
   arrowSpeed: 6
-  firingRange: 6
+  firingRange: 8
 --- !u!61 &3447840588831754687
 BoxCollider2D:
   m_ObjectHideFlags: 0

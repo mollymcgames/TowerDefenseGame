@@ -208,8 +208,8 @@ MonoBehaviour:
   firePoint: {fileID: 7875111859581718591}
   targetWaypoint: {fileID: 0}
   fireRate: 0.5
-  arrowSpeed: 7
-  firingRange: 6
+  arrowSpeed: 10
+  firingRange: 8
 --- !u!114 &4327318602585647676
 MonoBehaviour:
   m_ObjectHideFlags: 0
