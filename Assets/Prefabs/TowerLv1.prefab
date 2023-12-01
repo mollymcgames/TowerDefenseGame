@@ -428,8 +428,8 @@ MonoBehaviour:
   firePoint: {fileID: 395909338593279259}
   targetWaypoint: {fileID: 0}
   fireRate: 0.5
-  arrowSpeed: 6
-  firingRange: 6
+  arrowSpeed: 7
+  firingRange: 7
 --- !u!61 &4956426086939161937
 BoxCollider2D:
   m_ObjectHideFlags: 0

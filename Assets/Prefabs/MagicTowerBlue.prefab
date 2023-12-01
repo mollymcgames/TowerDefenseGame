@@ -227,8 +227,8 @@ MonoBehaviour:
   firePoint: {fileID: 6221374220614693868}
   targetWaypoint: {fileID: 0}
   fireRate: 0.7
-  energyBallSpeed: 5
-  firingRange: 6
+  energyBallSpeed: 6
+  firingRange: 7
   activeEnergyBalls: []
 --- !u!114 &8488422083089721604
 MonoBehaviour:

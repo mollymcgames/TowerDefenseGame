@@ -35,7 +35,7 @@ Transform:
   - {fileID: 1787418804925662275}
   - {fileID: 3777431740199763499}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &769557978195863781
 SpriteRenderer:
@@ -106,7 +106,7 @@ MonoBehaviour:
   targetWaypoint: {fileID: 0}
   fireRate: 1
   energyBallSpeed: 8
-  firingRange: 7
+  firingRange: 8
   activeEnergyBalls: []
 --- !u!61 &5009020020036894440
 BoxCollider2D:
@@ -142,7 +142,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.08339429}
+  m_Offset: {x: 0.011720061, y: -0.054094076}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -152,7 +152,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.28, y: 3.0574293}
+  m_Size: {x: 1.3268805, y: 3.1160297}
   m_EdgeRadius: 0
 --- !u!114 &5959822100470287258
 MonoBehaviour:

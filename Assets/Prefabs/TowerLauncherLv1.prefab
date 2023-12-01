@@ -369,8 +369,8 @@ MonoBehaviour:
   firePoint: {fileID: 5152920500306911282}
   targetWaypoint: {fileID: 0}
   fireRate: 1
-  energyBallSpeed: 5
-  firingRange: 6
+  energyBallSpeed: 6
+  firingRange: 7
   activeEnergyBalls: []
 --- !u!61 &2750467945271290257
 BoxCollider2D:
