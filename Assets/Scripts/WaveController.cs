@@ -150,7 +150,10 @@ public class WaveController : MonoBehaviour
                     SceneManager.LoadScene("LevelTwo"); //might need to change this name too to Level2
                     break;
                 case "LevelTwo":
+                if (audioManager != null)
+                    {                
                     audioManager.StopBackgroundMusic(); //stop the background music
+                    }
                     SceneManager.LoadScene("LevelThree");
                     break;
                 case "LevelThree":
