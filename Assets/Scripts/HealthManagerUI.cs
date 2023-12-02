@@ -34,7 +34,10 @@ public class HealthManagerUI : MonoBehaviour
         {
             Debug.Log("Game Over");
             moneyCounter.GameOver(); //reset the money counter by clearing the player prefs
-            audioManager.StopBackgroundMusic(); //stop the background music
+            if (audioManager != null)
+            {                
+                audioManager.StopBackgroundMusic(); //stop the background music
+            }
             SceneManager.LoadScene("GameOver"); //Load the game over scene
         }
     }
