@@ -19,6 +19,9 @@ public class TowerUpgrade : MonoBehaviour
     public TextMeshProUGUI costText;
 
     private bool buttonVisible = false; 
+    private TowerSpawner towerSpawner;
+    private string towerType; // Added to store the tower type
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,17 +33,16 @@ public class TowerUpgrade : MonoBehaviour
 
         upgradeButton.onClick.AddListener(UpgradeTower);
         sellButton.onClick.AddListener(SellTower);
+
+        //Get the TowerSpawner script
+        towerSpawner = FindFirstObjectByType<TowerSpawner>();
+        if(towerSpawner == null)
+        {
+            Debug.LogError("No TowerSpawner script found!");
+        }
+        towerType = upgradedPrefab.name; // Assuming the upgradedPrefab has a unique name for each type
+
         
-        // Subscribe to the tower click event using OnMouseDown
-
-        // BoxCollider2D boxCollider = GetComponent<BoxCollider2D>();
-        // if (boxCollider != null)
-        // {
-        //     boxCollider.isTrigger = true; // Make sure the collider is set as a trigger
-        // }        
-
-        // upgradeButton.onClick.AddListener(UpgradeTower);
-
         UpdateCostText();
     }
 
@@ -65,13 +67,6 @@ public class TowerUpgrade : MonoBehaviour
             buttonVisible = false;
         }
     }
-
-    // void OnMouseDown()
-    // {
-    //     // Show the upgrade button when the tower is clicked
-    //     upgradeButton.gameObject.SetActive(true);
-    //     buttonVisible = true;
-    // }
 
     void UpgradeTower()
     {
@@ -99,6 +94,15 @@ public class TowerUpgrade : MonoBehaviour
         if(moneyCounter != null)
         {
             moneyCounter.AddMoney(sellValue);
+
+            //Get the position of the tower 
+            Vector3 position = transform.position;
+
+            //Get the tower spawner script and inform it about the tower before destroying it
+            if (towerSpawner != null)
+            {
+                towerSpawner.RemoveTowerPosition(position, towerType);
+            }
             //Destroy the current tower
             Destroy(gameObject);
             Debug.Log("Tower sold!");
