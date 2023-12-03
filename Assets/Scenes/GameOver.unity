@@ -744,9 +744,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11552794}
-        m_TargetAssemblyTypeName: GameOverScript, Assembly-CSharp
-        m_MethodName: RetryGame
+      - m_Target: {fileID: 11552793}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_MethodName: Map
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

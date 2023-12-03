@@ -733,7 +733,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11552793}
         m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
-        m_MethodName: PlayGameAgain
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
