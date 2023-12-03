@@ -48,4 +48,14 @@ public class MenuScript : MonoBehaviour
     {
         SceneManager.LoadScene("LevelFour");
     }
+
+    public void Map()
+    {
+        SceneManager.LoadScene("Map");
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 }
