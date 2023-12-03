@@ -34,7 +34,7 @@ Transform:
   - {fileID: 6053120474443673521}
   - {fileID: 6695613483636665647}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2468354640195418006
 SpriteRenderer:
@@ -147,8 +147,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeButton: {fileID: 4643600642173890573}
+  sellButton: {fileID: 0}
   upgradedPrefab: {fileID: 1256792551733040795, guid: 9647f343e973bb44aa727fc8f35fda84, type: 3}
   uniqueCost: 3
+  sellValue: 0
   costText: {fileID: 3229659368830913592}
 --- !u!1 &4705152579517398143
 GameObject:
@@ -533,7 +535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19433115, g: 0.33962262, b: 0.08810965, a: 1}
+  m_Color: {r: 0.8862745, g: 0.67058825, b: 0.25490198, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
