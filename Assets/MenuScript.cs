@@ -28,4 +28,24 @@ public class MenuScript : MonoBehaviour
         Debug.Log("Quit");
         Application.Quit();
     }
+
+    public void Level1()
+    {
+        SceneManager.LoadScene("Test");
+    }
+
+    public void Level2()
+    {
+        SceneManager.LoadScene("LevelTwo");
+    }
+
+    public void Level3()
+    {
+        SceneManager.LoadScene("LevelThree");
+    }
+
+    public void Level4()
+    {
+        SceneManager.LoadScene("LevelFour");
+    }
 }
