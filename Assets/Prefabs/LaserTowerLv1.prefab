@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bfca6631a5b3914c8184462a43fafa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energyBallPrefab: {fileID: 1467487188596121710, guid: 20f93df6c6760364e828073d08a4021d, type: 3}
+  energyBallPrefab: {fileID: 3059051074207641744, guid: 8513a472229805045bf3b56e4d0d504c, type: 3}
   firePoint: {fileID: 734398583194729950}
   targetWaypoint: {fileID: 0}
   fireRate: 1
