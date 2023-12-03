@@ -111,6 +111,6 @@ public class TowerUpgrade : MonoBehaviour
 
     void UpdateCostText()
     {
-        costText.text = "Upgrade £" + uniqueCost.ToString();
+        costText.text = "£" + uniqueCost.ToString();
     }
 }
