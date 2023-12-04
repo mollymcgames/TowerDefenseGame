@@ -35,7 +35,6 @@ public class WaveController : MonoBehaviour
     [SerializeField] private AudioSource winSoundEffect;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         audioManager = FindFirstObjectByType<AudioManager>();
@@ -44,7 +43,6 @@ public class WaveController : MonoBehaviour
         Debug.Log("INITIAL Active enemies:" + activeEnemies.Count);
         continueButton.gameObject.SetActive(false); //Hide the continue button in the UI from the start
         UpdateWaveText(); //Update the wave count text in the canvas UI from the start
-        // StartCoroutine(SpawnWave()); //Start spawning enemies
 
         moneyCounter = FindFirstObjectByType<MoneyCounter>(); //Find the MoneyCounter component
 
@@ -125,9 +123,8 @@ public class WaveController : MonoBehaviour
         {
             Debug.Log("Won it all!");
 
+            string activeSceneName = SceneManager.GetActiveScene().name; //Get the name of the active scene
 
-            //Get the name of the active scene
-            string activeSceneName = SceneManager.GetActiveScene().name;
 
             //Load different scenes based on the active scene name
             switch (activeSceneName)
