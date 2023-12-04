@@ -350,7 +350,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: "\xA31"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -569,7 +569,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: "\xA31"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1320,7 +1320,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: "\xA31"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3678,7 +3678,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: "\xA31"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3806,29 +3806,23 @@ MonoBehaviour:
   - towerPrefab: {fileID: 1118266316064701169, guid: 84fe37ff3d81b834c9ad3257430c2347, type: 3}
     towerCountText: {fileID: 216755525}
     towerButton: {fileID: 1250615853}
-    maxTowersPerTower: 3
-    currentTowers: 0
+    cost: 1
   - towerPrefab: {fileID: 6368675066605825484, guid: efc716b3df002c54793d45310fae47fb, type: 3}
     towerCountText: {fileID: 1720392727}
     towerButton: {fileID: 1454793496}
-    maxTowersPerTower: 3
-    currentTowers: 0
+    cost: 1
   - towerPrefab: {fileID: 1718041629675340823, guid: efec95d96409418419debbfda15c577e, type: 3}
     towerCountText: {fileID: 292886474}
     towerButton: {fileID: 1959816805}
-    maxTowersPerTower: 2
-    currentTowers: 0
+    cost: 1
   - towerPrefab: {fileID: 2641895231052056892, guid: 701a45e81e9797c4a83c9a3533483bf1, type: 3}
     towerCountText: {fileID: 515788314}
     towerButton: {fileID: 892418173}
-    maxTowersPerTower: 2
-    currentTowers: 0
+    cost: 1
   - towerPrefab: {fileID: 6324007116090604393, guid: 4fbf182331a1e99419d22f117af957cb, type: 3}
     towerCountText: {fileID: 1271672872}
     towerButton: {fileID: 553360599}
-    maxTowersPerTower: 2
-    currentTowers: 0
-  maxTowers: 5
+    cost: 1
   towerArcherCountText: {fileID: 1720392727}
   allowedPositions:
   - {x: -8.82, y: -1.99, z: 0}
@@ -39243,7 +39237,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: "\xA31"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -39480,7 +39474,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -30.310059, y: 31.385004}
+  m_AnchoredPosition: {x: -30.310059, y: 31.38501}
   m_SizeDelta: {x: 60.62, y: 62.77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1753695837

@@ -358,7 +358,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: "\xA30"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2172,7 +2172,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: "\xA31"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3104,7 +3104,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -30.310059, y: 31.385004}
+  m_AnchoredPosition: {x: -30.310059, y: 31.38501}
   m_SizeDelta: {x: 60.62, y: 62.77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1102680214
@@ -3510,7 +3510,6 @@ GameObject:
   - component: {fileID: 1336093401}
   - component: {fileID: 1336093402}
   - component: {fileID: 1336093403}
-  - component: {fileID: 1336093404}
   - component: {fileID: 1336093405}
   m_Layer: 0
   m_Name: GameControllers
@@ -3550,29 +3549,23 @@ MonoBehaviour:
   - towerPrefab: {fileID: 1718041629675340823, guid: efec95d96409418419debbfda15c577e, type: 3}
     towerCountText: {fileID: 828145629}
     towerButton: {fileID: 1163483614}
-    maxTowersPerTower: 2
-    currentTowers: 0
+    cost: 1
   - towerPrefab: {fileID: 6368675066605825484, guid: efc716b3df002c54793d45310fae47fb, type: 3}
     towerCountText: {fileID: 1720392727}
     towerButton: {fileID: 90127610}
-    maxTowersPerTower: 2
-    currentTowers: 0
+    cost: 1
   - towerPrefab: {fileID: 2641895231052056892, guid: 701a45e81e9797c4a83c9a3533483bf1, type: 3}
     towerCountText: {fileID: 2026456206}
     towerButton: {fileID: 1543051326}
-    maxTowersPerTower: 3
-    currentTowers: 0
+    cost: 1
   - towerPrefab: {fileID: 1990585967791283988, guid: 19921dcf0a2385a45b493f2155133759, type: 3}
     towerCountText: {fileID: 54473539}
     towerButton: {fileID: 643404722}
-    maxTowersPerTower: 0
-    currentTowers: 0
+    cost: 0
   - towerPrefab: {fileID: 1118266316064701169, guid: 84fe37ff3d81b834c9ad3257430c2347, type: 3}
     towerCountText: {fileID: 1661187659}
     towerButton: {fileID: 655213928}
-    maxTowersPerTower: 3
-    currentTowers: 0
-  maxTowers: 5
+    cost: 1
   towerArcherCountText: {fileID: 1720392727}
   allowedPositions:
   - {x: -2.822146, y: 5.54, z: 0}
@@ -3644,25 +3637,6 @@ MonoBehaviour:
   - {x: -10.6, y: 2.24, z: 0}
   - {x: 12.2, y: 2.78, z: 0}
   spawnInterval: 10
-  isSpawning: 1
-  amountOfEnemiesSpawnedPerWave: 1
-  activeEnemies: []
---- !u!114 &1336093404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1336093397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee0613f58fe658447adeefc8c85eb3bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 9064619126924730254, guid: db61c7ab22cb6144098d6c349ed304c2, type: 3}
-  spawnPositions:
-  - {x: -11.208521, y: 1.6758907, z: 0}
-  spawnInterval: 20
   isSpawning: 1
   amountOfEnemiesSpawnedPerWave: 1
   activeEnemies: []
@@ -21975,7 +21949,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: "\xA31"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -22110,7 +22084,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: "\xA31"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -23557,7 +23531,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: "\xA31"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
