@@ -46,26 +46,14 @@ public class WaveController : MonoBehaviour
         UpdateWaveText(); //Update the wave count text in the canvas UI from the start
         // StartCoroutine(SpawnWave()); //Start spawning enemies
 
+        moneyCounter = FindFirstObjectByType<MoneyCounter>(); //Find the MoneyCounter component
 
-        //Check you are in the first scene to add money
-        // if (SceneManager.GetActiveScene().name == "Test") //change name of scene to Level1
-        // {
-            //Find the MoneyCounter component
-            moneyCounter = FindFirstObjectByType<MoneyCounter>();
-
-        //     if (moneyCounter.GetMoney() == 0)
-        //     {
-        //         moneyCounter.AddMoney(10); // Add £10 to the money counter
-        //     }
-        // }
         moneyCounter.LoadMoney(); // Load the money value when the script starts
 
         //add an onlcick listener for the start button
         startButton.onClick.AddListener(OnStartButtonClicked);
 
-        //add an onlcick listener for the continue button
-        continueButton.onClick.AddListener(OnContinueButtonClicked);
-
+        continueButton.onClick.AddListener(OnContinueButtonClicked); //add an onlcick listener for the continue button
 
     }
 
@@ -79,7 +67,6 @@ public class WaveController : MonoBehaviour
             currentWave = 1; //Set the current wave to 1
             StartCoroutine(SpawnWave()); //Start spawning enemies
         }
-        // startButtonClicked = true;
     }
 
     public IEnumerator SpawnWave()
