@@ -101,7 +101,7 @@ public class TowerUpgrade : MonoBehaviour
             //Get the tower spawner script and inform it about the tower before destroying it
             if (towerSpawner != null)
             {
-                towerSpawner.RemoveTowerPosition(position, towerType);
+                towerSpawner.RemoveTowerPosition(towerSpawner.DeriveTowerPosition(position));
             }
             //Destroy the current tower
             Destroy(gameObject);

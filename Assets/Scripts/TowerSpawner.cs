@@ -25,8 +25,9 @@ public class TowerSpawner : MonoBehaviour
 
     public int currentTowerIndex = 0;
 
-    private Dictionary<Vector3, Dictionary<string, string>> towerPositions = new Dictionary<Vector3, Dictionary<string, string>>();
+    // private Dictionary<Vector3, Dictionary<string, string>> towerPositions = new Dictionary<Vector3, Dictionary<string, string>>();
 
+    private string[] towerPositions = null;
     public MoneyCounter moneyCounter;
 
     void Start()
@@ -35,6 +36,9 @@ public class TowerSpawner : MonoBehaviour
         {
             towerInfo.towerButton.onClick.AddListener(() => SwitchTower(towerInfo));
         }
+
+        //create our store of used tower positions
+        towerPositions = new string[allowedPositions.Length];
     }
 
     void Update()
@@ -47,24 +51,40 @@ public class TowerSpawner : MonoBehaviour
                 Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
                 worldPosition.z = 0;
 
-                foreach (Vector3 position in allowedPositions)
+
+                int positionNumber = DeriveTowerPosition(worldPosition, allowedPositions);
+                if (positionNumber >= 0 && !IsPositionOccupied(positionNumber))
                 {
-                    if (Vector3.Distance(worldPosition, position) < 0.5f && !IsPositionOccupied(position, towerInfos[currentTowerIndex].towerPrefab.name))
-                    {
-                        Instantiate(towerInfos[currentTowerIndex].towerPrefab, worldPosition, Quaternion.identity);
-                        UpdateTowerPosition(worldPosition, towerInfos[currentTowerIndex].towerPrefab.name);
-                        moneyCounter.SubtractMoney(towerInfos[currentTowerIndex].cost); //deduct specicifc tower cost
-                        break;
-                    }
+                    Instantiate(towerInfos[currentTowerIndex].towerPrefab, worldPosition, Quaternion.identity);
+                    UpdateTowerPosition(positionNumber);
+                    moneyCounter.SubtractMoney(towerInfos[currentTowerIndex].cost); //deduct specicifc tower cost
                 }
-            }
-            else
-            {
-                UnityEngine.Debug.Log("Not enough money to place a tower");
+                else
+                {
+                    UnityEngine.Debug.Log("Position is occupied");
+                }
             }
         }
     }
 
+    public int DeriveTowerPosition(Vector3 worldPosition)
+    {
+        return DeriveTowerPosition(worldPosition, allowedPositions);
+    }
+
+    private int DeriveTowerPosition(Vector3 worldPosition, Vector3[] allowedPositions)
+    {
+        int positionNumber = 0;
+        foreach (Vector3 position in allowedPositions)        
+        {
+            if (Vector3.Distance(worldPosition, position) < 0.5f )
+            {
+                return positionNumber;
+            }
+            positionNumber++;
+        }
+        return -1;
+    }
 
     private void SwitchTower(TowerInfo selectedTower)
     {
@@ -75,28 +95,17 @@ public class TowerSpawner : MonoBehaviour
         }
     }
 
-    public void RemoveTowerPosition(Vector3 position, string towerType)
+    public void RemoveTowerPosition(int position)
     {
-        if (towerPositions.ContainsKey(position) && towerPositions[position].ContainsKey(towerType))
-        {
-            towerPositions[position].Remove(towerType);
-        }
+        towerPositions[position] = null;
     }
-    private bool IsPositionOccupied(Vector3 position, string towerType)
+    private bool IsPositionOccupied(int position)
     {
-        if (towerPositions.ContainsKey(position))
-        {
-            return towerPositions[position].ContainsKey(towerType);
-        }
-        return false;
+        return towerPositions[position] != null;
     }
 
-    private void UpdateTowerPosition(Vector3 position, string towerType)
+    private void UpdateTowerPosition(int position)
     {
-        if (!towerPositions.ContainsKey(position))
-        {
-            towerPositions[position] = new Dictionary<string, string>();
-        }
-        towerPositions[position][towerType] = "occupied";
+        towerPositions[position] = "occupied";
     }
 }
