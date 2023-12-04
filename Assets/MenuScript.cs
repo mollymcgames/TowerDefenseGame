@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
-
     public void RetryGame()
     {
         // Load the game scene
@@ -57,5 +56,16 @@ public class MenuScript : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("Menu");
+    }
+
+    public void NewGame()
+    {
+        //Delete all the player prefs related to stored levels
+        PlayerPrefs.DeleteKey("Test_Completed");
+        PlayerPrefs.DeleteKey("LevelTwo_Completed");
+        PlayerPrefs.DeleteKey("LevelThree_Completed");
+        PlayerPrefs.DeleteKey("LevelFour_Completed");
+
+        Debug.Log("New Game Started. All completion data has been reset.");
     }
 }

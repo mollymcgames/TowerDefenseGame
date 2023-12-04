@@ -96,6 +96,10 @@ public class WaveController : MonoBehaviour
                 enemySpawner.StopSpawning(); //Stop spawning enemies
             }
             yield return new WaitUntil(() => activeEnemies.Count == 0); //Wait until all enemies are dead
+
+            //Save the level completion immediately after the last enemy is killed
+            SetLevelCompleted(SceneManager.GetActiveScene().name); //Set the level to completed
+            
             //Click Continue to start the next wave 
             continueButton.gameObject.SetActive(true); // Show the continue button in the UI
 
@@ -150,6 +154,11 @@ public class WaveController : MonoBehaviour
                     break;
             }
         }        
+    }
+
+    private void SetLevelCompleted(string levelName)
+    {
+        PlayerPrefs.SetInt(levelName + "_Completed", 1); //Set the level to completed
     }
 
     private bool continueButtonClicked = false;
