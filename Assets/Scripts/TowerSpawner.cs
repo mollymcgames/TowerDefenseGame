@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using NUnit.Framework.Internal;
 
 [System.Serializable]
 public class TowerInfo
@@ -11,18 +12,12 @@ public class TowerInfo
     public TextMeshProUGUI towerCountText;
     public Button towerButton;
 
-    [SerializeField] private int maxTowersPerTower;
-    public int MaxTowerPerTower { get { return maxTowersPerTower; } }
-
-    // //Individual counts for each tower prefab 
-    public int currentTowers;
+    public int cost; // The cost of the tower
 }
 
 public class TowerSpawner : MonoBehaviour
 {
     public List<TowerInfo> towerInfos;
-    public int maxTowers = 3;
-    private int currentTowers = 0;
 
     public TextMeshProUGUI towerArcherCountText;
 
@@ -36,8 +31,6 @@ public class TowerSpawner : MonoBehaviour
 
     void Start()
     {
-        UpdateTowerCountText();
-
         foreach (var towerInfo in towerInfos)
         {
             towerInfo.towerButton.onClick.AddListener(() => SwitchTower(towerInfo));
@@ -46,7 +39,7 @@ public class TowerSpawner : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && (towerInfos[currentTowerIndex].currentTowers < towerInfos[currentTowerIndex].MaxTowerPerTower))
+        if (Input.GetMouseButtonDown(0))
         {
             if (moneyCounter.CanAfford(1))
             {
@@ -60,9 +53,7 @@ public class TowerSpawner : MonoBehaviour
                     {
                         Instantiate(towerInfos[currentTowerIndex].towerPrefab, worldPosition, Quaternion.identity);
                         UpdateTowerPosition(worldPosition, towerInfos[currentTowerIndex].towerPrefab.name);
-                        towerInfos[currentTowerIndex].currentTowers++;
-                        UpdateTowerCountText();
-                        moneyCounter.SubtractMoney(1);
+                        moneyCounter.SubtractMoney(towerInfos[currentTowerIndex].cost); //deduct specicifc tower cost
                         break;
                     }
                 }
@@ -74,14 +65,6 @@ public class TowerSpawner : MonoBehaviour
         }
     }
 
-    private void UpdateTowerCountText()
-    {
-        foreach (var towerInfo in towerInfos)
-        {
-            int remainingTowers = towerInfo.MaxTowerPerTower - towerInfo.currentTowers;
-            towerInfo.towerCountText.text = remainingTowers.ToString();
-        }
-    }
 
     private void SwitchTower(TowerInfo selectedTower)
     {
