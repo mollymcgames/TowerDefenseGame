@@ -1300,6 +1300,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZombieMan
       objectReference: {fileID: 0}
+    - target: {fileID: 1998194639739489471, guid: 0651ce8fc41958c44963d986a74e5990, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2092388091364772342, guid: 0651ce8fc41958c44963d986a74e5990, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -3049,17 +3053,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307454682}
   m_CullTransparentMesh: 1
---- !u!114 &1333828172 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6559340897733022371, guid: d239357874440f947bdf8ff04e684bfc, type: 3}
-  m_PrefabInstance: {fileID: 3280004414019813936}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1336093397
 GameObject:
   m_ObjectHideFlags: 0
@@ -30575,14 +30568,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knight
       objectReference: {fileID: 0}
-    - target: {fileID: 7220450581003420860, guid: d239357874440f947bdf8ff04e684bfc, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7220450581003420860, guid: d239357874440f947bdf8ff04e684bfc, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8783593634671503773, guid: d239357874440f947bdf8ff04e684bfc, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -30627,10 +30612,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8797983293929795935, guid: d239357874440f947bdf8ff04e684bfc, type: 3}
-      propertyPath: slider
-      value: 
-      objectReference: {fileID: 1333828172}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
