@@ -9,6 +9,10 @@ public class KnightController : MonoBehaviour
 
     private Animator anim;
     [SerializeField] private float speed; //The speed of the knight
+
+    private float attackTime = 0.3f; //The time it takes to attack
+    private float attackTimeCounter = 0.3f; //The time it takes to attack
+    private bool isAttacking; //Check if the knight is attacking
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +34,24 @@ public class KnightController : MonoBehaviour
         {
             anim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal")); //Set the lastMoveX parameter in the animator
             anim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical")); //Set the lastMoveY parameter in the animator
+        }
+
+        if(isAttacking)
+        {
+            rb.velocity = Vector2.zero; //Set the velocity to zero
+            attackTimeCounter -= Time.deltaTime; //Decrement the attack time counter
+            if(attackTimeCounter <= 0)
+            {
+                anim.SetBool("isAttacking", false); //Set the isAttacking parameter in the animator
+                isAttacking = false; //Set isAttacking to false
+            }
+        }
+
+        if(Input.GetMouseButton(0)) //check for left click
+        {
+            attackTimeCounter = attackTime; //make sure when we swing sword, it's not instant
+            anim.SetBool("isAttacking", true); //Set the isAttacking parameter in the animator
+            isAttacking = true; //Set isAttacking to true
         }
     }
 }
