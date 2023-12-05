@@ -18,7 +18,10 @@ public class KnightController : MonoBehaviour
 
     void Update()
     {
-        rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * Time.deltaTime; //Get the input from the keyboard and move the knight
+        // rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * Time.deltaTime; //Get the input from the keyboard and move the knight
+
+
+        rb.velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized * speed;   //don't need to use normalized if you don't want to
 
         anim.SetFloat("moveX", rb.velocity.x); //Set the moveX parameter in the animator
         anim.SetFloat("moveY", rb.velocity.y); //Set the moveY parameter in the animator
