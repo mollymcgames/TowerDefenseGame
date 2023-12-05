@@ -843,6 +843,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 121383852625201397, guid: db61c7ab22cb6144098d6c349ed304c2, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1741366020896420440, guid: db61c7ab22cb6144098d6c349ed304c2, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -894,6 +898,10 @@ PrefabInstance:
     - target: {fileID: 3910589054544717632, guid: db61c7ab22cb6144098d6c349ed304c2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951064839998583968, guid: db61c7ab22cb6144098d6c349ed304c2, type: 3}
+      propertyPath: m_Mass
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 9064619126924730254, guid: db61c7ab22cb6144098d6c349ed304c2, type: 3}
       propertyPath: m_Name
@@ -1299,22 +1307,6 @@ PrefabInstance:
     - target: {fileID: 1607208529561209343, guid: 0651ce8fc41958c44963d986a74e5990, type: 3}
       propertyPath: m_Name
       value: ZombieMan
-      objectReference: {fileID: 0}
-    - target: {fileID: 1998194639739489471, guid: 0651ce8fc41958c44963d986a74e5990, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092388091364772342, guid: 0651ce8fc41958c44963d986a74e5990, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092388091364772342, guid: 0651ce8fc41958c44963d986a74e5990, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8631620361530875102, guid: 0651ce8fc41958c44963d986a74e5990, type: 3}
-      propertyPath: m_Mass
-      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8779941759918479512, guid: 0651ce8fc41958c44963d986a74e5990, type: 3}
       propertyPath: m_RootOrder
@@ -1735,6 +1727,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1098269454855079799, guid: 89140a83874a18c42b74fa0a0551185c, type: 3}
+      propertyPath: m_Mass
+      value: 1100
+      objectReference: {fileID: 0}
     - target: {fileID: 3311450265585854099, guid: 89140a83874a18c42b74fa0a0551185c, type: 3}
       propertyPath: m_Name
       value: AncientSkeleton

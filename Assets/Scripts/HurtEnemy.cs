@@ -20,21 +20,14 @@ public class HurtEnemy : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
-            // Destroy(other.gameObject);
 
             EnemyHealthManager enemyHealthManager = other.GetComponent<EnemyHealthManager>();
 
-            // EnemyHealthZombie enemyHealthManager = other.GetComponent<EnemyHealthZombie>();
-
             if (enemyHealthManager != null)
             {
-                enemyHealthManager.TakeDamage(5);
+                enemyHealthManager.TakeDamage(2);
                 Debug.Log("Damage dealt!");
             }
-            // else
-            // {
-            //     Debug.LogWarning("EnemyHealthZombie component not found!");
-            // }
         }
     }
 }
