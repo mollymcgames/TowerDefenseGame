@@ -22,5 +22,11 @@ public class KnightController : MonoBehaviour
 
         anim.SetFloat("moveX", rb.velocity.x); //Set the moveX parameter in the animator
         anim.SetFloat("moveY", rb.velocity.y); //Set the moveY parameter in the animator
+
+        if(Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
+        {
+            anim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal")); //Set the lastMoveX parameter in the animator
+            anim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical")); //Set the lastMoveY parameter in the animator
+        }
     }
 }
