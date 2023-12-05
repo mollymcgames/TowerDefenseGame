@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7525248952333990834}
   - component: {fileID: 5812516109523695535}
   - component: {fileID: 8305683934008229956}
+  - component: {fileID: 1533951477122249081}
   m_Layer: 10
   m_Name: ZombieMan
   m_TagString: Enemy
@@ -37,7 +38,7 @@ Transform:
   m_Children:
   - {fileID: 4937656788698091115}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3753921999732216298
 SpriteRenderer:
@@ -149,7 +150,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -238,6 +239,18 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1533951477122249081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607208529561209343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b81a0863e757148a76197f85a88a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1912764451685581326
 GameObject:
   m_ObjectHideFlags: 0
