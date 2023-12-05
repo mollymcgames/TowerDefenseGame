@@ -47,7 +47,7 @@ public class KnightController : MonoBehaviour
             }
         }
 
-        if(Input.GetMouseButton(0)) //check for left click
+        if(Input.GetMouseButton(1)) //check for right mouse button click
         {
             attackTimeCounter = attackTime; //make sure when we swing sword, it's not instant
             anim.SetBool("isAttacking", true); //Set the isAttacking parameter in the animator
