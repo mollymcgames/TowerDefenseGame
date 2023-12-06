@@ -25,10 +25,10 @@ public class TowerSpawner : MonoBehaviour
 
     public int currentTowerIndex = 0;
 
-    // private Dictionary<Vector3, Dictionary<string, string>> towerPositions = new Dictionary<Vector3, Dictionary<string, string>>();
-
     private string[] towerPositions = null;
     public MoneyCounter moneyCounter;
+
+    [SerializeField] private AudioSource placeTowerSoundEffect;
 
     void Start()
     {
@@ -58,6 +58,7 @@ public class TowerSpawner : MonoBehaviour
                     Instantiate(towerInfos[currentTowerIndex].towerPrefab, worldPosition, Quaternion.identity);
                     UpdateTowerPosition(positionNumber);
                     moneyCounter.SubtractMoney(towerInfos[currentTowerIndex].cost); //deduct specicifc tower cost
+                    placeTowerSoundEffect.Play(); //play the sound effect
                 }
                 else
                 {
@@ -83,7 +84,7 @@ public class TowerSpawner : MonoBehaviour
             }
             positionNumber++;
         }
-        return -1;
+        return -1; //no position found
     }
 
     private void SwitchTower(TowerInfo selectedTower)
