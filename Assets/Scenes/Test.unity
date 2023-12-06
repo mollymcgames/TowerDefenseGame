@@ -3141,7 +3141,7 @@ MonoBehaviour:
   - towerPrefab: {fileID: 1990585967791283988, guid: 19921dcf0a2385a45b493f2155133759, type: 3}
     towerCountText: {fileID: 1410008000}
     towerButton: {fileID: 1722163459}
-    cost: 0
+    cost: 1
   - towerPrefab: {fileID: 2641895231052056892, guid: 701a45e81e9797c4a83c9a3533483bf1, type: 3}
     towerCountText: {fileID: 970311657}
     towerButton: {fileID: 1926014456}
@@ -3467,7 +3467,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: "\xA31"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

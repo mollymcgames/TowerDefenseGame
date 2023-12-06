@@ -2803,7 +2803,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA30"
+  m_text: "\xA31"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3547,7 +3547,7 @@ MonoBehaviour:
   - towerPrefab: {fileID: 1990585967791283988, guid: 19921dcf0a2385a45b493f2155133759, type: 3}
     towerCountText: {fileID: 1124612491}
     towerButton: {fileID: 562433262}
-    cost: 0
+    cost: 1
   - towerPrefab: {fileID: 1718041629675340823, guid: efec95d96409418419debbfda15c577e, type: 3}
     towerCountText: {fileID: 913831451}
     towerButton: {fileID: 1222712125}
