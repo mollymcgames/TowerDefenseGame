@@ -1,24 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemySpawnKnight : MonoBehaviour
 {
 
     public GameObject knightPrefab;
+    public GameObject redKnightPrefab;
+
+    public Button knightButton;
+    public Button redKnightButton;
+
     // Start is called before the first frame update
     void Start()
     {
-        SpawnEnemy();   
+
+        //Add click listeners to the buttons
+        knightButton.onClick.AddListener(SpawnKnight);
+        redKnightButton.onClick.AddListener(SpawnRedKnight);
+
     }
 
-    void SpawnEnemy()
+    void SpawnKnight()
     {
         //Sample a valid position on the Navmesh
         Vector3 spawnPosition = GetRandomNavMeshPosition();
 
         Instantiate(knightPrefab, spawnPosition, Quaternion.identity);
+    }
+
+    void SpawnRedKnight()
+    {
+        //Sample a valid position on the Navmesh
+        Vector3 spawnPosition = GetRandomNavMeshPosition();
+
+        Instantiate(redKnightPrefab, spawnPosition, Quaternion.identity);
     }
 
         Vector3 GetRandomNavMeshPosition()
