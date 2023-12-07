@@ -303,7 +303,7 @@ MonoBehaviour:
   energyBallPrefab: {fileID: 2238613717627653718, guid: 7978a9ebd174a7144a2d3013f1c2d1b8, type: 3}
   firePoint: {fileID: 6585876817723744024}
   targetWaypoint: {fileID: 0}
-  fireRate: 0.5
+  fireRate: 0.4
   energyBallSpeed: 12
   firingRange: 9
   activeEnergyBalls: []
