@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.WSA;
 
 public class TowerArcher : MonoBehaviour
 {
@@ -17,10 +18,19 @@ public class TowerArcher : MonoBehaviour
     private List<GameObject> activeArrows = new List<GameObject>(); // List to hold active arrows
     private bool shouldFire = true; // A flag to determine if the tower should fire
 
+    public LauncherWeapon launcherWeapon; // Reference to the LauncherWeapon script
+
     // Start is called before the first frame update
     void Start()
     {
         timeUntilFire = 0f; // Set the timer to the fire rate
+
+        // Manually assign the launcherWeapon reference
+        launcherWeapon = GetComponentInChildren<LauncherWeapon>();
+        if (launcherWeapon == null)
+        {
+            Debug.LogError("LauncherWeapon script not found on the same GameObject!");
+        }
     }
 
     // Update is called once per frame
@@ -81,7 +91,12 @@ public class TowerArcher : MonoBehaviour
         if (closestEnemy != null)
         {
             NavMeshAgent enemyAgent = closestEnemy.GetComponent<NavMeshAgent>();
+            launcherWeapon.PlayAttackAnimation();
             ShootArrow(enemyAgent);
+        }
+        else
+        {
+            launcherWeapon.PlayIdleAnimation();
         }
     }
 
