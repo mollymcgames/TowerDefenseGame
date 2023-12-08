@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.WSA;
 
-public class RedMoonTower : MonoBehaviour
+public class LauncherTower : MonoBehaviour
 {
     public GameObject energyBallPrefab; // Add the energy ball prefab here
     public Transform firePoint; // An empty game object as the fire point to assign in the inspector
@@ -18,10 +18,19 @@ public class RedMoonTower : MonoBehaviour
     public List<GameObject> activeEnergyBalls = new List<GameObject>(); // List to hold active arrows
     private bool shouldFire = true; // A flag to determine if the tower should fire
 
+    public LauncherWeapon launcherWeapon; // Reference to the LauncherWeapon script
+
     // Start is called before the first frame update
     void Start()
     {
-        timeUntilFire = 0f; // Set the timer to the fire rate  
+        timeUntilFire = 0f; // Set the timer to the fire rate
+
+        // Manually assign the launcherWeapon reference
+        launcherWeapon = GetComponentInChildren<LauncherWeapon>();
+        if (launcherWeapon == null)
+        {
+            Debug.LogError("LauncherWeapon script not found on the same GameObject!");
+        }        
     }
 
     // Update is called once per frame
@@ -82,7 +91,12 @@ public class RedMoonTower : MonoBehaviour
         if (closestEnemy != null)
         {
             NavMeshAgent enemyAgent = closestEnemy.GetComponent<NavMeshAgent>();
+            launcherWeapon.PlayAttackAnimation();
             ShootEnergyBall(enemyAgent);
+        }
+        else
+        {
+            launcherWeapon.PlayIdleAnimation();
         }
     }
 
