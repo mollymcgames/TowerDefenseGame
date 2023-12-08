@@ -961,7 +961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4747675115805262153, guid: 30fa27029cdb4724c81b0b333e0d02e1, type: 3}
       propertyPath: m_Name
-      value: LauncherWeapon (1)
+      value: LauncherWeapon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
