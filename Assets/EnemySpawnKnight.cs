@@ -23,6 +23,10 @@ public class EnemySpawnKnight : MonoBehaviour
 
     private bool buttonVisible = false;
 
+    public LauncherWeapon launcherWeapon;
+
+    private bool attackAnimationPlayed = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +37,22 @@ public class EnemySpawnKnight : MonoBehaviour
 
         UpdateCountText();
         UpdateButtonInteractable();
+
+        // Manually assign the launcherWeapon reference
+        launcherWeapon = GetComponentInChildren<LauncherWeapon>();
+        if (launcherWeapon == null)
+        {
+            Debug.LogError("LauncherWeapon script not found on the same GameObject!");
+        }
+
+    }
+
+    IEnumerator PlayAttackAnimation(float duration)
+    {
+        launcherWeapon.PlayAttackAnimation();
+        yield return new WaitForSeconds(duration);
+        attackAnimationPlayed = false;
+        launcherWeapon.PlayIdleAnimation();
 
     }
 
@@ -49,6 +69,9 @@ public class EnemySpawnKnight : MonoBehaviour
             knightCount--;
             UpdateCountText();
             UpdateButtonInteractable();
+
+            StartCoroutine(PlayAttackAnimation(1f));
+            
         }
 
     }
@@ -66,6 +89,10 @@ public class EnemySpawnKnight : MonoBehaviour
             redKnightCount--;
             UpdateCountText();
             UpdateButtonInteractable();
+            
+            launcherWeapon.PlayAttackAnimation();
+
+            StartCoroutine(PlayAttackAnimation(1f));
         }
     }
 
