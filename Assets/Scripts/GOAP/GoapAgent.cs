@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-
+using System;
 public class SubGoal {
 
     // Dictionary to store our goals
@@ -40,6 +40,8 @@ public class GoapAgent : MonoBehaviour {
     
     SubGoal currentGoal;
 
+    GameObject targetOfInterest;
+
     // Start is called before the first frame update
     public void Start() 
     {
@@ -50,21 +52,37 @@ public class GoapAgent : MonoBehaviour {
     }
 
     bool invoked = false;
+
     void CompleteAction()
     {
-        Debug.Log("Completing action: "+currentAction.actionName);
+        Debug.Log("Agent: ["+currentAction.actionName+"] Completing action.");
         currentAction.running = false;
         currentAction.PostPerform();
-        invoked = false;        
+        invoked = false;
+
+        // Sometimes an action can say, it's time to replan!
+        if ( currentAction.replan )
+        {
+            currentAction.replan = false; // Don't want to go into a tailspin either!
+            ResetPlan();
+        }
+    }
+
+    void RunAction()
+    {
+        Debug.Log("Agent: ["+currentAction.actionName+"] Doing action: "+currentAction.actionName);
+        currentAction.running = true;
+        currentAction.DoAction();
     }
 
 
     public void ResetPlan()
     {
-        Debug.Log("Resetting entire plan!");
-        CompleteAction();
+        Debug.Log("Agent: ["+currentAction.actionName+"] Resetting entire plan!");
+        currentAction.replan = false;
         planner = null;
         actionQueue = null;
+        CompleteAction();
     }
 
     // LateUpdate is called once per frame
@@ -79,29 +97,63 @@ public class GoapAgent : MonoBehaviour {
         * 4. 
         */
 
-
         // Check if there's a current action that is running....
         if ( currentAction != null && currentAction.running)
         {
-            Debug.Log("Checking running action: "+currentAction.actionName);
+            Debug.Log("Agent: ["+currentAction.actionName+"] Checking running action.");
 
-            // This is important so that agent MOVES TOWARDS THE GOAL
-            float distanceToTarget = Vector3.Distance(currentAction.target.transform.position, this.transform.position);
+            // This is important so that agent MOVES TOWARDS THE GOAL            
+            float distanceToTarget;
+            try 
+            {
+                distanceToTarget = Vector3.Distance(currentAction.target.transform.position, this.transform.position);
+            } 
+            catch (Exception e) 
+            {
+                // Stop everything, a target just went out of scope!!!
+                distanceToTarget = 1000.0f;
+                currentAction.running = false;
+                currentAction.replan = false;
+                planner = null;
+                actionQueue = null;
+                // Invoke("CompleteAction", 0.1f);
+                // continue;
+            }
             
             // Is the enemy at it's destination yet?
-            if ( currentAction.agent.hasPath && distanceToTarget < 1.5f)
+            if ( currentAction.actionType == ActionType.doSomething)
             {
-                Debug.Log("This action has now completed! ["+currentAction.actionName+"]");
+                Debug.Log("Agent: ["+currentAction.actionName+"] This \"doSomething\" action is now happening.");
+                if (!invoked)
+                {
+                    // This runs the method that does a doSomething action!
+                    Invoke("RunAction", 0.01f);
+                    // This runs the method that wraps up the action AFTER the action's duration has expired.
+                    // Invoke("CompleteAction", currentAction.duration);
+                    invoked = true;
+                }
+            }
+            else if ( currentAction.actionType == ActionType.goSomewhere && currentAction.agent.hasPath && distanceToTarget < currentAction.targetDistance)
+            {
+                Debug.Log("Agent: ["+currentAction.actionName+"] This \"goSomewhere\" action is now finishing up.");
+                targetOfInterest = currentAction.target;
+
                 // Stops an action being invoked twice!
-                if ( !invoked)
+                if (!invoked)
                 {
                     // This runs the method that wraps up the action AFTER the action's duration has expired.
                     Invoke("CompleteAction", currentAction.duration);
                     invoked = true;
                 }
             }
-            else {
-                Debug.Log("Running action too far away from target still: "+currentAction.actionName + " , distance="+distanceToTarget);
+            else if ( currentAction.replan )
+            {
+                currentAction.replan = false;
+                ResetPlan();
+            }
+            else 
+            {
+                Debug.Log("Agent: ["+currentAction.actionName+"] Running action too far away from target still , distance="+distanceToTarget);
             }
             return;
         }
@@ -116,7 +168,7 @@ public class GoapAgent : MonoBehaviour {
             foreach(KeyValuePair<SubGoal,int> sg in sortedGoals)
             {
                 // No agent beliefs, just use the world goals
-                actionQueue = planner.plan(actions, sg.Key.subGoals, beliefs);
+                actionQueue = planner.plan(actions, sg.Key.subGoals, beliefs, actions.First().actionName);
                 if ( actionQueue != null)
                 {
                     currentGoal = sg.Key;
@@ -142,9 +194,14 @@ public class GoapAgent : MonoBehaviour {
             currentAction = actionQueue.Dequeue();
             if ( currentAction.PrePerform())
             {
-                if ( currentAction.target == null && currentAction.targetTag != "")
+                if ( currentAction.actionType == ActionType.doSomething ) 
                 {
-                    Debug.Log("Doing action. Going to target tag: "+currentAction.targetTag);
+                    currentAction.target = targetOfInterest;
+                    Debug.Log("Agent: ["+currentAction.actionName+"] Doing action against this target: "+currentAction.target);                    
+                }
+                else if ( currentAction.target == null && currentAction.targetTag != "")
+                {
+                    Debug.Log("Agent: ["+currentAction.actionName+"] Action, going to target tag: "+currentAction.targetTag);
                     currentAction.target = GameObject.FindWithTag(currentAction.targetTag);
                 }
 
@@ -163,5 +220,3 @@ public class GoapAgent : MonoBehaviour {
         }
     }
 }
-
-

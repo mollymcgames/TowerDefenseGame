@@ -3,8 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+public enum ActionType
+{
+    doSomething,
+    goSomewhere
+}
+
 public abstract class GoapAction : MonoBehaviour
 {
+    public ActionType actionType = ActionType.goSomewhere;
+
     public string actionName = "Action";
     
     public float cost = 1.0f;
@@ -12,6 +20,9 @@ public abstract class GoapAction : MonoBehaviour
     // The target upon which this Action take's affect
     public GameObject target;    
     
+    // This defines how far away from the target we want the action's object to be from the target before the action is "done".
+    public float targetDistance = 1.5f;
+
     [SerializeField] public string targetTag;
     // How long the action should run for
     public float duration = 0.0f;
@@ -44,6 +55,10 @@ public abstract class GoapAction : MonoBehaviour
 
     // A little flag that indicates if this particular Action is running.
     public bool running = false;
+
+    // A little flag that indicates if this particular Action is saying, enough's enough, time to replan!
+    public bool replan = false;
+
 
     public GoapAction()
     {
@@ -98,4 +113,6 @@ public abstract class GoapAction : MonoBehaviour
 
     public abstract bool PrePerform();
     public abstract bool PostPerform();
+
+    public virtual void DoAction() {}
 }

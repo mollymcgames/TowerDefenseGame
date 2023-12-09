@@ -55,6 +55,14 @@ public class Node
 // This class is the planner itself, and works out what Actions should be in Queue for the Enemy to work through.
 public class GoapPlanner
 {
+    public string planName = "default";
+
+    public Queue<GoapAction> plan(List<GoapAction> actions, Dictionary<string, int> enemyGoal, WorldStates worldBeliefStates, string planName)
+    {
+        this.planName = planName;
+        return plan(actions, enemyGoal, worldBeliefStates);
+    }
+
     public Queue<GoapAction> plan(List<GoapAction> actions, Dictionary<string, int> enemyGoal, WorldStates worldBeliefStates)
     {
         List<GoapAction> usableActions = new List<GoapAction>();
@@ -80,7 +88,7 @@ public class GoapPlanner
 
         if ( !success)
         {
-            Debug.Log("NO PLAN FOUND!");
+            Debug.Log("["+planName+"] NO PLAN FOUND!");
             return null;
         }
 
@@ -125,11 +133,11 @@ public class GoapPlanner
             queue.Enqueue(a);            
         }
 
-        Debug.Log("We have a plan.  These are the queue steps: ");
+        Debug.Log("We have a plan ["+planName+"] These are the queue steps: ");
         int step = 1;
         foreach (GoapAction a in queue) 
         {
-            Debug.Log("Queue step ["+ step++ +"]: "+a.actionName);
+            Debug.Log("["+planName+"] Queue step ["+ step++ +"]: "+a.actionName);
         }
 
         return queue;

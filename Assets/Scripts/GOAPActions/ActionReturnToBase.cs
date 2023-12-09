@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class ActionReturnToBase : GoapAction
 {
-    EnemyController zmc;
+    RedKnightController rnc;
 
     EnemyHealthManager ehm;
 
@@ -13,15 +13,9 @@ public class ActionReturnToBase : GoapAction
     public override bool PrePerform()
     {
         Debug.Log("ACTION: Returning to base...");
-        // zmc = gameObject.GetComponent<EnemyController>();   // gets component from -this- gameobject
-        // zmc.SetTarget(targetTag);
 
-        // // Make the enemy go a little slower too, after all, they are injured!
-        // zmc.UpdateSpeed(2.0f);
-        // // zmc.UpdateStoppingDistance(0.1f);
-
-        // // To be realistic, the enemy needs to loiter at the health base for a second!
-        // duration = 0.5f;
+        rnc = gameObject.GetComponent<RedKnightController>();   // gets component from -this- gameobject
+        rnc.SetTarget(rnc.GetOriginalSpawnLocation());       
 
         return true;
     }
@@ -29,6 +23,7 @@ public class ActionReturnToBase : GoapAction
     public override bool PostPerform()
     {        
         Debug.Log("ACTION: Returned to base...");
+        replan = true;  
         return true;
     }
 

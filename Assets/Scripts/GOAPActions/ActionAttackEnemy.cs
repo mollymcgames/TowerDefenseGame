@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,23 +6,17 @@ using UnityEngine.AI;
 
 public class ActionAttackEnemy : GoapAction
 {
-    EnemyController zmc;
+    RedKnightController rnc;
 
     EnemyHealthManager ehm;
 
-
     public override bool PrePerform()
     {
-        Debug.Log("ACTION: Attacking an enemy...");
-        // zmc = gameObject.GetComponent<EnemyController>();   // gets component from -this- gameobject
-        // zmc.SetTarget(targetTag);
+        Debug.Log("ACTION: About to attack an enemy...");
+        actionType = ActionType.doSomething;
 
-        // // Make the enemy go a little slower too, after all, they are injured!
-        // zmc.UpdateSpeed(2.0f);
-        // // zmc.UpdateStoppingDistance(0.1f);
-
-        // // To be realistic, the enemy needs to loiter at the health base for a second!
-        // duration = 0.5f;
+        // Once the target is found, we want to attack quickly!
+        duration = 0f;
 
         return true;
     }
@@ -29,7 +24,45 @@ public class ActionAttackEnemy : GoapAction
     public override bool PostPerform()
     {        
         Debug.Log("ACTION: Enemy dead...");
+        rnc = GetRedKnightController();
+        rnc.StopAttack();
+        // replan = true;
         return true;
+    }
+
+    private RedKnightController GetRedKnightController()
+    {
+        return gameObject.GetComponent<RedKnightController>();   // gets component from -this- gameobject
+    }
+
+    public override void DoAction()
+    {
+        Debug.Log("ACTION: Attacking an enemy...");        
+        base.DoAction();
+        rnc = GetRedKnightController();  // gets component from -this- gameobject
+        try 
+        {
+            ehm = rnc.targetWaypoint.gameObject.GetComponent<EnemyHealthManager>(); // we need to know our enemy's health...
+        }
+        catch ( Exception e) 
+        {
+            // Of course, if the enemy dies....it won't be found, so time to bail!!
+            return;
+        }
+       
+        // Keep on attacking until enemy is dead!!
+        if ( ehm.currentHealth >= 0 )
+        {
+            Debug.Log("ACTION: Enemy health before: "+ehm.currentHealth);
+            rnc.InitiateAttack();            
+            Debug.Log("ACTION: Enemy health after: "+ehm.currentHealth);
+            Invoke("DoAction",0.75f);
+        }
+        else
+        {
+            rnc.StopAttack();
+            replan = true;
+        }
     }
 
 }

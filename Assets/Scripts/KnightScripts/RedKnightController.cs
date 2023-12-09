@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,9 @@ public class RedKnightController : MonoBehaviour
     private Animator anim;
     [SerializeField] private float speed; //The speed of the knight
 
-    [SerializeField] private Transform targetWaypoint; //The waypoint the enemy is moving towards
+    [SerializeField] public Transform targetWaypoint; //The waypoint the enemy is moving towards
+
+    private Transform originalSpawnLocation;
 
     private float attackTime = 0.3f; //The time it takes to attack
     private float attackTimeCounter = 0.3f; //The time it takes to attack
@@ -38,7 +41,7 @@ public class RedKnightController : MonoBehaviour
         anim.SetFloat("moveY", normalizedVelocity.y); //Set the moveY parameter in the animator
 
 
-        if(agent.velocity.magnitude == 0)
+        if (agent.velocity.magnitude == 0)
         {
             anim.SetBool("isMoving", false); // Set isMoving to false to stop the animation
         }
@@ -53,24 +56,22 @@ public class RedKnightController : MonoBehaviour
             anim.SetFloat("lastMoveY", agent.velocity.y); //Set the lastMoveY parameter in the animator
         }
 
-        if(isAttacking)
+        if (isAttacking)
         {
             rb.velocity = Vector2.zero; //Set the velocity to zero
             attackTimeCounter -= Time.deltaTime; //Decrement the attack time counter
-            if(attackTimeCounter <= 0)
+            if (attackTimeCounter <= 0)
             {
                 anim.SetBool("isAttacking", false); //Set the isAttacking parameter in the animator
                 isAttacking = false; //Set isAttacking to false
             }
         }
 
-        //check if an enemy is in close range and initiate attack
-        if (IsEnemyInCloseRange() && !isAttacking)
-        {
-            attackTimeCounter = attackTime; //make sure when we swing sword, it's not instant
-            anim.SetBool("isAttacking", true); //Set the isAttacking parameter in the animator
-            isAttacking = true; //Set isAttacking to true
-        }
+        // //check if an enemy is in close range and initiate attack
+        // if (IsEnemyInCloseRange() && !isAttacking)
+        // {
+        //     InitiateAttack();
+        // }
 
         //check if the attack animation is playing
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
@@ -84,13 +85,42 @@ public class RedKnightController : MonoBehaviour
         }
     }
 
+    public void InitiateAttack()
+    {
+        attackTimeCounter = attackTime; //make sure when we swing sword, it's not instant
+        anim.SetBool("isAttacking", true); //Set the isAttacking parameter in the animator
+        isAttacking = true; //Set isAttacking to true
+    }
+
+    public void StopAttack()
+    {
+        anim.SetBool("isAttacking", false); //Set the isAttacking parameter in the animator
+        attackTimeCounter = 0;
+        isAttacking = false;
+    }
 
     public void SetTarget(GameObject inputTargetWaypoint)
     {
-        // Set the targetWaypoint to the desired Vector3 position
-        targetWaypoint = inputTargetWaypoint.transform;
+        // Set the targetWaypoint to the desired position
+        try 
+        {
+            targetWaypoint = inputTargetWaypoint.transform;
+        }
+        catch (Exception e)
+        {};
     }
     
+    public void SetTarget(Transform inputTargetWaypoint)
+    {
+        // Set the targetWaypoint to the desired position
+        try 
+        {
+            targetWaypoint = inputTargetWaypoint;
+        }
+        catch (Exception e)
+        {};
+    }
+
     void MoveToTargetWaypoint()
     {
         FollowWaypoint(targetWaypoint);
@@ -124,4 +154,9 @@ public class RedKnightController : MonoBehaviour
         }
         return false;
     }    
+
+    public Transform GetOriginalSpawnLocation() 
+    {
+        return originalSpawnLocation;
+    }
 }

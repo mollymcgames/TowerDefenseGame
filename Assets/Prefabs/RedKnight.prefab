@@ -397,7 +397,6 @@ GameObject:
   - component: {fileID: 5732574387866246232}
   - component: {fileID: 7370291278616656346}
   - component: {fileID: 8014893875106736608}
-  - component: {fileID: 6925558762775144176}
   - component: {fileID: 6715759012883310226}
   m_Layer: 0
   m_Name: RedKnight
@@ -650,9 +649,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a1139847bdaedf4cb1065c5d9aac5e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actionType: 1
   actionName: Action go to enemy
   cost: 1
   target: {fileID: 0}
+  targetDistance: 1.5
   targetTag: 
   duration: 0
   preConditionsWorldState: []
@@ -661,31 +662,7 @@ MonoBehaviour:
     value: 0
   agent: {fileID: 0}
   running: 0
---- !u!114 &6925558762775144176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1626332177831910372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3064c1f4fb9df38469cf29bf457f7555, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionName: Action return to base
-  cost: 1
-  target: {fileID: 0}
-  targetTag: 
-  duration: 0
-  preConditionsWorldState:
-  - key: enemyIsDead
-    value: 0
-  afterEffectsWorldState:
-  - key: isBackAtBase
-    value: 0
-  agent: {fileID: 0}
-  running: 0
+  replan: 0
 --- !u!114 &6715759012883310226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -698,9 +675,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8f2946617a79b14caef0e8a4fce4773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actionType: 1
   actionName: Action attack enemy
   cost: 1
   target: {fileID: 0}
+  targetDistance: 1.5
   targetTag: 
   duration: 0
   preConditionsWorldState:
@@ -711,6 +690,7 @@ MonoBehaviour:
     value: 0
   agent: {fileID: 0}
   running: 0
+  replan: 0
 --- !u!1 &1879429763169994924
 GameObject:
   m_ObjectHideFlags: 0
