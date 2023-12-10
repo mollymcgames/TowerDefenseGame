@@ -7,6 +7,5 @@ using UnityEngine.UI;
 
 public class ZombieManController : EnemyController
 {
- // Might well have Enemy speicif attributes or methods here in the future
 
 }

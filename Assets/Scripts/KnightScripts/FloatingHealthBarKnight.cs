@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class FloatingHealthBarKnight : MonoBehaviour
 {
-    // Start is called before the first frame update    
-
     [SerializeField] private Slider slider;
     public HealthManager healthManager;
 
@@ -16,7 +14,6 @@ public class FloatingHealthBarKnight : MonoBehaviour
         slider.maxValue = healthManager.maxHealth;
     }
 
-    // Update is called once per frame
     void Update()
     {
         slider.value = healthManager.currentHealth;

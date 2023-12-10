@@ -22,9 +22,6 @@ public class KnightController : MonoBehaviour
 
     void Update()
     {
-        // rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * Time.deltaTime; //Get the input from the keyboard and move the knight
-
-
         rb.velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized * speed;   //don't need to use normalized if you don't want to
 
         anim.SetFloat("moveX", rb.velocity.x); //Set the moveX parameter in the animator
@@ -40,7 +37,7 @@ public class KnightController : MonoBehaviour
         {
             rb.velocity = Vector2.zero; //Set the velocity to zero
             attackTimeCounter -= Time.deltaTime; //Decrement the attack time counter
-            if(attackTimeCounter <= 0)
+            if (attackTimeCounter <= 0)
             {
                 anim.SetBool("isAttacking", false); //Set the isAttacking parameter in the animator
                 isAttacking = false; //Set isAttacking to false

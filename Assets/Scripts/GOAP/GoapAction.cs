@@ -17,34 +17,28 @@ public abstract class GoapAction : MonoBehaviour
     
     public float cost = 1.0f;
     
-    // The target upon which this Action take's affect
+    // The target upon which this Action takes effect
     public GameObject target;    
     
     // This defines how far away from the target we want the action's object to be from the target before the action is "done".
     public float targetDistance = 1.5f;
 
     [SerializeField] public string targetTag;
-    // How long the action should run for
-    public float duration = 0.0f;
+    public float duration = 0.0f;  // How long the action should run for
     
-    // This is an array of mandatory WORLD STATE preconditions that if there, 
+    // This is an array of mandatory world state preconditions that if there, 
     // will make this Action become active/valid.
-    // NOTE: This is here so that they can be configured in the INSPECTOR
     public WorldState[] preConditionsWorldState;
     
-    // And this is an array of WORLD STATES that the world will be in
-    // once this Action has completed.
-    // NOTE: This is here so that they can be configured in the INSPECTOR
+    // This is an array of world states that the world will be in once this Action has completed.
     public WorldState[] afterEffectsWorldState;
     
     public NavMeshAgent agent;
 
     // This is a list of pre conditions that make this Action valid.
-    // NOTE: These remain hidden from the INSPECTOR
     public Dictionary<string, int> preConditions;
 
     // And this is list of post conditions once the Action has run.
-    // NOTE: These remain hidden from the INSPECTOR
     public Dictionary<string, int> afterEffects;
 
     // This is what the "NPC" this Action is attached too believes. Could be 
@@ -53,10 +47,10 @@ public abstract class GoapAction : MonoBehaviour
 
     public WorldStates worldBeliefs;
 
-    // A little flag that indicates if this particular Action is running.
+    // A flag that indicates if this particular Action is running.
     public bool running = false;
 
-    // A little flag that indicates if this particular Action is saying, enough's enough, time to replan!
+    // A flag that indicates if this particular Action is saying, enough's enough, time to replan.
     public bool replan = false;
 
 
@@ -70,7 +64,7 @@ public abstract class GoapAction : MonoBehaviour
     {
         agent = this.gameObject.GetComponent<NavMeshAgent>();
 
-        // Pop any pre conditions configured in the INSPECTOR into our list of pre conditions.
+        // Put any pre conditions configured in the inspector into a list of pre conditions.
         if (preConditionsWorldState != null)
         {
             foreach (WorldState w in preConditionsWorldState)
@@ -79,7 +73,7 @@ public abstract class GoapAction : MonoBehaviour
             }
         }
 
-        // Pop any post conditions configured in the INSPECTOR into our list of pre conditions.
+        // Put any post conditions configured in the inspector into a list of pre conditions.
         if (afterEffectsWorldState != null)
         {
             foreach (WorldState w in afterEffectsWorldState)

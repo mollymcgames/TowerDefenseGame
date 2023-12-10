@@ -20,7 +20,6 @@ public class RedKnightController : MonoBehaviour
     private float attackTime = 0.3f; //The time it takes to attack
     private float attackTimeCounter = 0.3f; //The time it takes to attack
     private bool isAttacking; //Check if the knight is attacking
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>(); //Get the rigidbody component 
@@ -67,12 +66,6 @@ public class RedKnightController : MonoBehaviour
             }
         }
 
-        // //check if an enemy is in close range and initiate attack
-        // if (IsEnemyInCloseRange() && !isAttacking)
-        // {
-        //     InitiateAttack();
-        // }
-
         //check if the attack animation is playing
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
@@ -87,7 +80,7 @@ public class RedKnightController : MonoBehaviour
 
     public void InitiateAttack()
     {
-        attackTimeCounter = attackTime; //make sure when we swing sword, it's not instant
+        attackTimeCounter = attackTime; //wait for counter to be up before attacking
         anim.SetBool("isAttacking", true); //Set the isAttacking parameter in the animator
         isAttacking = true; //Set isAttacking to true
     }
@@ -141,19 +134,6 @@ public class RedKnightController : MonoBehaviour
         }
     }
 
-    bool IsEnemyInCloseRange()
-    {
-        //check if there is a target and is close enough for an attack
-        if (targetWaypoint != null)
-        {
-            float distanceToTarget = Vector2.Distance(transform.position, targetWaypoint.position);
-
-            //desired attack range 
-            float attackRange = 1.0f;
-            return distanceToTarget <= attackRange;
-        }
-        return false;
-    }    
 
     public Transform GetOriginalSpawnLocation() 
     {

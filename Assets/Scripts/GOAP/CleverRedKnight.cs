@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class CleverRedKnight : GoapAgent
 {    
-    // Start is called before the first frame update
     public void Start()
     {
         base.Start();
-        // Create a new subgoal for our Clever Knight!
+        // Create a new subgoal for the Clever Knight
         SubGoal s1 = new SubGoal("enemyIsDead", 1, true);
-        // Add the subgoal as a priority 3 to the goals. Lower numbers are higher priority!
+        // Add the subgoal as a priority 3 to the goals. Lower numbers are higher priority
         goals.Add(s1, 5); 
         // SubGoal s2 = new SubGoal("isBackAtBase", 1, true);
         // goals.Add(s2,3);

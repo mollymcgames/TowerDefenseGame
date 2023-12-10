@@ -87,7 +87,6 @@ public class ProjectileScript : MonoBehaviour
 
     public void DealDamage(GameObject enemy)
     {
-        // GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
         if (enemy != null)
         {
             EnemyHealthZombie enemyHealthManager = enemy.GetComponent<EnemyHealthZombie>();
@@ -96,7 +95,6 @@ public class ProjectileScript : MonoBehaviour
                 enemyHealthManager.TakeDamage(2); // Change the value if needed
             }
 
-            //@TODO: Remove this later as the health managers will merge
             EnemyHealthGoblinRider enemyHealthBat = enemy.GetComponent<EnemyHealthGoblinRider>();
             if (enemyHealthBat != null)
             {

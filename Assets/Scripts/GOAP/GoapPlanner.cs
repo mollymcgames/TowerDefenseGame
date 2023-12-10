@@ -92,9 +92,10 @@ public class GoapPlanner
             return null;
         }
 
-        // Now we need to work through each of the leaves and find the cheapest leaf
-        // Why? Because....then starting from that cheapest leaf we can then work
-        // back up the chain of parent leaves and sum up the total cost.
+
+        // Iterate through each leaf to identify the cheapest leaf.
+        // Then starting from that cheapest leaf, back up the chain of parent leaves and sum up the total cost.
+
         Node cheapest = null;
         foreach (Node leaf in leaves)
         {
@@ -117,17 +118,18 @@ public class GoapPlanner
         Node n = cheapest;
         while (n != null)
         {
-            // Only the start node will have a NULL action!
+            // Only the start node will have a null action
             if ( n.action != null )
             {
                 result.Insert(0, n.action);
             }
-            // Move on to the next parent so that we get the next (well previous!) action!
+            //Proceed to the next parent to obtain the next action
             n = n.parent;
         }
 
-        // Finally we can now create our Queue that has the actions our enemy can go and perform.
-        Queue<GoapAction> queue = new Queue<GoapAction>();
+
+        Queue<GoapAction> queue = new Queue<GoapAction>();  //Queue that has the actions for the enemy to perform
+
         foreach (GoapAction a in result)
         {
             queue.Enqueue(a);            
@@ -143,25 +145,24 @@ public class GoapPlanner
         return queue;
     }
 
-    // RECURSION alert!!!
     private bool BuildGraph(Node parent, List<Node> leaves, List<GoapAction> usableActions, Dictionary<string,int> enemyGoal)
     {
         bool foundPath = false;
         foreach (GoapAction nextPossibleAction in usableActions)
         {
-            // So we know what the parent Action(node!) state is, and that's what our GOAP is trying to find an action to match
-            // So we have to look into the NEXT Action and see if it's achievable given the parent state.
-            // Obviously we just ignore the next possible action if it's not!
+            // The parent Action(node) state is known and that's what our GOAP is trying to find an action to match
+            // Examine the next Action and see if it's achievable based on the parent state.
+            // Disregard the next possible action if it's unattainable given the parent state.
             if ( nextPossibleAction.IsAchievableGiven(parent.state))
             {
-                // We're going to need the Dictionary of states held within the parent state.
-                // Best to take a copy so that we don't manipulate the parent state itself by accident!
-                // These then represent the possible FUTURE state of the world should the Action be performed!
+                // Make a Dictionary of states held within the parent state. 
+                // It is advisable to take a copy to prevent unintentional manipulation to the parent state.
+                // Theese copies serve as representations of the potential future state of the world, should the Action be performed.
                 Dictionary<string,int> projectedStates = new Dictionary<string, int>(parent.state);
 
-                // We know the 'current' state from our parent, but now we have to "pretend" our next possible action
-                // has been performed, so we now load in to our view of the current state the "after effects" of the next 
-                // possible action pretendingthat the action took place!
+                // The current state is known from the parent state, but now we have to "pretend" our next possible action has been performed.
+                // Load in to the view of the current state the "after effects" of the next possible action pretending that the action took place
+
                 foreach (KeyValuePair<string, int> stateEffect in nextPossibleAction.afterEffects)
                 {
                     if ( !projectedStates.ContainsKey(stateEffect.Key))
@@ -170,19 +171,19 @@ public class GoapPlanner
                     }
                 }
 
-                // Add up the costs of the nodes as we go - which is how the "cheapest" node works above.
+                //Add up the cost of the parent and the next possible action
                 Node node = new Node(parent, parent.cost + nextPossibleAction.cost, projectedStates, nextPossibleAction);
 
-                // For each of the possible actions we're looking at, we have to determine if the goal of the enemy has been achieved yet!
-                // We do this by looking through our current state "possible future model" and if in that we find the name
+                // For each of the possible actions, determine if the goal of the enemy has been achieved yet.
+                // Look through our current state "possible future model" and if in that we find the name
                 // of one or more of our enemy goals (remember the goal is set in the enemy "Agent" class, e.g. CleverEnemy.cs) 
-                // then we have a winner!
+                // then we have a winner
                 if ( GoalAchieved(enemyGoal, projectedStates))
                 {
                     leaves.Add(node);
                     foundPath = true;
                 }
-                else // No matches found in our projected states for the goal :-( So we need to recurse down the graph and look again on other remaining Actions/Nodes.
+                else // No matches found in our projected states for the goal so recurse down the graph and look again on other remaining Actions/Nodes.
                 {
                     List<GoapAction> subsetOfRemainingActions = ActionSubset(usableActions, nextPossibleAction);
                     bool found = BuildGraph(node, leaves, subsetOfRemainingActions, enemyGoal);
@@ -208,8 +209,7 @@ public class GoapPlanner
         return true;
     }
 
-    // This will return a COPY of the action list - again we don't want to be manipulating the original in memory list of actions!
-    // On the way, it removes the action that has just been tested and failed for trying to achieve a goal.
+    //This returns a copy of the action list, minus the action that has just been tested and failed for trying to achieve a goal.
     private List<GoapAction> ActionSubset(List<GoapAction> actions, GoapAction removeThisActionAsItHasNotAchievedTheGoal)
     {
         List<GoapAction> reducedListOfPossibleActions = new List<GoapAction>();

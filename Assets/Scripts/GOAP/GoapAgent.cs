@@ -84,8 +84,7 @@ public class GoapAgent : MonoBehaviour {
         CompleteAction();
     }
 
-    // LateUpdate is called once per frame
-    // IMPORTANT! This is where the plan can be made to be recalculated from time to time based on if enough changes have happened to the world!
+    // This is where the plan can be made to be recalculated from time to time based on if enough changes have happened to the world
     void LateUpdate() 
     {
         /* This method does X things...
@@ -109,13 +108,12 @@ public class GoapAgent : MonoBehaviour {
             } 
             catch (Exception e) 
             {
-                // Stop everything, a target just went out of scope!!!
+                // Stop everything, a target just went out of scope
                 distanceToTarget = 1000.0f;
                 currentAction.running = false;
                 currentAction.replan = false;
                 planner = null;
                 actionQueue = null;
-                // continue;
             }
             
             // Is the enemy at it's destination yet?
@@ -124,9 +122,9 @@ public class GoapAgent : MonoBehaviour {
                 Debug.Log("Agent: ["+currentAction.actionName+"] This \"doSomething\" action is now happening.");
                 if (!invoked)
                 {
-                    // This runs the method that does a doSomething action!
+                    // This runs the method that does a doSomething action
                     Invoke("RunAction", 0.01f);
-                    // This runs the method that wraps up the action AFTER the action's duration has expired.
+                    // This runs the method that wraps up the action after the action's duration has expired.
                     invoked = true;
                 }
             }
@@ -135,10 +133,10 @@ public class GoapAgent : MonoBehaviour {
                 Debug.Log("Agent: ["+currentAction.actionName+"] This \"goSomewhere\" action is now finishing up.");
                 targetOfInterest = currentAction.target;
 
-                // Stops an action being invoked twice!
+                // Stops an action being invoked twice
                 if (!invoked)
                 {
-                    // This runs the method that wraps up the action AFTER the action's duration has expired.
+                    // This runs the method that wraps up the action after the action's duration has expired.
                     Invoke("CompleteAction", currentAction.duration);
                     invoked = true;
                 }
@@ -181,7 +179,7 @@ public class GoapAgent : MonoBehaviour {
             {
                 goals.Remove(currentGoal);
             }
-            // This is IMPORTANT!  It's here we set the planner to NULL!  This means when there are no goals left the planner recalculates!
+            // Set the planner to null. This means when there are no goals left the planner recalculates
             planner = null;
         }
 
@@ -202,7 +200,7 @@ public class GoapAgent : MonoBehaviour {
                     currentAction.target = GameObject.FindWithTag(currentAction.targetTag);
                 }
 
-                // Give the agent somewhere to go!
+                // Give the agent somewhere to go
                 if ( currentAction.target != null)
                 {
                     currentAction.running = true;
@@ -211,7 +209,7 @@ public class GoapAgent : MonoBehaviour {
             }
             else
             {
-                // This forces a new plan to be generated!
+                // This forces a new plan to be generated
                 actionQueue = null;
             }
         }
