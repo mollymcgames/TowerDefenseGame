@@ -62,7 +62,7 @@ public class TowerSpawner : MonoBehaviour
                 }
                 else
                 {
-                    UnityEngine.Debug.Log("Position is occupied");
+                    Debug.Log("Position is occupied");
                 }
             }
         }

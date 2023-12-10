@@ -30,13 +30,13 @@ public class KnightController : MonoBehaviour
         anim.SetFloat("moveX", rb.velocity.x); //Set the moveX parameter in the animator
         anim.SetFloat("moveY", rb.velocity.y); //Set the moveY parameter in the animator
 
-        if(Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
+        if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
         {
             anim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal")); //Set the lastMoveX parameter in the animator
             anim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical")); //Set the lastMoveY parameter in the animator
         }
 
-        if(isAttacking)
+        if (isAttacking)
         {
             rb.velocity = Vector2.zero; //Set the velocity to zero
             attackTimeCounter -= Time.deltaTime; //Decrement the attack time counter
@@ -47,7 +47,7 @@ public class KnightController : MonoBehaviour
             }
         }
 
-        if(Input.GetMouseButton(1)) //check for right mouse button click
+        if (Input.GetMouseButton(1)) //check for right mouse button click
         {
             attackTimeCounter = attackTime; //make sure when we swing sword, it's not instant
             anim.SetBool("isAttacking", true); //Set the isAttacking parameter in the animator

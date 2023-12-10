@@ -31,7 +31,7 @@ public class SellTower : MonoBehaviour
 
         //Get the TowerSpawner script
         towerSpawner = FindFirstObjectByType<TowerSpawner>();
-        if(towerSpawner == null)
+        if (towerSpawner == null)
         {
             Debug.LogError("No TowerSpawner script found!");
         }        
@@ -41,7 +41,7 @@ public class SellTower : MonoBehaviour
     void OnMouseOver()
     {
         //show the upgrade button when the mouse is over the tower
-        if(!buttonVisible)
+        if (!buttonVisible)
         {
             sellButton.gameObject.SetActive(true);
             buttonVisible = true;
@@ -51,7 +51,7 @@ public class SellTower : MonoBehaviour
     void OnMouseExit()
     {
         //hide the upgrade button when the mouse is no longer over the tower
-        if(buttonVisible)
+        if (buttonVisible)
         {
             sellButton.gameObject.SetActive(false);
             buttonVisible = false;

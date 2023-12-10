@@ -96,28 +96,27 @@ public class TowerUpgrade : MonoBehaviour
 
 
     IEnumerator PlaySellSoundAndDestroy()
-{
-    sellSoundEffect.Play(); //Play the sell sound effect
-    // yield return new WaitForSeconds(sellSoundEffect.clip.length);  // Wait for the sound to finish playing
-    yield return new WaitForSeconds(0.5f);  // Wait for the sound to finish playing not the whole clip length
-    // Continue with the rest of the SellTower() code
-    //Add the sell value to the money counter when selling the tower    
-    MoneyCounter moneyCounter = FindFirstObjectByType<MoneyCounter>();
-    if (moneyCounter != null)
     {
-        moneyCounter.AddMoney(sellValue);
-        //Get the position of the tower         
-        Vector3 position = transform.position;
-        //Get the tower spawner script and inform it about the tower before destroying it
-        if (towerSpawner != null)
+        sellSoundEffect.Play(); //Play the sell sound effect
+        // yield return new WaitForSeconds(sellSoundEffect.clip.length);  // Wait for the sound to finish playing
+        yield return new WaitForSeconds(0.5f);  // Wait for the sound to finish playing not the whole clip length
+        //Add the sell value to the money counter when selling the tower    
+        MoneyCounter moneyCounter = FindFirstObjectByType<MoneyCounter>();
+        if (moneyCounter != null)
         {
-            towerSpawner.RemoveTowerPosition(towerSpawner.DeriveTowerPosition(position));
+            moneyCounter.AddMoney(sellValue);
+            //Get the position of the tower         
+            Vector3 position = transform.position;
+            //Get the tower spawner script and inform it about the tower before destroying it
+            if (towerSpawner != null)
+            {
+                towerSpawner.RemoveTowerPosition(towerSpawner.DeriveTowerPosition(position));
+            }
+            //Destroy the current tower
+            Destroy(gameObject);
+            Debug.Log("Tower sold!");
         }
-        //Destroy the current tower
-        Destroy(gameObject);
-        Debug.Log("Tower sold!");
     }
-}
 
     void UpdateCostText()
     {

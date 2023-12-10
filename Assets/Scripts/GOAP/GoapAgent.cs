@@ -42,7 +42,6 @@ public class GoapAgent : MonoBehaviour {
 
     GameObject targetOfInterest;
 
-    // Start is called before the first frame update
     public void Start() 
     {
         GoapAction[] configuredActions = this.GetComponents<GoapAction>();
@@ -116,7 +115,6 @@ public class GoapAgent : MonoBehaviour {
                 currentAction.replan = false;
                 planner = null;
                 actionQueue = null;
-                // Invoke("CompleteAction", 0.1f);
                 // continue;
             }
             
@@ -129,7 +127,6 @@ public class GoapAgent : MonoBehaviour {
                     // This runs the method that does a doSomething action!
                     Invoke("RunAction", 0.01f);
                     // This runs the method that wraps up the action AFTER the action's duration has expired.
-                    // Invoke("CompleteAction", currentAction.duration);
                     invoked = true;
                 }
             }

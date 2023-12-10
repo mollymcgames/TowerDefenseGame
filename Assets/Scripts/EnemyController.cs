@@ -20,10 +20,9 @@ public abstract class EnemyController : MonoBehaviour
 
     [SerializeField] private float speed = 0.5f ; //The speed at which the enemy moves
 
-    //ADD+
     EnemyController zmc;
 
-    EnemyHealthManager ehm; //ADD
+    EnemyHealthManager ehm; 
 
 
     NavMeshAgent agent;
@@ -31,8 +30,7 @@ public abstract class EnemyController : MonoBehaviour
     private bool hasReachedIntermediateWaypoint = false; //Check if the enemy has reached the target
     private bool hasReachedWaypoint = false; //Check if the enemy has reached the target
 
-    private bool hasBeenHealed = false; //ADD+
-    // Start is called before the first frame update
+    private bool hasBeenHealed = false;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>(); //Get the NavMeshAgent component
@@ -106,7 +104,6 @@ public abstract class EnemyController : MonoBehaviour
         else if (hasStartedMoving && agent.remainingDistance <= agent.stoppingDistance) //Check if the enemy has reached the targe    
         {
 
-            //ADD+
             if (targetWaypoint.tag == "HealthWaypoint" && hasBeenHealed == false)
             {
                 ehm = gameObject.GetComponent<EnemyHealthAncientSkeleton>(); //NOT WORKING CANT USE ENEMY HEALTH MANAGER OR ENEMY HEALTH ANCIENT SKELETON
@@ -164,7 +161,6 @@ public abstract class EnemyController : MonoBehaviour
         hasStartedMoving = true;
     }
 
-    //ADD+
     public void UpdateSpeed(float newSpeed)
     {
         speed = newSpeed;

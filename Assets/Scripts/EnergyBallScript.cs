@@ -77,7 +77,7 @@ public class EnergyBallScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
             DealDamage(collision.gameObject);
             Destroy(gameObject);
@@ -88,27 +88,27 @@ public class EnergyBallScript : MonoBehaviour
     public void DealDamage(GameObject enemy)
     {
         // GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
-        if(enemy != null)
+        if (enemy != null)
         {
             EnemyHealthZombie enemyHealthManager = enemy.GetComponent<EnemyHealthZombie>();
-            if(enemyHealthManager != null)
+            if (enemyHealthManager != null)
             {
                 enemyHealthManager.TakeDamage(2); // Change the value if needed
             }
 
             //@TODO: Remove this later as the health managers will merge
             EnemyHealthGoblinRider enemyHealthBat = enemy.GetComponent<EnemyHealthGoblinRider>();
-            if(enemyHealthBat != null)
+            if (enemyHealthBat != null)
             {
                 enemyHealthBat.TakeDamage(2); // Change the value if needed
             }
             EnemyHealthNecromancer enemyHealthNecromancer = enemy.GetComponent<EnemyHealthNecromancer>();
-            if(enemyHealthNecromancer != null)
+            if (enemyHealthNecromancer != null)
             {
                 enemyHealthNecromancer.TakeDamage(1); // Change the value if needed
             }
             EnemyHealthAncientSkeleton enemyHealthAncientSkeleton = enemy.GetComponent<EnemyHealthAncientSkeleton>();
-            if(enemyHealthAncientSkeleton != null)
+            if (enemyHealthAncientSkeleton != null)
             {
                 enemyHealthAncientSkeleton.TakeDamage(1); // Change the value if needed
             }
