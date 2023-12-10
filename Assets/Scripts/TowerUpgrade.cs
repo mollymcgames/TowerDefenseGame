@@ -24,7 +24,6 @@ public class TowerUpgrade : MonoBehaviour
 
     [SerializeField] private AudioSource sellSoundEffect;
 
-    // Start is called before the first frame update
     void Start()
     {
         AudioSource audioSource = GetComponent<AudioSource>();
@@ -38,7 +37,7 @@ public class TowerUpgrade : MonoBehaviour
 
         //Get the TowerSpawner script
         towerSpawner = FindFirstObjectByType<TowerSpawner>();
-        if(towerSpawner == null)
+        if (towerSpawner == null)
         {
             Debug.LogError("No TowerSpawner script found!");
         }
@@ -51,7 +50,7 @@ public class TowerUpgrade : MonoBehaviour
     void OnMouseOver()
     {
         //show the upgrade button when the mouse is over the tower
-        if(!buttonVisible)
+        if (!buttonVisible)
         {
             upgradeButton.gameObject.SetActive(true);
             sellButton.gameObject.SetActive(true);
@@ -62,7 +61,7 @@ public class TowerUpgrade : MonoBehaviour
     void OnMouseExit()
     {
         //hide the upgrade button when the mouse is no longer over the tower
-        if(buttonVisible)
+        if (buttonVisible)
         {
             upgradeButton.gameObject.SetActive(false);
             sellButton.gameObject.SetActive(false);
@@ -74,7 +73,7 @@ public class TowerUpgrade : MonoBehaviour
     {
         //Subtrct the unique cost when upgrading the tower
         MoneyCounter moneyCounter = FindFirstObjectByType<MoneyCounter>();
-        if(moneyCounter != null && moneyCounter.CanAfford(uniqueCost))
+        if (moneyCounter != null && moneyCounter.CanAfford(uniqueCost))
         {
             moneyCounter.SubtractMoney(uniqueCost);
             //Instantiate the upgraded tower prefab at the same position as the current tower
@@ -98,7 +97,6 @@ public class TowerUpgrade : MonoBehaviour
     IEnumerator PlaySellSoundAndDestroy()
     {
         sellSoundEffect.Play(); //Play the sell sound effect
-        // yield return new WaitForSeconds(sellSoundEffect.clip.length);  // Wait for the sound to finish playing
         yield return new WaitForSeconds(0.5f);  // Wait for the sound to finish playing not the whole clip length
         //Add the sell value to the money counter when selling the tower    
         MoneyCounter moneyCounter = FindFirstObjectByType<MoneyCounter>();

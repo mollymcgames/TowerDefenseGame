@@ -5,16 +5,16 @@ using UnityEngine.AI;
 
 public class RedMoonTower : MonoBehaviour
 {
-    public GameObject energyBallPrefab; // Add the energy ball prefab here
+    public GameObject energyBallPrefab; // Add the projectile prefab here
     public Transform firePoint; // An empty game object as the fire point to assign in the inspector
     public Transform targetWaypoint; // The target waypoint the enemy moves towards
 
     [SerializeField] private float fireRate = 1.0f; // The rate of fire
-    [SerializeField] public float energyBallSpeed = 2f; // The speed of the arrow
+    [SerializeField] public float energyBallSpeed = 2f; // The speed of the projectile
     [SerializeField] private float firingRange = 5f; // The desired firing range
 
     private float timeUntilFire; // Timer to keep track of when to fire
-    public List<GameObject> activeEnergyBalls = new List<GameObject>(); // List to hold active arrows
+    public List<GameObject> activeEnergyBalls = new List<GameObject>(); // List to hold active projectiles
     private bool shouldFire = true; // A flag to determine if the tower should fire
 
     // Start is called before the first frame update
@@ -26,20 +26,20 @@ public class RedMoonTower : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        // Countdown the timer until it's time to fire the next arrow
+        // Countdown the timer until it's time to fire the next projectile
         timeUntilFire -= Time.deltaTime;
 
-        // If the timer reaches zero or below, fire an arrow and reset the timer
+        // If the timer reaches zero or below, fire a projectile and reset the timer
         if (timeUntilFire <= 0 && shouldFire)
         {
             FireEnergyBall();
             timeUntilFire = fireRate;
         }
 
-        // Create a separate list to hold arrows that are no longer active
+        // Create a separate list to hold projectiles that are no longer active
         List<GameObject> inactiveEnergyBalls = new List<GameObject>();
 
-        // If an arrow is present, move it towards the enemy's position
+        // If an projectile is present, move it towards the enemy's position
         foreach (GameObject energyBall in activeEnergyBalls)
         {
             if (energyBall != null)
@@ -52,7 +52,7 @@ public class RedMoonTower : MonoBehaviour
             }
         }
 
-        // Remove the inactive arrows from the active arrows list
+        // Remove the inactive projectile from the active projectiles list
         foreach (GameObject energyBall in inactiveEnergyBalls)
         {
             inactiveEnergyBalls.Remove(energyBall);
@@ -61,7 +61,7 @@ public class RedMoonTower : MonoBehaviour
 
     private void FireEnergyBall()
     {
-        // The Tower should find the closest enemy before firing an arrow. If there are multiple enemies on the scene it will prioritize the nearest one.
+        // The Tower should find the closest enemy before firing an projectile. If there are multiple enemies on the scene it will prioritize the nearest one.
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy"); // Get all the enemies on the scene
         GameObject closestEnemy = null; // The closest enemy
         float closestDistance = Mathf.Infinity; // The distance to the closest enemy
@@ -88,7 +88,7 @@ public class RedMoonTower : MonoBehaviour
 
     protected virtual void ShootEnergyBall(NavMeshAgent enemyAgent)
     {
-            // Instantiate an arrow prefab at the fire point position and rotation
+            // Instantiate an projectile prefab at the fire point position and rotation
             GameObject energyBall = Instantiate(energyBallPrefab, firePoint.position, firePoint.rotation);
 
             // Calculate the direction towards the enemy agent
@@ -96,14 +96,13 @@ public class RedMoonTower : MonoBehaviour
 
             energyBall.transform.rotation = Quaternion.LookRotation(Vector3.forward, direction) * Quaternion.Euler(0, 0, 270);
 
-            // Get the arrow component
             Rigidbody2D rb = energyBall.GetComponent<Rigidbody2D>();
 
-            // Set the initial velocity of the arrow towards the enemy
+            // Set the initial velocity of the projectile towards the enemy
             if (rb != null)
             {
                 rb.velocity = direction * energyBallSpeed;
-                activeEnergyBalls.Add(energyBall); // Add the arrow to the list of active arrows
+                activeEnergyBalls.Add(energyBall); // Add the projectile to the list of active projectiles
             }
     }
 }

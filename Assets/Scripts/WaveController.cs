@@ -145,7 +145,6 @@ public class WaveController : MonoBehaviour
                     SceneManager.LoadScene("LevelThree");
                     break;
                 case "LevelThree":
-                    // continueButton.gameObject.SetActive(false);
                     SceneManager.LoadScene("LevelFour");
                     break;
                 case "LevelFour":

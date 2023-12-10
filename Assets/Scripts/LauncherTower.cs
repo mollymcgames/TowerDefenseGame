@@ -32,7 +32,6 @@ public class LauncherTower : MonoBehaviour
         }        
     }
 
-    // Update is called once per frame
     protected virtual void Update()
     {
         // Countdown the timer until it's time to fire the next arrow
@@ -79,7 +78,7 @@ public class LauncherTower : MonoBehaviour
             if (enemy != null)
             {
                 float distance = Vector3.Distance(transform.position, enemy.transform.position); // Calculate the distance between the tower and the enemy
-                //we will also use this for the ifcheck 
+                // If the distance is less than the closest distance and less than the firing range
                 if (distance < closestDistance && distance <= firingRange) // If the distance is less than the closest distance
                 {
                     closestDistance = distance; // Set the closest distance to the distance

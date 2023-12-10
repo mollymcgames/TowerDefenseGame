@@ -40,7 +40,6 @@ public class MoneyCounter : MonoBehaviour
     private void UpdateMoneyText()
     {
         moneyText.text = money.ToString();
-        // moneyText.text = "Money: £" + money.ToString();
 
     }
 
@@ -60,13 +59,6 @@ public class MoneyCounter : MonoBehaviour
             money = 10;
             SaveMoney(); //save the updated money value
         }
-    }
-
-    public void ClearMoney()
-    {
-        money = 0;
-        SaveMoney(); //save the updated money value
-        UpdateMoneyText();
     }
 
     public void GameOver()  //want to make sure this doesnt exist in memory when we go back to the main menu

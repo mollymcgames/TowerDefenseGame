@@ -13,7 +13,6 @@ public class AudioManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            // DontDestroyOnLoad(gameObject); // Don't destroy this object when loading a new scene
             audioSource = GetComponent<AudioSource>();
 
             if (backgroundMusic != null)

@@ -15,7 +15,7 @@ public class ActionAttackEnemy : GoapAction
         Debug.Log("ACTION: About to attack an enemy...");
         actionType = ActionType.doSomething;
 
-        // Once the target is found, we want to attack quickly!
+        // Once the target is found, attack quickly
         duration = 0f;
 
         return true;
@@ -26,7 +26,6 @@ public class ActionAttackEnemy : GoapAction
         Debug.Log("ACTION: Enemy dead...");
         rnc = GetRedKnightController();
         rnc.StopAttack();
-        // replan = true;
         return true;
     }
 
@@ -46,11 +45,10 @@ public class ActionAttackEnemy : GoapAction
         }
         catch ( Exception e) 
         {
-            // Of course, if the enemy dies....it won't be found, so time to bail!!
             return;
         }
        
-        // Keep on attacking until enemy is dead!!
+        // Keep on attacking until enemy is dead
         if ( ehm.currentHealth >= 0 )
         {
             Debug.Log("ACTION: Enemy health before: "+ehm.currentHealth);

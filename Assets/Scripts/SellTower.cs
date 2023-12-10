@@ -68,7 +68,6 @@ public class SellTower : MonoBehaviour
     IEnumerator PlaySellSoundAndDestroy()
     {
         sellSoundEffect.Play(); //Play the sell sound effect
-        // yield return new WaitForSeconds(sellSoundEffect.clip.length);  // Wait for the sound to finish playing
         yield return new WaitForSeconds(0.5f);  // Wait for the sound to finish playing not the whole clip length
         //Add the sell value to the money counter when selling the tower    
         MoneyCounter moneyCounter = FindFirstObjectByType<MoneyCounter>();

@@ -15,7 +15,7 @@ public abstract class EnemyHealthManager : MonoBehaviour
     private WaveController waveController;
 
 
-    public Slider slider; //reference to the healthbar
+    public Slider slider; 
     void Start()
     {
         ga = gameObject.GetComponent<CleverEnemy>();
@@ -29,7 +29,7 @@ public abstract class EnemyHealthManager : MonoBehaviour
     {
         currentHealth -= damage;
         Debug.Log("Enemy ["+gameObject.GetInstanceID()+"] took damage");
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             Die();
         }

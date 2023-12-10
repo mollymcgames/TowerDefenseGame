@@ -37,7 +37,7 @@ public abstract class EnemyController : MonoBehaviour
         agent.updateRotation = false; //Stop the NavMeshAgent component from rotating the enemy
         agent.updateUpAxis = false; //Stop the NavMeshAgent component from rotating the enemy
         agent.speed = speed; //Set the speed of the NavMeshAgent component
-        agent.stoppingDistance = 0.5f; //Set the stopping distance of the NavMeshAgent component we might need to change this later but for now it works
+        agent.stoppingDistance = 0.5f; //Set the stopping distance of the NavMeshAgent component
 
         myAnimator = GetComponent<Animator>(); //Get the animator component
 
@@ -63,7 +63,7 @@ public abstract class EnemyController : MonoBehaviour
 
         if (targetWaypoint == null || intermediateWaypoint == null)
         {
-            Debug.Log("Waypoint is null"); //can change to debug log otherwise
+            Debug.Log("Waypoint is null");
         }
 
     }
@@ -72,7 +72,7 @@ public abstract class EnemyController : MonoBehaviour
     {
 
         //Move towards the intermediate waypoint first
-        if(intermediateWaypoint != null && !hasReachedIntermediateWaypoint)
+        if (intermediateWaypoint != null && !hasReachedIntermediateWaypoint)
         {
             MoveToIntermediateWaypoint();
         }
@@ -132,22 +132,18 @@ public abstract class EnemyController : MonoBehaviour
                     floatingHealthBar.UpdateHealthBar();
                 }
             }
-            else if(targetWaypoint.tag != "HealthWaypoint")
+            else if (targetWaypoint.tag != "HealthWaypoint")
             {
                 hasReachedWaypoint = true;
-                healthManager.ReduceHealth(); //Reduce the health by 1
+                healthManager.ReduceHealth();
 
                 Debug.Log("Bad guy beat ya!");
                 waveController = FindFirstObjectByType<WaveController>();
-                // List<GameObject> activeEnemies = waveController.GetActiveEnemies();
-                Debug.Log("A GOB ["+gameObject.GetInstanceID()+"] WON but they're no longer active so...active enemies BEFORE processing:"+waveController.GetActiveEnemies().Count);
                 waveController.RemoveEnemy(gameObject);
-                Debug.Log("A GOB ["+gameObject.GetInstanceID()+"] WON but they're no longer active so...active enemies AFTER processing:"+waveController.GetActiveEnemies().Count);
 
 
                 Destroy(gameObject); //Destroy the enemy game object
-                //subtract money here
-                moneyCounter.SubtractMoney(1);
+                moneyCounter.SubtractMoney(1); //Subtract money when the enemy reaches the target
                 return;
             }  
         }

@@ -19,7 +19,6 @@ public class TowerArcher : MonoBehaviour
 
     public LauncherWeapon launcherWeapon; // Reference to the LauncherWeapon script
 
-    // Start is called before the first frame update
     void Start()
     {
         timeUntilFire = 0f; // Set the timer to the fire rate
@@ -32,7 +31,6 @@ public class TowerArcher : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         // Countdown the timer until it's time to fire the next arrow
@@ -79,7 +77,6 @@ public class TowerArcher : MonoBehaviour
             if (enemy != null)
             {
                 float distance = Vector3.Distance(transform.position, enemy.transform.position); // Calculate the distance between the tower and the enemy
-                //we will also use this for the ifcheck 
                 if (distance < closestDistance && distance <= firingRange) // If the distance is less than the closest distance
                 {
                     closestDistance = distance; // Set the closest distance to the distance

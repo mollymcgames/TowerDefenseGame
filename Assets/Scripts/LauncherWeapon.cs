@@ -6,7 +6,7 @@ public class LauncherWeapon : MonoBehaviour
 
     private void Start()
     {
-        // Ensure you have assigned the Animator component in the Unity Editor
+        // Ensure the Animator component is assigned in the Unity Editor
         if (weaponAnimator == null)
         {
             Debug.LogError("Animator component not assigned to LauncherWeapon script!");

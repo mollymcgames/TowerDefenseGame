@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CleverRedKnight : GoapAgent
 {    
-    public void Start()
+    public new void Start()
     {
         base.Start();
         // Create a new subgoal for the Clever Knight
