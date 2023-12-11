@@ -54,7 +54,7 @@ public class GoapAgent : MonoBehaviour {
 
     void CompleteAction()
     {
-        Debug.Log("Agent: ["+currentAction.actionName+"] Completing action.");
+        // Debug.Log("Agent: ["+currentAction.actionName+"] Completing action.");
         currentAction.running = false;
         currentAction.PostPerform();
         invoked = false;
@@ -69,7 +69,7 @@ public class GoapAgent : MonoBehaviour {
 
     void RunAction()
     {
-        Debug.Log("Agent: ["+currentAction.actionName+"] Doing action: "+currentAction.actionName);
+        // Debug.Log("Agent: ["+currentAction.actionName+"] Doing action: "+currentAction.actionName);
         currentAction.running = true;
         currentAction.DoAction();
     }
@@ -77,7 +77,7 @@ public class GoapAgent : MonoBehaviour {
 
     public void ResetPlan()
     {
-        Debug.Log("Agent: ["+currentAction.actionName+"] Resetting entire plan!");
+        // Debug.Log("Agent: ["+currentAction.actionName+"] Resetting entire plan!");
         currentAction.replan = false;
         planner = null;
         actionQueue = null;
@@ -98,7 +98,7 @@ public class GoapAgent : MonoBehaviour {
         // Check if there's a current action that is running....
         if ( currentAction != null && currentAction.running)
         {
-            Debug.Log("Agent: ["+currentAction.actionName+"] Checking running action.");
+            // Debug.Log("Agent: ["+currentAction.actionName+"] Checking running action.");
 
             // This is important so that agent MOVES TOWARDS THE GOAL            
             float distanceToTarget;
@@ -130,7 +130,7 @@ public class GoapAgent : MonoBehaviour {
             }
             else if ( currentAction.actionType == ActionType.goSomewhere && currentAction.agent.hasPath && distanceToTarget < currentAction.targetDistance)
             {
-                Debug.Log("Agent: ["+currentAction.actionName+"] This \"goSomewhere\" action is now finishing up.");
+                // Debug.Log("Agent: ["+currentAction.actionName+"] This \"goSomewhere\" action is now finishing up.");
                 targetOfInterest = currentAction.target;
 
                 // Stops an action being invoked twice
@@ -146,10 +146,10 @@ public class GoapAgent : MonoBehaviour {
                 currentAction.replan = false;
                 ResetPlan();
             }
-            else 
-            {
-                Debug.Log("Agent: ["+currentAction.actionName+"] Running action too far away from target still , distance="+distanceToTarget);
-            }
+            // else 
+            // {
+            //     // Debug.Log("Agent: ["+currentAction.actionName+"] Running action too far away from target still , distance="+distanceToTarget);
+            // }
             return;
         }
 
@@ -192,11 +192,11 @@ public class GoapAgent : MonoBehaviour {
                 if ( currentAction.actionType == ActionType.doSomething ) 
                 {
                     currentAction.target = targetOfInterest;
-                    Debug.Log("Agent: ["+currentAction.actionName+"] Doing action against this target: "+currentAction.target);                    
+                    // Debug.Log("Agent: ["+currentAction.actionName+"] Doing action against this target: "+currentAction.target);                    
                 }
                 else if ( currentAction.target == null && currentAction.targetTag != "")
                 {
-                    Debug.Log("Agent: ["+currentAction.actionName+"] Action, going to target tag: "+currentAction.targetTag);
+                    // Debug.Log("Agent: ["+currentAction.actionName+"] Action, going to target tag: "+currentAction.targetTag);
                     currentAction.target = GameObject.FindWithTag(currentAction.targetTag);
                 }
 

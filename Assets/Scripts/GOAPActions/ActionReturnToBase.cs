@@ -12,7 +12,7 @@ public class ActionReturnToBase : GoapAction
 
     public override bool PrePerform()
     {
-        Debug.Log("ACTION: Returning to base...");
+        // Debug.Log("ACTION: Returning to base...");
 
         rnc = gameObject.GetComponent<RedKnightController>();   // gets component from -this- gameobject
         rnc.SetTarget(rnc.GetOriginalSpawnLocation());       
@@ -22,7 +22,7 @@ public class ActionReturnToBase : GoapAction
 
     public override bool PostPerform()
     {        
-        Debug.Log("ACTION: Returned to base...");
+        // Debug.Log("ACTION: Returned to base...");
         replan = true;  
         return true;
     }

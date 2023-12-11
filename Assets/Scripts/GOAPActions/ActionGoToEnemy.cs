@@ -40,7 +40,7 @@ public class ActionGoToEnemy : GoapAction
 
     public override bool PostPerform()
     {        
-        Debug.Log("ACTION: Found an enemy...");
+        // Debug.Log("ACTION: Found an enemy...");
         rnc = GetRedKnightController();   // gets component from -this- gameobject
         rnc.StopAttack();
         return true;

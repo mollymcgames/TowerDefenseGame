@@ -119,11 +119,11 @@ public abstract class EnemyController : MonoBehaviour
                     healAmount = 15;
                 }
 
-                Debug.Log("GOB ["+gameObject.GetInstanceID()+"] HEALED for: "+healAmount);
+                // Debug.Log("GOB ["+gameObject.GetInstanceID()+"] HEALED for: "+healAmount);
                 ehm.currentHealth += healAmount;
                 zmc.UpdateSpeed(2);
                 hasBeenHealed = true;
-                Debug.Log("From action, current HEALED health: "+ehm.currentHealth);
+                // Debug.Log("From action, current HEALED health: "+ehm.currentHealth);
 
                 //Update the healthbar for ancient skeleton
                 FloatingHealthBarAncientSkeleton floatingHealthBar = GetComponent<FloatingHealthBarAncientSkeleton>();
@@ -137,7 +137,6 @@ public abstract class EnemyController : MonoBehaviour
                 hasReachedWaypoint = true;
                 healthManager.ReduceHealth();
 
-                Debug.Log("Bad guy beat ya!");
                 waveController = FindFirstObjectByType<WaveController>();
                 waveController.RemoveEnemy(gameObject);
 
@@ -149,7 +148,7 @@ public abstract class EnemyController : MonoBehaviour
         }
         else if (hasReachedWaypoint && agent.remainingDistance > agent.stoppingDistance) //Check if the enemy has reached the target
         {
-            Debug.Log("WAYPOINT REACHED GOB with ID: "+gameObject.GetInstanceID() + " and their remaining distance is: "+agent.remainingDistance);
+            // Debug.Log("WAYPOINT REACHED GOB with ID: "+gameObject.GetInstanceID() + " and their remaining distance is: "+agent.remainingDistance);
             hasReachedWaypoint = false;
             hasBeenHealed = false;
         }

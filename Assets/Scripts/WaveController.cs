@@ -40,7 +40,7 @@ public class WaveController : MonoBehaviour
         audioManager = FindFirstObjectByType<AudioManager>();
 
         activeEnemies = new List<GameObject>();
-        Debug.Log("INITIAL Active enemies:" + activeEnemies.Count);
+        // Debug.Log("INITIAL Active enemies:" + activeEnemies.Count);
         continueButton.gameObject.SetActive(false); //Hide the continue button in the UI from the start
         UpdateWaveText(); //Update the wave count text in the canvas UI from the start
 
@@ -60,7 +60,7 @@ public class WaveController : MonoBehaviour
         if (currentWave == 1 && !startButtonClicked) //Check if the current wave is 1
         {
             startButtonClicked = true; //Set the start button clicked to true
-            Debug.Log("Start button clicked!");
+            // Debug.Log("Start button clicked!");
             startButton.gameObject.SetActive(false); //Hide the start button in the UI
             currentWave = 1; //Set the current wave to 1
             StartCoroutine(SpawnWave()); //Start spawning enemies
@@ -79,7 +79,7 @@ public class WaveController : MonoBehaviour
                 {
                     yield return new WaitForSeconds(5.0f); //Wait for 5 seconds
                     enemySpawner.SpawnEnemy(this); //Spawn an enemy
-                    Debug.Log("Active enemies:" + activeEnemies.Count);
+                    // Debug.Log("Active enemies:" + activeEnemies.Count);
                 }
             }
 
@@ -92,7 +92,7 @@ public class WaveController : MonoBehaviour
             Debug.Log("Reached max waves. stop spawning enemies");
             foreach (EnemySpawner enemySpawner in enemySpawners)
             {
-                Debug.Log("Active enemies STOP SPAWNING:" + activeEnemies.Count);
+                // Debug.Log("Active enemies STOP SPAWNING:" + activeEnemies.Count);
                 enemySpawner.StopSpawning(); //Stop spawning enemies
             }
             yield return new WaitUntil(() => activeEnemies.Count == 0); //Wait until all enemies are dead
@@ -169,29 +169,27 @@ public class WaveController : MonoBehaviour
 
     public List<GameObject> GetActiveEnemies()
     {
-        Debug.Log("WaveController active enemies count: "+activeEnemies.Count);
         return activeEnemies;
     }
 
     public void RemoveEnemy(GameObject thingToRemove)
     {
-        Debug.Log("WaveController REMOVE BEFORE active enemies count: "+activeEnemies.Count);
         activeEnemies.Remove(thingToRemove);
-        Debug.Log("WaveController REMOVE AFTER active enemies count: "+activeEnemies.Count);        
+        // Debug.Log("WaveController REMOVE AFTER active enemies count: "+activeEnemies.Count);        
     }
 
     public void AddEnemy(GameObject thingToAdd)
     {
-        Debug.Log("WaveController ADD BEFORE active enemies count: "+activeEnemies.Count);
+        // Debug.Log("WaveController ADD BEFORE active enemies count: "+activeEnemies.Count);
         activeEnemies.Add(thingToAdd);
-        Debug.Log("WaveController ADD AFTER active enemies count: "+activeEnemies.Count);        
+        // Debug.Log("WaveController ADD AFTER active enemies count: "+activeEnemies.Count);        
     }
 
     public void ClearEnemies()
     {
-        Debug.Log("WaveController CLEAR BEFORE active enemies count: "+activeEnemies.Count);
+        // Debug.Log("WaveController CLEAR BEFORE active enemies count: "+activeEnemies.Count);
         activeEnemies.Clear();
-        Debug.Log("WaveController CLEAR AFTER active enemies count: "+activeEnemies.Count);        
+        // Debug.Log("WaveController CLEAR AFTER active enemies count: "+activeEnemies.Count);        
     }
 
     private void UpdateWaveText()

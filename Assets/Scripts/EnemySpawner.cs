@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("INITIAL Active enemies IN SPAWNER:"+activeEnemies.Count);        
+        // Debug.Log("INITIAL Active enemies in spawner:"+activeEnemies.Count);        
         StartCoroutine(SpawnEnemy(FindFirstObjectByType<WaveController>())); //Start spawning enemies
     }
 

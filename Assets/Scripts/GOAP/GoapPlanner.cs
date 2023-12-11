@@ -88,7 +88,7 @@ public class GoapPlanner
 
         if ( !success)
         {
-            Debug.Log("["+planName+"] NO PLAN FOUND!");
+            // Debug.Log("["+planName+"] NO PLAN FOUND!");
             return null;
         }
 
@@ -135,12 +135,12 @@ public class GoapPlanner
             queue.Enqueue(a);            
         }
 
-        Debug.Log("We have a plan ["+planName+"] These are the queue steps: ");
-        int step = 1;
-        foreach (GoapAction a in queue) 
-        {
-            Debug.Log("["+planName+"] Queue step ["+ step++ +"]: "+a.actionName);
-        }
+        // Debug.Log("We have a plan ["+planName+"] These are the queue steps: ");
+        // int step = 1;
+        // foreach (GoapAction a in queue) 
+        // {
+        //     Debug.Log("["+planName+"] Queue step ["+ step++ +"]: "+a.actionName);
+        // }
 
         return queue;
     }

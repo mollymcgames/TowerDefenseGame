@@ -9,7 +9,7 @@ public class CleverEnemy : GoapAgent
 
     private bool resetPlan = false;
     
-    public void Start()
+    public new void Start()
     {
         base.Start();
         // Create a new subgoal for the Clever Enemy
@@ -27,7 +27,7 @@ public class CleverEnemy : GoapAgent
     public void Update()
     {
         ehm = gameObject.GetComponent<EnemyHealthAncientSkeleton>();
-        Debug.Log("From Clever Enemy, current health: "+ehm.currentHealth);
+        // Debug.Log("From Clever Enemy, current health: "+ehm.currentHealth);
 
         if ( ehm.currentHealth > 25 )
         {
@@ -42,7 +42,7 @@ public class CleverEnemy : GoapAgent
             beliefs.RemoveState("isHealthyEnough");
             if ( resetPlan == false)
             {
-                Debug.Log("Unhealthy, resetting plan!");
+                // Debug.Log("Unhealthy, resetting plan!");
                 ResetPlan(); 
                 resetPlan = true;
             }

@@ -51,9 +51,9 @@ public class ActionAttackEnemy : GoapAction
         // Keep on attacking until enemy is dead
         if ( ehm.currentHealth >= 0 )
         {
-            Debug.Log("ACTION: Enemy health before: "+ehm.currentHealth);
+            // Debug.Log("ACTION: Enemy health before: "+ehm.currentHealth);
             rnc.InitiateAttack();            
-            Debug.Log("ACTION: Enemy health after: "+ehm.currentHealth);
+            // Debug.Log("ACTION: Enemy health after: "+ehm.currentHealth);
             Invoke("DoAction",0.75f);
         }
         else
